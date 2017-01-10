@@ -1,0 +1,272 @@
+<main id="main" role="main">
+  <div class="visual">
+    <div class="container">
+      <div class="visual-content">
+        <div class="slogan">
+          <strong class="title">
+            <span>{{producer.type}}</span><strong> {{producer.name}}</strong>
+          </strong>
+        </div>
+        <div class="bottom-block">
+          <ul class="btn-block">
+            <li><a href="#" class="btn icon-plus22">Connect</a></li>
+            <li><a href="#" class="btn icon-bubble22">Message</a></li>
+            <li><a href="#" class="btn icon-link39">Share</a></li>
+          </ul>
+          <ul class="calculation">
+            <li><strong>3.7K</strong><span>Connections</span></li>
+            <li><strong>10</strong><span>Projects</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="col-left">
+      <div class="wrapper slider carousel">
+        <div ng-repeat="img in producer.uploads">
+          <div ng-show="img.fileType.indexOf('mp4') != -1">
+    				<video controls="controls"
+    				  ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
+    				  preload="none" class="slide slide-animation nonDraggableImage" 
+    				  ng-hide="!isCurrentSlideIndex($index)">
+    					<source type="video/mp4" ng-src="{{ img.fileName }}" />
+    				</video>
+  				</div>
+  				<div ng-show="img.fileType.indexOf('mp4') == -1">
+            <img class="slide slide-animation nonDraggableImage"
+               ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
+               ng-hide="!isCurrentSlideIndex($index)"
+               ng-src="{{ img.fileName }}"
+               spinkit-image-preloader="rotating-plane-spinner" />
+          </div>
+        </div>
+        <a class="btn-next" href="" ng-click="nextSlide()"></a>
+        <a class="btn-prev" href="" ng-click="prevSlide()"></a>
+      </div>
+      <h2>Our Story</h2>
+      <p>{{ producer.desc }}</p>
+    </div>
+    <aside class="col-right">
+      <div class="snapshot">
+        <strong class="title line">Snapshot</strong>
+        <dl>
+          <dt>Owner</dt>
+          <dd>{{ producer.owner.firstName }} {{ producer.owner.lastName }}</dd>
+          <dt>Street</dt>
+          <dd>{{producer.address1}}<br>{{producer.address2}}<br>{{producer.city}}, {{producer.state}} {{producer.zip}}</dd>
+          <dt>Type</dt>
+          <dd>{{producer.type}}</dd>
+          <dt>Energy Type</dt>
+          <dd>{{producer.energyType}}</dd>
+          <dt>Availability</dt>
+          <dd>{{  producer.availability.toString() }}</dd>
+          <dt>Certifications</dt>
+          <dd><a href="#">Learn More</a></dd>
+        </dl>
+      </div>
+      <div class="connections">
+          <strong class="title line">Connections <a href="#" class="btn icon-plus22">Connect</a></strong>
+        <ul class="followers">
+          <li>
+            <div class="img-box"><img src="images/img-5.png" alt="img description"></div>
+          </li>
+          <li>
+            <div class="img-box"><img src="images/img-5.png" alt="img description"></div>
+          </li>
+          <li>
+            <div class="img-box"><img src="images/img-5.png" alt="img description"></div>
+          </li>
+          <li>
+            <div class="img-box"><img src="images/img-5.png" alt="img description"></div>
+          </li>
+          <li>
+            <div class="img-box"><img src="images/img-5.png" alt="img description"></div>
+          </li>
+          <li>
+            <div class="img-box"><img src="images/img-5.png" alt="img description"></div>
+          </li>
+          <li>
+            <div class="img-box"><img src="images/img-5.png" alt="img description"></div>
+          </li>
+          <li>
+            <div class="img-box"><img src="images/img-5.png" alt="img description"></div>
+          </li>
+        </ul>
+      </div>
+      <div class="connections adds">
+        <strong class="title">Mutual Connections</strong>
+        <ul class="followers">
+          <li>
+            <div class="img-box"><img src="images/img-5.png" alt="img description"></div>
+          </li>
+          <li>
+            <div class="img-box"><img src="images/img-5.png" alt="img description"></div>
+          </li>
+          <li>
+            <div class="img-box"><img src="images/img-5.png" alt="img description"></div>
+          </li>
+          <li>
+            <div class="img-box"><img src="images/img-5.png" alt="img description"></div>
+          </li>
+        </ul>
+        <a href="#" class="btn">Explore</a>
+      </div>
+    </aside>
+  </div>
+  <div ui-view="projects">
+    <div class="tab-nav">
+			<div class="container">
+				<ul class="tabset">
+					<li><a href='' ng-click="activateTab('tab1')" ng-class="{ active: activeTab == 'tab1' }">Projects</a></li>
+					<li><a href='' ng-click="activateTab('tab2')" ng-class="{ active: activeTab == 'tab2' }">Updates</a></li>
+					<li><a href='' ng-click="activateTab('tab3')" ng-class="{ active: activeTab == 'tab3' }">Comments</a></li>
+				</ul>
+				<a href="mailto:{{ producer.owner.email }}" class="btn icon-bubble22">Message</a>
+			</div>
+		</div>
+    <div class="container">
+  		<div class="tab-content">
+  			<div id="tab1" ng-show="activeTab=='tab1'">
+  			  
+  			  
+  			  <!--MULTIPLE PROJECT VIEW-->
+  			  <section class="portfolio" ng-hide="single">
+						<div class="text-frame text-center">
+							<h1>Our Portfolio</h1>
+							<span class="add-text">Find a project that fits your clean energy needs.</span>
+						</div>
+            <div class="three-columns" ng-show="rows[0].length == 0">
+              <div class="col"></div>
+              <div class="col">
+                  <h3>No Matching Projects</h3>
+              </div>
+              <div class="col"></div>
+            </div>
+            <div class="three-columns" ng-repeat="row in rows">
+              <div class="col" ng-repeat="project in row">
+                <div class="promo-box">
+                  <a href='' ng-click="showProject(project._id)">
+                    <div class="img-wrapper">
+                      <img src="images/img-3.jpg" alt="img description">
+                      <strong class="title" 
+                        ng-class="{orange: (project.projectType == 'RECs' || project.projectType == 'Carbon Offsets'),
+                        green: (project.projectType == 'Community Solar' || project.projectType == 'Competitive Supplier')}">
+                        {{project.projectType}}</strong>
+                    </div>
+                    <div class="text-wrapper">
+                      <h3>{{project.name}}</h3>
+                      <dl>
+                        <dt>STATUS</dt>
+                        <dd>{{project.status}}</dd>
+                        <dt>ENERGY TYPE</dt>
+                        <dd>{{project.energyMix}}</dd>
+                        <dt>AVAILABILITY</dt>
+                        <dd>{{project.availability.toString()}}</dd>
+                      </dl>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>  
+          </section>
+          
+          
+          
+          
+          
+          <!--SINGLE PROJECT VIEW-->
+          <div ng-hide="!single">
+            <div class="text-frame">
+							<h1>{{project.name}}</h1>
+							<span class="add-text">{{project.energyMix}}</span>
+							<a href="" ng-click="showAll()" class="btn-back">Back to Projects</a>
+						</div>
+						<div class="col-left">
+              <div class="wrapper slider carousel">
+                <div ng-repeat="img in project.uploads">
+                  <div ng-show="img.fileType.indexOf('mp4') != -1">
+            				<video controls="controls" 
+            				  ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
+            				  preload="none" class="slide slide-animation nonDraggableImage" 
+            				  ng-hide="!isCurrentSlideIndex($index)">
+            					<source type="video/mp4" ng-src="{{ img.fileName }}" />
+            				</video>
+          				</div>
+          				<div ng-show="img.fileType.indexOf('mp4') == -1">
+                    <img class="slide slide-animation nonDraggableImage"
+                       ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
+                       ng-hide="!isCurrentSlideIndex($index) || img.fileName.substr('mp4') == -1"
+                       ng-src="{{ img.fileName }}"
+                       spinkit-image-preloader='rotating-plane-spinner' />
+                  </div>
+                </div>
+                <a class="btn-next" href="" ng-click="nextProjectSlide()"></a>
+                <a class="btn-prev" href="" ng-click="prevProjectSlide()"></a>
+              </div>
+							<h2>Overview</h2>
+							<p>{{project.desc}}</p>
+						</div>
+						<aside class="col-right">
+							<div class="snapshot">
+								<strong class="title line">Project Snapshot</strong>
+								<dl>
+									<dt>Status</dt>
+									<dd>{{project.status}}</dd>
+									<dt>Type</dt>
+									<dd>{{project.projectType}}</dd>
+									<dt>Availability</dt>
+									<dd>{{project.availability.toString()}}</dd>
+									<dt>Energy Mix</dt>
+									<dd>{{project.energyMix}}</dd>
+									<dt>Capacity</dt>
+									<dd>{{project.capacity}}</dd>
+								</dl>
+							</div>
+							<div class="green-box">
+								<strong class="title line">Ready to Go Solar?</strong>
+								<p>Contact us today to sign up or join us for an information session to find out more!</p>
+								<a href="#" class="btn">Contact Us</a>
+							</div>
+						</aside>
+					</div>
+						
+						
+  			</div>
+  			<div id="tab2" ng-show="activeTab=='tab2'">
+          <div class="container">
+						<div class="text-frame text-center">
+							<h1>Updates</h1>
+						</div>
+        	  <div class="row" ng-repeat="u in producer.updates" ng-show="u.visible == true">
+              <div class="twelve columns">
+					      <h1>{{u.title}}</h1>
+				        <p><strong>Posted On : {{ u.created | date : "fullDate" }}</strong></p>
+					      <p>{{u.body}}</p>
+				      </div>
+			      </div>
+		      </div>
+  			</div>
+  			<div id="tab3" ng-show="activeTab=='tab3'">
+          <div class="container">
+						<div class="text-frame text-center">
+							<h1>Comments</h1>
+						</div>
+            <div class="row">
+              <div class="twelve columns">
+                <h3>Comments</h3>
+                <p><label for="inpTitle">Title: </label>
+                  <input name="inpTitle" type="text" class="form-control" ng-model="comment.title" value="{{ comment.title }}">
+                </p>
+                <p><label for="taBody">Body: </label>
+                  <textarea cols="60" rows="6" ng-model="comment.body">{{comment.body}}</textarea>
+                </p>
+                <p><a href='' ng-click="postComment()">Post Comment</a></p>
+              </div>
+            </div>
+            <div ng-repeat="c in producer.comments" ng-include="'profile/comment_row.html'"></div>
+		      </div>
+  			</div>
+  		</div>
+  	</div>
+</main>

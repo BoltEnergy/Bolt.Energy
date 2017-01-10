@@ -1,0 +1,20 @@
+  <div class="section privacy">
+    <div class="container">
+      <div class="row">
+        <div class="twelve columns">
+          <h3>Producer Update</h3>
+          <p><label for="inpTitle">Title: </label>
+            <input type="hidden" ng-model="update._id" name="hiddenId">
+            <input name="inpTitle" type="text" class="form-control" ng-model="update.title" value="{{ update.title }}">
+          </p>
+          <p><label for="taBody">Body: </label>
+            <textarea cols="60" rows="6" ng-model="update.body">{{update.body}}</textarea>
+          </p>
+          <p><label for="inpVisible">Make Update Visible: </label>
+            <input type="checkbox" name="inpVisible" ng-model="update.visible">
+          </p>
+          <p><a href='' ng-click="saveUpdate()">Save Update</a></p>
+        </div>
+      </div>
+    </div>
+  </div>

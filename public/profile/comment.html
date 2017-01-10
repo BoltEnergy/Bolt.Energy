@@ -1,0 +1,21 @@
+  <div class="section privacy">
+    <div class="container">
+      <div ng-repeat="com in comments" ng-include="comment_row.html"></div>
+      <div class="row">
+        <div class="twelve columns">
+          <h3>Comments</h3>
+          <p><label for="inpTitle">Title: </label>
+            <input type="hidden" ng-model="comment._id" name="hiddenId">
+            <input name="inpTitle" type="text" class="form-control" ng-model="comment.title" value="{{ comment.title }}">
+          </p>
+          <p><label for="taBody">Body: </label>
+            <textarea cols="60" rows="6" ng-model="comment.body">{{comment.body}}</textarea>
+          </p>
+          <p><label for="inpVisible">Make Update Visible: </label>
+            <input type="checkbox" name="inpVisible" ng-model="comment.visible">
+          </p>
+          <p><a href='' ng-click="saveComment()">Post Comment</a></p>
+        </div>
+      </div>
+    </div>
+  </div>

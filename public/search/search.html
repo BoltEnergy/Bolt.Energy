@@ -1,0 +1,83 @@
+<main id="main" role="main">
+  <div class="container">
+    <div class="row">
+      <div class="twelve columns">
+        <h1>Search</h1>
+        <p>Enter search terms below</p>
+        <p><input type="text" ng-model="searchTerm" /> <button ng-click="search()" href="" class="btn">Search</button></p>
+      </div>
+    </div>
+    <section class="portfolio">
+      <div class="text-frame clearfix">
+          <h1 class="left">Matching Projects</h1>
+      </div>
+      <div class="three-columns" ng-show="projectRows[0].length == 0">
+        <div class="col"></div>
+        <div class="col">
+            <h3>No Matching Projects</h3>
+        </div>
+        <div class="col"></div>
+      </div>
+      <div class="three-columns" ng-repeat="row in projectRows">
+        <div class="col" ng-repeat="project in row">
+          <div class="promo-box">
+            <a ui-sref="producer({ producerId: project.projectOwner })">
+              <div class="img-wrapper">
+                <img src="images/img-3.jpg" alt="img description">
+                <strong class="title" 
+                  ng-class="{orange: (project.projectType == 'RECs' || project.projectType == 'Carbon Offsets'),
+                  green: (project.projectType == 'Community Solar' || project.projectType == 'Competitive Supplier')}">
+                  {{project.projectType}}</strong>
+              </div>
+              <div class="text-wrapper">
+                <h3>{{project.name}}</h3>
+                <dl>
+                  <dt ng-hide="!project.status">STATUS</dt>
+                  <dd ng-hide="!project.status">{{project.status}}</dd>
+                  <dt ng-hide="!project.energyMix">ENERGY TYPE</dt>
+                  <dd ng-hide="!project.energyMix">{{project.energyMix}}</dd>
+                  <dt ng-hide="!project.availability.toString()">AVAILABILITY</dt>
+                  <dd ng-hide="!project.availability.toString()">{{project.availability.toString()}}</dd>
+                </dl>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="portfolio">
+      <div class="text-frame clearfix">
+          <h1 class="left">Matching Producers</h1>
+      </div>
+      <div class="three-columns" ng-show="producerRows[0].length == 0">
+        <div class="col"></div>
+        <div class="col">
+            <h3>No Matching Projects</h3>
+        </div>
+        <div class="col"></div>
+      </div>
+      <div class="three-columns" ng-repeat="row in producerRows">
+        <div class="col" ng-repeat="producer in row">
+          <div class="promo-box">
+            <a ui-sref="producer({ producerId: producer._id })">
+              <div class="img-wrapper">
+                <img src="images/img-3.jpg" alt="img description">
+              </div>
+              <div class="text-wrapper">
+                <h3>{{producer.name}}</h3>
+                <dl>
+                  <dt ng-hide="!producer.status">STATUS</dt>
+                  <dd ng-hide="!producer.status">{{producer.status}}</dd>
+                  <dt ng-hide="!producer.energyMix">ENERGY TYPE</dt>
+                  <dd ng-hide="!producer.energyMix">{{producer.energyType}}</dd>
+                  <dt ng-hide="!producer.availability.toString()">AVAILABILITY</dt>
+                  <dd ng-hide="!producer.availability.toString()">{{producer.availability.toString()}}</dd>
+                </dl>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>

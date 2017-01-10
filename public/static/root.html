@@ -1,0 +1,26 @@
+<header id="header">
+  <div class="container">
+    <div class="logo">
+      <a href="#">
+        <img src="images/logo.png" alt="bolt"/>
+      </a>
+    </div>
+    <a href="#" class="opener"><span></span></a>
+    <div class="menu">
+      <ul class="nav-btn" ng-hide="authenticated">
+        <li><a ui-sref="login" class="btn">Log In</a></li>
+        <li><a ui-sref="register" class="btn">Sign Up</a></li>
+      </ul>
+      <ul class="nav-btn" ng-show="authenticated">
+        <li><a ng-click="profile()" class="btn">Profile</a></li>
+        <li><a ng-click="logout()" href='' class="btn">Logout</a></li>
+      </ul>
+      <ul class="" id="nav">
+        <li><a ui-sref="search">Search</a></li>
+        <li><a ui-sref="about">About</a></li>
+        <li><a href="mailto:hello@bolt.energy">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+<div ui-view></div>

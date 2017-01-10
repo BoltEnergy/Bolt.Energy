@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" ng-app="bolt">
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+    <style>
+    .slider {
+        width: auto;
+        height: 400px;
+        overflow: hidden;
+        position: relative;
+/*        background: #e6e6e6;
+        border: 20px solid #FFF;
+        margin-top: 20px;*/
+    }
+
+    .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    </style>
+    <title>Bolt.Energy</title>
+    <!-- Styling -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link media="all" rel="stylesheet" href="css/main.css">
+    <link media="all" rel="stylesheet" href="libs/angular-toastr/dist/angular-toastr.css">
+    <link media="all" rel="stylesheet" href="libs/angular-spinkit/build/angular-spinkit.min.css">
+    <!-- <script src="https://use.typekit.net/oex8oja.js"></script> -->
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script type="text/javascript" src="libs/jquery/dist/jquery.min.js" defer></script>
+    <!-- Tools -->
+    <script src="libs/underscore/underscore-min.js"></script>
+    <!-- JS -->
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/angular-spinkit/build/angular-spinkit.min.js"></script>
+    <script src="libs/angular-animate/angular-animate.min.js"></script>
+    <script src="libs/angular-touch/angular-touch.min.js"></script>
+    <script src="libs/gsap/src/minified/TweenMax.min.js"></script>
+    <script src="libs/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="libs/angular-resource/angular-resource.min.js"></script>
+    <script src="libs/angular-toastr/dist/angular-toastr.tpls.min.js"></script>
+    <script src="libs/angular-base64-upload/dist/angular-base64-upload.min.js"></script>
+    <!-- ANGULAR CUSTOM -->
+    <script src="auth/auth.js"></script>
+    <script src="search/search.js"></script>
+    <script src="producer/producer.js"></script>
+    <script src="profile/profile.js"></script>
+    <script src="home/home.js"></script>
+    <script src="app.js"></script>
+
+</head>
+<body class="home">
+  <!--<div id="wrapper" ui-view>-->
+  <div id="wrapper">
+    <header id="header">
+      <div class="container" ng-controller="HeaderController">
+        <div class="logo">
+          <a href="#">
+            <img src="images/logo.png" alt="bolt"/>
+          </a>
+        </div>
+        <a href="#" class="opener"><span></span></a>
+        <div class="menu">
+          <ul class="nav-btn" ng-hide="authenticated">
+            <li><a ui-sref="login" class="btn">Log In</a></li>
+            <li><a ui-sref="register" class="btn">Sign Up</a></li>
+          </ul>
+          <ul class="nav-btn" ng-show="authenticated">
+            <li><a href='' ng-click="profile()" class="btn">Profile</a></li>
+            <li><a ng-click="logout()" href='' class="btn">Logout</a></li>
+          </ul>
+          <ul class="" id="nav">
+            <li><a ui-sref="search">Search</a></li>
+            <li><a ui-sref="about">About</a></li>
+            <li><a href="mailto:hello@bolt.energy">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div ui-view></div>
+  </div>
+  <footer id="footer">
+    <div class="container">
+      <p>&copy; 2016 <a href="#">Bolt Energy Market, Inc.</a> <a ui-sref="privacy" class="privacy">Privacy Policy</a> <a ui-sref="terms" class="privacy">Terms of Service</a></p>
+    </div>
+  </footer>
+  <script type="text/javascript">window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js" defer><\/script>')</script>
+  <script type="text/javascript" src="js/jquery.main.js" defer></script>
+</body>
+</html>
