@@ -68,12 +68,12 @@
   <div ui-view="projects">
     <div class="tab-nav">
 			<div class="container">
-				<ul class="tabset">
-					<li><a href='' ng-click="activateTab('tab1')" ng-class="{ active: activeTab == 'tab1' }">Projects</a></li>
-					<li><a href='' ng-click="activateTab('tab2')" ng-class="{ active: activeTab == 'tab2' }">Updates</a></li>
-					<li><a href='' ng-click="activateTab('tab3')" ng-class="{ active: activeTab == 'tab3' }">Comments</a></li>
-				</ul>
 				<a href="mailto:{{ producer.owner.email }}" class="btn icon-bubble22">Message</a>
+        <ul class="tabset">
+          <li><a href='' ng-click="activateTab('tab1')" ng-class="{ active: activeTab == 'tab1' }">Projects</a></li>
+          <li><a href='' ng-click="activateTab('tab2')" ng-class="{ active: activeTab == 'tab2' }">Updates</a></li>
+          <li><a href='' ng-click="activateTab('tab3')" ng-class="{ active: activeTab == 'tab3' }">Comments</a></li>
+        </ul>
 			</div>
 		</div>
     <div class="container">

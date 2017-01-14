@@ -1936,6 +1936,7 @@ select {
 textarea {
 	resize: vertical;
 	vertical-align: top;
+	max-width: 100%;
 }
 
 button,
@@ -2255,7 +2256,7 @@ body {
 .visual-content .title strong {
 	display: block;
 	margin: -2px 0 0 -3px;
-	font: 800 61px/53px "acumin-pro", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+	font: 800 61px/normal "acumin-pro", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
 }
 
 .btn-block {
@@ -2585,7 +2586,7 @@ body {
 .tabset a.active:before {
 	content: "";
 	position: absolute;
-	bottom: -37px;
+	bottom: -41px;
 	left: 50%;
 	-webkit-transform: translateX(-50%);
 	-ms-transform: translateX(-50%);
@@ -3027,7 +3028,9 @@ body {
 	position: relative;
 	width: 100%;
 }
-
+.slider.carousel {
+	/*height: 305px;*/
+}
 .carousel:hover .btn-prev,
 .carousel:hover .btn-next {
 	opacity: 1;
@@ -3046,7 +3049,7 @@ body {
 .carousel .slide {
 	float: left;
 	overflow: hidden;
-	width: 100%;
+	max-width: 100%;
 }
 
 .carousel .slide img {
@@ -3316,7 +3319,7 @@ body {
 	}
 
 	.visual-content .slogan:before {
-		top: 5px;
+		top: 0px;
 		left: -73px;
 	}
 
@@ -3354,10 +3357,12 @@ body {
 	}
 
 	.tab-nav {
-		padding: 5px 0 15px;
+		padding: 10px 0;
 		margin: 0 0 25px;
 	}
-
+	.tabset li {
+		line-height: 30px;
+	}
 	.tab-nav.dark .tabset {
 		padding: 0;
 		float: none;
@@ -3380,12 +3385,13 @@ body {
 	.tabset li select {
 		min-width: 300px;
 	}
+
 	.tabset a {
 		font-size: 16px;
 	}
 
 	.tabset a.active:before {
-		bottom: -32px;
+		bottom: -34px;
 	}
 
 	.tabset .counter {
@@ -3450,7 +3456,9 @@ body {
 		left: 50px;
 		right: 50px;
 	}
-
+	.slider.carousel {
+		height: 305px;
+	}
 	.carousel .btn-prev,
 	.carousel .btn-next {
 		left: 10px;
@@ -3474,24 +3482,31 @@ body {
 		line-height: normal;
 	}
 }
-/*@media (max-width: 709px) {
+
+@media (max-width: 509px) {
 	.tabset {
+		padding-top: 15px;
+		text-align: center;
+		float: none;
 	}
-	.tabset li select {
+	.tabset li {
+		float: none;
+		display: inline-block;
+		margin-right: 0;
+		width: 32%;
 	}
-	.tab-nav.dark .tabset li {
-		margin-right: 10px;
+	.tab-nav a.btn {
+		margin-top: 10px;
+		float: none;
 	}
-	.tab-nav.dark .tabset li.explore {
-	    padding-right:10px;
+	.tab-nav {
+		padding-bottom: 15px;
+		text-align: center;
 	}
-	.tab-nav.dark .tabset li.show_me {
-		margin-right: 10px
+	.tabset a.active::before {
+		bottom: -37px;
 	}
-	.tab-nav.dark .tabset li.show_in {
-		margin-right: 10px;
-	}
-}*/
+}
 
 @media (max-width: 479px) {
 	h1,
@@ -3521,14 +3536,13 @@ body {
 	.visual-content .slogan:before {
 		width: 44px;
 		height: 44px;
-		top: 12px;
 		left: 0;
 		background-size: 44px 44px;
 	}
 
 	.visual-content .title strong {
 		font-size: 32px;
-		line-height: 44px;
+		line-height: normal;
 	}
 
 	.btn-block .btn {
@@ -3539,7 +3553,9 @@ body {
 		margin: 0 -4px 10px 0;
 		width: 25%;
 	}
-
+	.tab-nav {
+		padding-bottom: 15px;
+	}
 	.tab-nav .container {
 		display: table;
 		table-layout: fixed;
@@ -3547,22 +3563,21 @@ body {
 		text-align: center;
 	}
 
-/*	.tab-nav .btn {
+	.tab-nav a.btn {
+		margin-top: 10px;
 		float: none;
-		margin: 0 0 20px;
 	}
-
 	.tabset {
+		padding-top: 15px;
+		text-align: center;
 		float: none;
-		display: table-footer-group;
 	}
-
 	.tabset li {
-		margin: 0;
-		width: 33.332%;
-		text-align: left;
-	}*/
-
+		float: none;
+		display: inline-block;
+		margin-right: 0;
+		width: 32%;
+	}
 	.tabset a {
 		display: inline-block;
 		vertical-align: middle;
@@ -3570,7 +3585,7 @@ body {
 	}
 
 	.tabset a.active:before {
-		bottom: -26px;
+		bottom: -31px;
 	}
 
 	.tabset .counter {
