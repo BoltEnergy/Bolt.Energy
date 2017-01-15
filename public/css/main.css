@@ -1812,8 +1812,7 @@ h2,
 .h2 {
 	color: #2c382b;
 	font-size: 24px;
-	margin: 0 0 8px;
-	padding: 17px 0 0;
+	color: #55ba47;
 }
 
 h3,
@@ -1975,6 +1974,28 @@ body {
 	max-width: 970px;
 }
 
+.row {
+	margin: 0 -15px;
+	clear: left;
+}
+
+.columns {
+	float: left;
+	padding: 0 15px;
+}
+
+.three {
+	width: 33.3%;
+}
+
+.six {
+	width: 50%
+}
+
+.twelve {
+	width: 100%
+}
+
 #header {
 	padding: 17px 0 23px;
 	position: relative;
@@ -2097,10 +2118,10 @@ body {
 .nav-btn a {
 	text-decoration: none;
 	min-width: 100px;
-	padding: 3px 10px 7px;
+	/*padding: 3px 10px 7px;*/
 	border: 1px solid #889682;
 	color: #889682;
-	line-height: 24px;
+	/*line-height: 24px;*/
 }
 
 .nav-btn a:hover {
@@ -2120,6 +2141,12 @@ body {
 	text-decoration: none;
 	border: 1px solid #fff;
 	color: #fff;
+	padding: 7px 10px;
+	line-height: normal;
+}
+
+button.btn {
+	background: #55ba47;
 }
 
 .btn.full {
@@ -2273,8 +2300,9 @@ body {
 }
 
 .btn-block .btn {
-	padding: 4px 16px 8px 36px;
-	line-height: 22px;
+	/*padding: 4px 16px 8px 36px;*/
+	/*line-height: 22px;*/
+	padding-left: 36px;
 }
 
 .btn-block .btn:hover {
@@ -2513,7 +2541,8 @@ body {
 	border-color: #55ba47;
 	border-radius: 4px;
 	line-height: 20px;
-	padding: 5px 13px 9px 35px;
+	/*padding: 5px 13px 9px 35px;*/
+	padding-left: 35px;
 }
 
 .tab-nav .btn:hover {
@@ -2937,10 +2966,8 @@ body {
 	font-weight: normal;
 	position: absolute;
 	background: #cbbc02;
-	padding: 7px 10px 9px;
+	padding: 10px;
 	top: 20px;
-	line-height: 15px;
-	line-height: 20px;
 	font-size: 12px;
 	color: #fff !important;
 	left: 60px;
@@ -3123,6 +3150,32 @@ body {
 
 .btn.icon-link39 button {
 	display: none;
+}
+
+.columns h1, .columns h2, .columns h3 {
+	margin: 15px 0;
+}
+
+.columns input, .columns textarea {
+	width: 100%;
+	font-size:17px;
+}
+
+.columns label {
+	display: block;
+}
+
+.columns select {
+	width: 100%;
+	font-size: 17px; 
+}
+
+.search input {
+	width: auto;
+}
+
+.register input, .register select, .register textarea {
+	width: 70%;
 }
 
 @media only screen and (min-width: 1025px) {
@@ -3308,7 +3361,7 @@ body {
 	}
 
 	.btn {
-		font-size: 14px;
+		/*font-size: 14px;*/
 	}
 
 	.visual {
@@ -3385,6 +3438,7 @@ body {
 		float: none;
 		height: 40px;
 		line-height: 40px;
+		width: 100%;
 	}
 	.tab-nav.dark .tabset li.explore {
 		padding:0;
@@ -3654,6 +3708,16 @@ body {
 	.promo-wrapper p {
 		font-size: 1.5em;
 	}
+
+	.columns {
+		float: none;
+	}
+	.three, .six {
+		width: 100%;
+	}
+	.register input, .register select, .register textarea {
+	width: 100%;
+}
 }
 
 @-webkit-keyframes buffering-stripes {

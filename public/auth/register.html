@@ -1,17 +1,18 @@
 <main id="main" role="main">
-  <div class="container">
+  <div class="container register">
   	<div class="row">
       <div class="twelve columns">
-      	<h2>Register for Bolt</h2>
+        <h1>Register for Bolt</h1>
+      </div>
+      <div class="six columns">
+      	<h3>Standar Profile Information</h3>
         <p><label for="inpFirstname">First: </label><input type="text" id="inpUsername" ng-model="firstName"></p>
         <p><label for="inpLastname">Last: </label><input type="text" id="inpUsername" ng-model="lastName"></p>
     		<p><label for="inpEmail">Email: </label><input type="text" id="inpUsername" ng-model="email"></p>
     		<p><label for="selType">Profile Type: </label><select ng-model="accountType"><option value="Producer">Producer</option><option value="Consumer">Consumer</option></select></p>
     		<p><label for="inpPassword">Password: </label><input type="password" id="inpPassword" ng-model="password"></p>
   		</div>
-		</div>
-    <div class="row" ng-show="accountType=='Producer'">
-      <div class="twelve columns">
+      <div class="six columns" ng-show="accountType=='Producer'">
         <h3>Producer Profile Information</h3>
         <p><label for="inpName">Name: </label>
           <input type="hidden" ng-model="producer._id" name="hiddenId">
@@ -84,7 +85,7 @@
             <option value="Commercial">Commercial</option>
           </select>
         </p>
-        <p<label for="selEnergyType">Energy Type: </label>
+        <p><label for="selEnergyType">Energy Type: </label>
           <select name="selEnergyType" id="selEnergyType" class="form-control" ng-model="producer.energyType" value="{{producer.energyType}}">
             <option value="Wind">Wind</option>
             <option value="Solar">Solar</option>
@@ -109,7 +110,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="twelve-columns">
+      <div class="twelve columns">
     		<p><a id="btnSignUp" ng-click="register()" href="">Register</a>&nbsp&nbsp<a id="btnCancel" ng-click="cancel()" href="">Cancel</a></p>
       </div>
     </div>

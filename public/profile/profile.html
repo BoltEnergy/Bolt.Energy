@@ -1,7 +1,7 @@
 <div class="section privacy">
   <div class="container">
     <div class="row">
-      <div class="twelve columns">
+      <div class="three columns">
         <h3>User Profile Information</h3>
     		<p><label for="inpFirstname">First: </label><input type="text" id="inpUsername" ng-model="user.firstName"></p>
     		<p><label for="inpLastname">Last: </label><input type="text" id="inpUsername" ng-model="user.lastName"></p>
@@ -9,24 +9,20 @@
     		<p><label for="inpType">Profile Type: </label><input disabled type="text" id="inpType" ng-model="user.accountType"></p>
   		  <p><a id="btnSignUp" ng-click="saveAccount()" href="">Update User Info</a></p>
       </div>
-    </div>
-    <div class="row" ng-hide="user.accountType == 'Consumer'">
-      <div class="three-columns">
+      <div class="three columns" ng-hide="user.accountType == 'Consumer'">
         <h3>Producer Profile</h3>
         <p ng-show="producer.name"><a href='' ui-sref="producer_edit({ producerId: producer._id })">{{ producer.name }}</a></p>
       </div>
-    </div>
-    <div class="row">
-      <div class="three-columns">
+      <div class="three columns">
         <h3>User Profile Images</h3>
         <p><label for="file">Select Files</label></p>
 		    <p></p><input type="file" name="files"  file-model="uploads"></p>
 		    <p><a href='' ng-click='uploadImage()'>Upload Image</a></p>
       </div>
     </div>
-    <div class="row" ng-repeat="upload in user.uploads">
+    <div class="row">
       <section class="portfolio">
-        <div class="three-columns">
+        <div class="three columns"  ng-repeat="upload in user.uploads">
           <div class="col"></div>
           <div class="col">
             <div class="promo-box">
