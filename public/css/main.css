@@ -3099,6 +3099,11 @@ body {
 #footer p {
 	overflow: hidden;
 	margin: 0 0 5px;
+	float: left;
+}
+
+#footer .links {
+	float: right;
 }
 
 #footer a {
@@ -3115,6 +3120,8 @@ body {
 	font-weight: 600;
 	padding: 0 0 0 20px;
 }
+
+
 
 @media only screen and (min-width: 1025px) {
 	a[href^=tel],
@@ -3517,7 +3524,14 @@ body {
 	body {
 		font-size: 14px;
 	}
-
+	#footer p, #footer .links {
+		float: none;
+		text-align: center;
+	}
+	#footer .links a {
+		float: none;
+		padding: 0 10px;
+	}
 	.btn.icon-plus22:before,
 	.btn.icon-link39:before,
 	.btn.icon-bubble22:before {
