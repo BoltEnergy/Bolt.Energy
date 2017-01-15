@@ -1,4 +1,7 @@
-angular.module('bolt', ["ngAnimate", "ngTouch", "ui.router", "ngResource","toastr","auth","home","search","profile","producer"])
+angular.module('bolt', ["ngAnimate", "ngTouch", "ui.router", "ngResource","toastr","auth","home","search","profile","producer",'djds4rce.angular-socialshare'])
+.run(function($FB){
+  $FB.init('1049483961846178');
+})
 .run(function($state,$rootScope,toastr,LoginService) {
   $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
     event.preventDefault();

@@ -24,7 +24,8 @@
     "angular-toastr": "^2.0.0",
     "angular-base64-upload": "^0.1.19",
     "underscore": "^1.8.3",
-    "angular-spinkit": "^0.3.4"
+    "angular-spinkit": "^0.3.4",
+    "angular-socialshare": "^1.4.5"
   },
   "resolutions": {
     "angular": "1.5.8"

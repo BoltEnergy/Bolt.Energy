@@ -3121,7 +3121,9 @@ body {
 	padding: 0 0 0 20px;
 }
 
-
+.btn.icon-link39 button {
+	display: none;
+}
 
 @media only screen and (min-width: 1025px) {
 	a[href^=tel],
