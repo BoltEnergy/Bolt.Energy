@@ -1800,6 +1800,7 @@ h6,
 	margin: 0;
 	color: inherit;
 	font-weight: 600;
+	line-height: normal;
 }
 
 h1,
@@ -2270,7 +2271,7 @@ button.btn {
 }
 
 .visual-content .title {
-	overflow: hidden;
+	/*overflow: hidden;*/
 	color: #fff;
 	margin: 0 0 9px;
 }
@@ -2795,6 +2796,11 @@ button.btn {
 	padding: 0 10px;
 }
 
+.privacy .three-columns .col {
+	display: inline-block;
+	float: none;
+}
+
 .hero-container {
 	position: relative;
 	background: url("../images/hero-01-1200x550.jpg") 0 50% no-repeat;
@@ -3152,6 +3158,10 @@ button.btn {
 	display: none;
 }
 
+.col-left h2 {
+	margin: 10px 0; 
+}
+
 .columns h1, .columns h2, .columns h3 {
 	margin: 15px 0;
 }
@@ -3168,15 +3178,21 @@ button.btn {
 .columns select {
 	width: 100%;
 	font-size: 17px; 
+	background: transparent;
+	border: 1px solid #ebebeb;
+	line-height: normal;
+	padding: .4em .7em;
 }
 
 .search input {
 	width: auto;
 }
 
-.register input, .register select, .register textarea {
-	width: 70%;
+.register input, .register select, .register textarea, .privacy input, .privacy select, .privacy textarea {
+	/*width: 70%;*/
 }
+
+
 
 @media only screen and (min-width: 1025px) {
 	a[href^=tel],
@@ -3446,7 +3462,10 @@ button.btn {
 		border: 0 none;
 	}
 	.tabset li select {
-		min-width: 300px;
+		min-width: 280px;
+		height: 30px;
+		line-height: 30px;
+		padding: 0px 10px;
 	}
 
 	.tabset a {
@@ -3543,6 +3562,9 @@ button.btn {
 	.promo-wrapper h1 {
 		padding-top: 25px;
 		line-height: normal;
+	}
+	.register input, .register select, .register textarea, .privacy input, .privacy select, .privacy textarea {
+		width: 100%;
 	}
 }
 
@@ -3715,9 +3737,15 @@ button.btn {
 	.three, .six {
 		width: 100%;
 	}
-	.register input, .register select, .register textarea {
-	width: 100%;
+	.register input, .register select, .register textarea, .privacy input, .privacy select, .privacy textarea {
+		width: 100%;
+	}
 }
+
+@media (max-width: 320px) {
+	.btn-block li:last-child {
+		margin:10px 0 0;
+	}
 }
 
 @-webkit-keyframes buffering-stripes {
