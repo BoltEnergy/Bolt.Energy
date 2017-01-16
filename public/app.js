@@ -2,6 +2,7 @@ angular.module('bolt', ["ngAnimate", "ngTouch", "ui.router", "ngResource","toast
 .run(function($FB){
   $FB.init('1049483961846178');
 })
+
 .run(function($state,$rootScope,toastr,LoginService) {
   $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
     event.preventDefault();
@@ -31,13 +32,16 @@ angular.module('bolt', ["ngAnimate", "ngTouch", "ui.router", "ngResource","toast
       toastr.error('An error has occurred.', 'Error');
     }
   });
+  $rootScope.$on('$stateChangeSuccess', function() {
+   document.body.scrollTop = document.documentElement.scrollTop = 0;
+});
 })
 .config(function ($stateProvider, $urlRouterProvider,$compileProvider) {
 
   //$compileProvider.debugInfoEnabled(false);
 
   $urlRouterProvider.otherwise('/home');
-  
+
   $stateProvider.state('home', {
     // parent: 'root',
     url: '/home',
@@ -55,7 +59,7 @@ angular.module('bolt', ["ngAnimate", "ngTouch", "ui.router", "ngResource","toast
       }
     }
   })
-  
+
   //Search
   $stateProvider.state('search', {
     // //parent: 'root',
@@ -63,7 +67,7 @@ angular.module('bolt', ["ngAnimate", "ngTouch", "ui.router", "ngResource","toast
     templateUrl: 'search/search.html',
     controller: 'SearchController'
   })
-  
+
   //Auth Pages
   $stateProvider.state('login', {
     //parent: 'root',
@@ -218,7 +222,7 @@ angular.module('bolt', ["ngAnimate", "ngTouch", "ui.router", "ngResource","toast
       }
     }
   })
-  
+
   //Profile View Pages
   $stateProvider.state('producer', {
     //parent: 'root',
@@ -237,12 +241,18 @@ angular.module('bolt', ["ngAnimate", "ngTouch", "ui.router", "ngResource","toast
       }
     }
   })
-  
+
   //Static Pages
   $stateProvider.state('about', {
     //parent: 'root',
     url: '/about',
     templateUrl: 'static/about.html',
+    controller: 'StaticController'
+  })
+  $stateProvider.state('terms', {
+    //parent: 'root',
+    url: '/terms',
+    templateUrl: 'static/terms.html',
     controller: 'StaticController'
   })
   $stateProvider.state('privacy', {
@@ -287,7 +297,7 @@ angular.module('bolt', ["ngAnimate", "ngTouch", "ui.router", "ngResource","toast
 .service('ConfigService', function ($http, $q, $window) {
   return {
     appRoot: function () {
-      //var url = 'http://localhost:3002';
+      // var url = 'http://localhost:3001';
       //var url = 'https://bolt-test-sgannonumd.c9users.io';
       var url = '';
       if ($window.location.href.indexOf('c9users') > -1) {
