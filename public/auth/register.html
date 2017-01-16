@@ -4,25 +4,25 @@
       <div class="twelve columns">
         <h1>Register for Bolt</h1>
       </div>
-      <div class="six columns">
+      <div class="three columns">
       	<h3>Standar Profile Information</h3>
-        <p><label for="inpFirstname">First: </label><input type="text" id="inpUsername" ng-model="firstName"></p>
-        <p><label for="inpLastname">Last: </label><input type="text" id="inpUsername" ng-model="lastName"></p>
-    		<p><label for="inpEmail">Email: </label><input type="text" id="inpUsername" ng-model="email"></p>
-    		<p><label for="selType">Profile Type: </label><select ng-model="accountType"><option value="Producer">Producer</option><option value="Consumer">Consumer</option></select></p>
-    		<p><label for="inpPassword">Password: </label><input type="password" id="inpPassword" ng-model="password"></p>
+        <p><label for="inpFirstname">First: </label><input type="text" id="inpUsername" ng-model="firstName" placeholder="First Name" ></p>
+        <p><label for="inpLastname">Last: </label><input type="text" id="inpUsername" ng-model="lastName" placeholder="Last Name"></p>
+    		<p><label for="inpEmail">Email: </label><input type="text" id="inpUsername" ng-model="email" placeholder="someone@example.com"></p>
+    		<p><label for="selType">Profile Type: </label><select ng-model="accountType" class="selectpicker"><option value="Producer">Producer</option><option value="Consumer">Consumer</option></select></p>
+    		<p><label for="inpPassword">Password: </label><input type="password" id="inpPassword" ng-model="password" placeholder="Password"></p>
   		</div>
-      <div class="six columns" ng-show="accountType=='Producer'">
+      <div class="three columns" ng-show="accountType=='Producer'">
         <h3>Producer Profile Information</h3>
         <p><label for="inpName">Name: </label>
           <input type="hidden" ng-model="producer._id" name="hiddenId">
-          <input name="inpName" type="text" class="form-control" ng-model="producer.name" value="{{ producer.name }}">
+          <input name="inpName" type="text" class="form-control" ng-model="producer.name" value="{{ producer.name }}" placeholder="Name">
         </p>
         <p><label for="inpDesc">Description: </label>
-          <textarea name="inpDesc" rows=6 cols=10 class="form-control" ng-model="producer.desc"></textarea>
+          <textarea name="inpDesc" rows=6 cols=10 class="form-control" ng-model="producer.desc" placeholder="Description"></textarea>
         </p>
         <p><label for="inpStatus">Status: </label>
-          <input name="inpStatus" type="text" class="form-control" ng-model="producer.status" value="{{ producer.status }}">
+          <input name="inpStatus" type="text" class="form-control" ng-model="producer.status" value="{{ producer.status }}" placeholder="Status">
         </p>
         <p><label for="lstAvailability">Availability: </label>
             <select name="lstAvailability" multiple class="form-control" ng-model="producer.availability" value="{{producer.availability}}">
@@ -79,6 +79,9 @@
               <option value="WY">Wyoming</option>
             </select>
         </p>
+      </div>
+      <div class="three columns" ng-show="accountType=='Producer'">
+        <h3>&nbsp;</h3>
         <p><label for="selProfileType">Commercial or Non-Commercial: </label>
           <select name="selProfileType" class="form-control" ng-model="producer.type" value="{{producer.type}}">
             <option value="Non-Commercial">Non-Commercial</option>
@@ -96,22 +99,22 @@
             <option value="Other">Other</option>
           </select></p>
         <p><label for="inpAddress1">Address 1: </label>
-          <input name="inpAddress1" type="text" class="form-control" ng-model="producer.address1" value="{{ producer.address1 }}"></p>
+          <input name="inpAddress1" type="text" class="form-control" ng-model="producer.address1" value="{{ producer.address1 }}" placeholder="Address 1"></p>
         <p><label for="inpAddress2">Address 2: </label>
-          <input name="inpAddress2" type="text" class="form-control" ng-model="producer.address2" value="{{ producer.address2 }}"></p>
+          <input name="inpAddress2" type="text" class="form-control" ng-model="producer.address2" value="{{ producer.address2 }}" placeholder="Address 2"></p>
         <p><label for="inpCity">City: </label>
-          <input name="inpCity" type="text" class="form-control" ng-model="producer.city" value="{{ producer.city }}"></p>
+          <input name="inpCity" type="text" class="form-control" ng-model="producer.city" value="{{ producer.city }}" placeholder="City"></p>
         <p><label for="inpState">State: </label>
-          <input name="inpState" type="text" class="form-control" ng-model="producer.state" value="{{ producer.state }}"></p>
+          <input name="inpState" type="text" class="form-control" ng-model="producer.state" value="{{ producer.state }}" placeholder="State"></p>
         <p><label for="inpZip">Zip: </label>
-          <input name="inpZip" type="text" class="form-control" ng-model="producer.zip" value="{{ producer.zip }}"></p>
+          <input name="inpZip" type="text" class="form-control" ng-model="producer.zip" value="{{ producer.zip }}" placeholder="Zip"></p>
         <p><label for="inpApprovalNumber">Approval Number: </label>
-          <input name="inpApprovalNumber" type="text" class="form-control" ng-model="producer.approvalNumber" value="{{ producer.approvalNumber }}"></p>
+          <input name="inpApprovalNumber" type="text" class="form-control" ng-model="producer.approvalNumber" value="{{ producer.approvalNumber }}" placeholder="Approval No."></p>
       </div>
     </div>
     <div class="row">
       <div class="twelve columns">
-    		<p><a id="btnSignUp" ng-click="register()" href="">Register</a>&nbsp&nbsp<a id="btnCancel" ng-click="cancel()" href="">Cancel</a></p>
+    		<p><a id="btnSignUp" ng-click="register()" href="">Register</a>&nbsp;&nbsp;<a id="btnCancel" ng-click="cancel()" href="">Cancel</a></p>
       </div>
     </div>
   </div>
