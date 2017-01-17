@@ -297,15 +297,15 @@ angular.module('bolt', ["ngAnimate", "ngTouch", "ui.router", "ngResource","toast
 .service('ConfigService', function ($http, $q, $window) {
   return {
     appRoot: function () {
-      // var url = 'http://localhost:3001';
+      var url = 'http://localhost:8080';
       //var url = 'https://bolt-test-sgannonumd.c9users.io';
-      var url = '';
-      if ($window.location.href.indexOf('c9users') > -1) {
-        //url = 'https://bolt-test-sgannonumd.c9users.io';
-        url = 'https://kfund-sgannonumd.c9users.io';
-      } else {
-        url = 'http://localhost:8080';
-      }
+      // var url = '';
+      // if ($window.location.href.indexOf('c9users') > -1) {
+      //   //url = 'https://bolt-test-sgannonumd.c9users.io';
+      //   url = 'https://kfund-sgannonumd.c9users.io';
+      // } else {
+      //   url = 'http://localhost:8080';
+      // }
       return url;
     },
     epUser: function() {
