@@ -119,7 +119,7 @@ angular.module('producer',["ngAnimate", "ngTouch", "ui.router", "ngResource","to
             method: 'GET',
             url :url
           }).then(function(responseData) {
-            retVal.resolve(responseData.data.producer);
+              retVal.resolve(responseData.data.producer);
           }, function(error) {
             retVal.resolve(error);
           });

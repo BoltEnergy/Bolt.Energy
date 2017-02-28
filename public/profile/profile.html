@@ -1,44 +1,93 @@
 <div class="section privacy">
-  <div class="container">
-    <div class="row">
-      <div class="six columns">
-        <h3>User Profile Information</h3>
-    		<p><label for="inpFirstname">First: </label><input type="text" id="inpUsername" ng-model="user.firstName"></p>
-    		<p><label for="inpLastname">Last: </label><input type="text" id="inpUsername" ng-model="user.lastName"></p>
-    		<p><label for="inpEmail">Email: </label><input disabled type="text" id="inpUsername" ng-model="user.email"></p>
-    		<p><label for="inpType">Profile Type: </label><input disabled type="text" id="inpType" ng-model="user.accountType"></p>
-  		  <p><a id="btnSignUp" ng-click="saveAccount()" href="">Update User Info</a></p>
-      </div>
-      <div class="six columns" ng-hide="user.accountType == 'Consumer'">
-        <h3>Producer Profile</h3>
-        <p ng-show="producer.name"><a href='' ui-sref="producer_edit({ producerId: producer._id })">{{ producer.name }}</a></p>
-      </div>
-      <div class="three columns">
-        <h3>User Profile Images</h3>
-        <p><label for="file">Select Files</label></p>
-		    <p></p><p><input type="file" name="files"  file-model="uploads"></p>
-		    <p><a href='' ng-click='uploadImage()'>Upload Image</a></p>
-      </div>
-    </div>
     <div class="container">
-      <div class="row">
-        <div class="three-columns">
-          <div class="col"  ng-repeat="upload in user.uploads">
-              <div class="promo-box">
-                <div class="img-wrapper">
-          				<video controls="controls" preload="none" 
-          				  ng-show="upload.fileType.indexOf('mp4') != -1">
-          					  <source type="video/mp4" ng-src="{{ upload.fileName }}" />
-          				</video>
-                  <img ng-src="{{upload.fileName}}"
-                  spinkit-image-preloader='rotating-plane-spinner'
-                  ng-show="upload.fileType.indexOf('mp4') == -1" />
+
+        <div class="row">
+            <div class="tab-nav">
+                <div class="container">
+                    <ul class="tabset">
+                        <li><a href='' class="active">My Account</a></li>
+                        <li ng-hide="user.accountType == 'Consumer'"><a href='' ui-sref="producer_edit({ producerId: producer._id })">My Profile</a></li>
+                        <li ng-hide="user.accountType == 'Consumer'"><a href='' ui-sref="project_edit({ projectId: '', producerId: producer._id })">My Projects</a></li>
+                    </ul>
                 </div>
-              </div>
-            <div class="col"></div>
-          </div> 
+            </div>
+
+
+            <div class="container">
+                <div class="tab-content">
+                    <div id="tab1">
+                        <div class="six columns">
+                            <h3>Account Information</h3>
+                            <p><label for="inpFirstname">First: </label><input type="text" id="inpUsername" ng-model="user.firstName"></p>
+                            <p><label for="inpLastname">Last: </label><input type="text" id="inpUsername" ng-model="user.lastName"></p>
+                            <p>
+                                <label for="inpEmail">Email: </label><input type="email" id="inpUsername" ng-model="user.email">
+                                <input type="hidden" ng-model="currentEmail" name="currentEmail">
+                            </p>
+                            <p><label for="inpType">Profile Type: </label><input disabled type="text" id="inpType" ng-model="user.accountType"></p>
+                            <p><a id="btnChangePassword" ng-click="showHideNewPwd()" href="">Change Password</a></p>
+                            <div id="divChangePassword" ng-show="changePwd">
+                                <p><label for="inpFirstname">New Password: </label><input type="password" id="newPwd" ng-model="newPwd"></p>
+                                <p><label for="inpLastname">Confirm New Password: </label><input type="password" id="newPwdConfirm" ng-model="newPwdConfirm"></p>
+                            </div>
+                            <p><label for="inpLastname">Current Password: </label><input type="password" id="inpCurrentPwd" ng-required="true" ng-model="currentPassword"></p>
+                            <p>
+                                <a id="btnSignUp" ng-click="saveAccount()" href="">Update User Info</a>
+                                <a id="btnDelete" ng-click="removeUser(user._id)" href="" class="right">Delete Account</a>
+                            </p>
+                        </div>
+                        <div class="six columns">
+                            <div class="row">
+                                <div class="five-columns">
+                                    <div class="info-box"><em>In your Account page, you can change your log in information, password, and edit other adminstrative information.</em></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="six columns" ng-hide="true">
+                            <h3>Producer Profile</h3>
+                            <p ng-show="producer.name"><a href='' ui-sref="producer_edit({ producerId: producer._id })">{{ producer.name }}</a></p>
+                        </div>
+                        <div class="three columns" ng-show="user.accountType == 'Consumer' && user.uploads.length==0">
+                            <h3>User Profile Image</h3>
+                            <p><label for="file">Select Files</label></p>
+                            <p></p><p><input type="file" name="files" file-model="uploads"></p>
+                            <p><a href='' ng-click='uploadImage()'>Upload Image</a></p>
+                        </div>
+
+
+                        <div class="three columns" ng-show="user.accountType == 'Consumer'">
+                            <div class="row">
+                                <div class="two-columns">
+                                    <div class="col" ng-repeat="upload in user.uploads">
+
+                                        <div class="promo-box">
+                                            <div class="img-wrapper">
+                                                <video controls="controls" preload="none"
+                                                       ng-show="upload.fileType.indexOf('mp4') != -1">
+                                                    <source type="video/mp4" ng-src="{{ upload.fileName }}" />
+                                                </video>
+                                                <img ng-src="{{upload.fileName}}"
+                                                     spinkit-image-preloader='rotating-plane-spinner'
+                                                     ng-show="upload.fileType.indexOf('mp4') == -1" />
+                                            </div>
+                                            <p class="right"><a href='' ng-click='deleteImage(upload._id)'>Delete Image</a></p>
+                                        </div>
+                                        <div class="col"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
         </div>
-      </div>
+
     </div>
-  </div>
 </div>

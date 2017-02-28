@@ -47,16 +47,16 @@ var ProducerSchema = new Schema({
 	modified: Date
 });
 
-ProducerSchema.pre('save', function (next) {
-    var producer = this;
-    User.findById(producer.owner, function(err, u) {
-    	if (err) { return next(err); }
-    	u.producer = producer._id;
-    	u.save(function(err, us) {
-    		if (err) { return next(err); }
-    		next();
-    	});
-    });
-});
+//ProducerSchema.pre('save', function (next) {
+//    var producer = this;
+//    User.findById(producer.owner, function(err, u) {
+//    	if (err) { return next(err); }
+//    	u.producer = producer._id;
+//    	u.save(function(err, us) {
+//    		if (err) { return next(err); }
+//    		next();
+//    	});
+//    });
+//});
 
 module.exports = mongoose.model('Producer', ProducerSchema);

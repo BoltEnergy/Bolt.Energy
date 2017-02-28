@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en" ng-app="bolt">
 <head>
     <meta charset="UTF-8">
@@ -48,7 +48,7 @@
     <script src="auth/auth.js"></script>
     <script src="search/search.js"></script>
     <script src="producer/producer.js"></script>
-    <script src="profile/profile.js"></script>
+    <script src="profile/profile.js?Reset=1"></script>
     <script src="home/home.js"></script>
     <script src="app.js"></script>
 
@@ -83,12 +83,14 @@
     </header>
     <div ui-view></div>
   </div>
-  <footer id="footer">
-    <div class="container">
-      <p>&copy; 2016 <a href="#">Bolt Energy Market, Inc.</a></p><p class="links"><a ui-sref="privacy" class="privacy">Privacy Policy</a> <a ui-sref="terms" class="privacy">Terms of Service</a></p>
-    </div>
-  </footer>
-  <script type="text/javascript">window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js" defer><\/script>')</script>
-  <script type="text/javascript" src="js/jquery.main.js" defer></script>
+    
+  
+        <footer id="footer">
+            <div class="container">
+                <p>&copy; 2016 <a href="#">Bolt Energy Market, Inc.</a></p><p class="links"><a ui-sref="privacy" class="privacy">Privacy Policy</a> <a ui-sref="terms" class="privacy">Terms of Service</a></p>
+            </div>
+        </footer>
+        <script type="text/javascript">window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js" defer><\/script>')</script>
+        <script type="text/javascript" src="js/jquery.main.js" defer></script>
 </body>
 </html>

@@ -13,17 +13,25 @@ const requireAuth = passport.authenticate('jwt', { session: false });
 
 module.exports = function(app) {
   var router = express.Router();
-  router.get('/update/:id', function(req, res) {
+  router.get('/update/:id', requireAuth, function (req, res) {
 		try {
-			if (objectId.isValid(req.params.id)) {
-				var search = Update.findById(req.params.id);
-				search.exec(function(err, up) {
-					if (err) {
-						res.status(400).json({error: err});
-					} else {
-						res.json({ update: up });
-					}
-				});
+		    if (objectId.isValid(req.params.id)) {
+		        var promisesArray = [];
+		        promisesArray.push(Producer.findOne({ updates: req.params.id }, function (err, producer) { producer }).populate({ path: 'projects', populate: { path: 'uploads' } }).populate('owner').exec(function (err, producer) { producer }));
+		        promisesArray.push(Update.findById(req.params.id).exec());
+		        Promise.all(promisesArray).then(function (responseData) {
+		            res.json(responseData);
+		        })
+
+
+				//var search = Update.findById(req.params.id);
+				//search.exec(function(err, up) {
+				//	if (err) {
+				//		res.status(400).json({error: err});
+				//	} else {
+				//		res.json({ update: up });
+				//	}
+				//});
 			} else { res.status(401).json({ message: "Invalid object id." }); }
 		} catch (e) {
 			res.json({ err: e });
@@ -53,9 +61,11 @@ module.exports = function(app) {
 	    Update.findById(req.params.updateId, function(err, up) {
 	      if (err) res.status(500).json('Error updating update.');
 	      up.title = req.body.title;
+		  	up.projectid = req.body.projectid;
+		  	up.projectname = req.body.projectname;
 	      up.body = req.body.body;
 	      up.modified = new Date();
-	      up.visible = req.body.visible;
+	      up.visible = true;
 	      up.save(function(e, upd) {
 	        if (e) res.status(500).json('Error updating update.');
 	        res.status(200).json({ update: upd });

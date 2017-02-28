@@ -2,7 +2,7 @@
     <div class="container">
       <div class="row">
         <div class="twelve columns">
-          <h3>Producer Update</h3>
+          <h3>Project Update</h3>
           <p><label for="inpTitle">Title: </label>
             <input type="hidden" ng-model="update._id" name="hiddenId">
             <input name="inpTitle" type="text" class="form-control" ng-model="update.title" value="{{ update.title }}">
@@ -10,9 +10,17 @@
           <p><label for="taBody">Body: </label>
             <textarea cols="60" rows="6" ng-model="update.body">{{update.body}}</textarea>
           </p>
-          <p><label for="inpVisible">Make Update Visible: </label>
+          <p style="display: none;"><label for="inpVisible">Make Update Visible: </label>
             <input type="checkbox" name="inpVisible" ng-model="update.visible">
           </p>
+            <p>
+                <label for="taBody">Is this update about a specific project? </label>
+                <select name="projects" id="projects" ng-model="update.projectid">
+                    <option value="">Please Select</option>
+                    <option ng-selected="{{option._id == update.projectid}}" ng-repeat="option in listProjects" value="{{option._id}}">{{option.name}}</option>
+                </select>
+                
+            </p>
           <p><a href='' ng-click="saveUpdate()">Save Update</a></p>
         </div>
       </div>

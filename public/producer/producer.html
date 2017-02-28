@@ -190,6 +190,7 @@
 					      <h1>{{u.title}}</h1>
 				        <p><strong>Posted On : {{ u.created | date : "fullDate" }}</strong></p>
 					      <p>{{u.body}}</p>
+                  <p ng-hide="u.projectname == '' || u.projectname==null">{{u.projectname == '' ? '' : 'This update discusses the following project(s):'+u.projectname}}</p>
 				      </div>
 			      </div>
 		      </div>
@@ -216,4 +217,7 @@
   			</div>
   		</div>
   	</div>
+
+
+
 </main>

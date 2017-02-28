@@ -1964,7 +1964,7 @@ body {
 #wrapper {
 	overflow: hidden;
 	position: relative;
-	display: table-cell;
+	/*display: table-cell;*/
 	table-layout: fixed;
 	width: 100%;
 }
@@ -1985,6 +1985,13 @@ body {
 	padding: 0 15px;
 }
 
+.two {
+	width: 20%;
+}
+.ten {
+	width: 80%;
+    float:left;
+}
 .three {
 	width: 33.3%;
 }
@@ -2530,6 +2537,7 @@ button.btn {
 	padding: 22px 0;
 	margin: 0 0 20px;
 	background: #ebebeb;
+    height:79px;
 }
 
 .tab-nav.dark {
@@ -3117,12 +3125,15 @@ button.btn {
 }
 
 #footer {
-	overflow: hidden;
+	 
 	display: table-footer-group;
-	height: 1%;
+	height:auto; 
 	background: #2b3b2b;
 	font-size: 14px;
 	color: #889682;
+    position: absolute;
+    width: 100%;
+    left:0px;
 }
 
 #footer .container {
@@ -3192,8 +3203,27 @@ button.btn {
 	/*width: 70%;*/
 }
 
+.info-box {
+    width: 90%;
+    border: 2px solid #55ba47;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 18px;
+    margin-bottom: 18px;
 
-
+}
+.current_project {
+    margin: 0px;
+    padding: 0px;
+}
+.current_project li {
+    list-style: none;
+    padding-bottom: 13px;
+    color: #777777;
+}
+.link-update-project {
+    padding-left: 195px;
+}
 @media only screen and (min-width: 1025px) {
 	a[href^=tel],
 	a[href^=skype],
@@ -3309,6 +3339,9 @@ button.btn {
 		line-height: 22px;
 		margin: 0 0 5px;
 	}
+    .link-update-project {
+    padding-left: 0px;
+}
 
 	h2,
 	.h2 {
@@ -3566,6 +3599,7 @@ button.btn {
 	.register input, .register select, .register textarea, .privacy input, .privacy select, .privacy textarea {
 		width: 100%;
 	}
+
 }
 
 @media (max-width: 509px) {
@@ -3734,12 +3768,16 @@ button.btn {
 	.columns {
 		float: none;
 	}
-	.three, .six {
+	.three, .six, .ten, .two {
 		width: 100%;
 	}
 	.register input, .register select, .register textarea, .privacy input, .privacy select, .privacy textarea {
 		width: 100%;
 	}
+ .info-box{
+     width: 96%;
+    margin: 25px auto;
+}
 }
 
 @media (max-width: 320px) {
