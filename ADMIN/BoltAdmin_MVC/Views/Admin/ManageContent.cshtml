@@ -1,0 +1,134 @@
+﻿@model BoltAdmin_MVC.Models.Content
+@{
+    ViewBag.Title = "ManageContent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/ckeditor/ckeditor.js"></script>
+<script type='text/javascript'>
+    function sldeUpDown(id, header) {
+        if ($("#" + id).css('display') == 'block') {
+            $("#" + id).slideUp('slow');
+            $('#' + header).html('View More..');
+        }
+        else {
+            $("#" + id).slideDown('slow');
+            $('#' + header).html('View Less..');
+        }
+    }
+
+    function GoToHome() {
+        window.location.href = "/Admin/Index/";
+
+        return false;
+    }
+
+    function getdropdown(selectObject) {
+
+        var value = selectObject.value;
+        $('input[type=text]').val('');
+        CKEDITOR.instances['pageContent'].setData('');
+        $.ajax({
+            url: '@Url.Action("ManageContent", "Admin")',
+            type: 'GET',
+            dataType: 'json',
+            // we set cache: false because GET requests are often cached by browsers
+            // IE is particularly aggressive in that respect
+            cache: false,
+            data: { '_id': value },
+            success: function (data) {
+                $('#pageTitle').val(data.pageTitle);
+                CKEDITOR.instances['pageContent'].setData(data.pageContent);
+                $('#pageVanityUrl').val(data.pageVanityUrl);
+            }
+        });
+        //var value = selectObject.value;
+        //window.location.href = "/Admin/ManageContent/" + value;
+    }
+
+    function validateForm() {
+        if ($('#selectPage').val() == "") {
+            alert("No page selected to updated");
+            return false;
+        }
+        else if ($('#pageVanityUrl').val() == "") {
+            alert("Vanity URL is must");
+            return false;
+        }
+        else if (CKEDITOR.instances['pageContent'].getData() == "") {
+            CKEDITOR.instances['pageContent'].setData(" ");
+        }
+    }
+</script>
+@using (Html.BeginForm())
+{
+    <div id="response" class="responseOverlay">
+
+    </div>
+    <div class="bolt_new_topic">
+        <div class="bolt_vanity_form">
+            <h2>Page Title</h2>
+            <h5>Select Page</h5>
+            <select id="selectPage" name="selectPage" onchange="getdropdown(this)">
+                <option value="">Select Page</option>
+            </select>
+            <h5>Page Title</h5>
+            @*<input name="" type="text" class="text">*@
+            @Html.TextBoxFor(a => a.pageTitle, new { @class = "text" })
+            <h5>Vanity URL</h5>
+            <div class="lable">
+                <span class="prefix">www.bolt.energy/content/</span>
+                @*<input class="snehainput" type="text" value="" />*@
+                @Html.TextBoxFor(a => a.pageVanityUrl, new { @class = "snehainput" })
+                @Html.ValidationMessageFor(a => a.pageVanityUrl)
+            </div>
+
+
+            <h5>Page Content</h5>
+            @*<textarea name="" cols="" rows=""></textarea>*@
+            @Html.TextAreaFor(a => a.pageContent, new { @class = "text" })
+            <script>
+                // Replace the <textarea id="pageContent"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace('pageContent');
+            </script>
+            <div class="reg-btn-outer">
+                <input type="submit" value="Update" class="reg-btn" onclick="javascript: return validateForm();">
+                <input type="button" value="Cancel" class="reg-btn" onclick="GoToHome()">
+            </div>
+
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+}
+<script>
+    $(document).ready(function () {
+        var pageList = '@Html.Raw(ViewData["listPages"])';
+        if (pageList || '' != '') {
+            pageList = pageList.replace(/\ObjectId\(/g, '').replace(/\)/g, '');
+            var listJson = JSON.parse(pageList);
+            for (i in listJson) {
+                $('#selectPage').append('<option value="' + listJson[i]._id + '">' + listJson[i].pageVanityUrl + '</option>');
+            }
+
+        }
+        ////////////////////
+        var responseMsg = '@Html.Raw(ViewData["displayMessage"])';
+        if (responseMsg || '' != '' && $('#pageVanityUrl').val()!="") {
+            var responseJson = JSON.parse(responseMsg);
+            if(responseJson.responseCode==200)
+            {
+                $('#response').addClass("green");
+            }
+            else {
+                $('#response').addClass("red");
+            }
+            $('#response').html(responseJson.message);
+            $('#response').fadeIn(500);
+            $('input[type=text]').val('');
+            CKEDITOR.instances['pageContent'].setData('');
+            $('#response').fadeOut(4000);
+        } 
+    });
+</script>

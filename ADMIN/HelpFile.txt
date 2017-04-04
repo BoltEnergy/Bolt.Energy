@@ -1,0 +1,2 @@
+» Web.config
+  1. Please update database connection and live site url settings within web.config file.

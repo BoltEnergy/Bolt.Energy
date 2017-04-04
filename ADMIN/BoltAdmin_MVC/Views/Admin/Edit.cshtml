@@ -1,0 +1,109 @@
+﻿@model BoltAdmin_MVC.Models.UserBE
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script type='text/javascript'>
+    function sldeUpDown(id, header) {
+        if ($("#" + id).css('display') == 'block') {
+            $("#" + id).slideUp('slow');
+        }
+        else {
+            $("#" + id).slideDown('slow');
+        }
+    }
+
+    function GoToHome() {
+        window.location.href = "/Admin/Index/";
+        return false;
+    }
+
+
+</script>
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+
+
+@using (Html.BeginForm("UserAccount"))
+{
+    @Html.ValidationSummary(true)
+
+    <div class="bolt_new_topic">
+        <ul class="bolt_tabs">
+            @if (Model.accountType == "Consumer")
+            {
+                <li> <a href="javascript:;" class="active">Account</a> </li>
+            }
+            else
+            {
+                @Html.Partial("_AdminTabs")
+            }
+
+
+        </ul>
+        <ul class="bolt_breadcrumb">
+            <li> <a href="javascript:;" onclick="GoToHome()"> <span>Home</span> </a> </li>
+            <li> <span>User Account</span> </li>
+        </ul>
+        <div class="bolt_vanity_form">
+            <h2 style="padding-top: 15px; float: left; width: 100%; font-size: 18px; padding-bottom: 7px;">Account Information</h2>
+            <h5>First Name</h5>
+            @Html.TextBoxFor(model => model.firstName, new { @class = "textReadable", @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.firstName)
+
+            <h5>Last Name</h5>
+            @*<input name="" type="text" class="text">*@
+            @Html.TextBoxFor(model => model.lastName, new { @class = "textReadable", @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.lastName)
+            <h5>Email</h5>
+            @Html.TextBoxFor(model => model.email, new { @class = "textReadable", @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.email)
+
+            <h5>Account Type</h5>
+            @Html.TextBoxFor(model => model.accountType, new { @class = "textReadable", @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.accountType)
+
+            <h5><a href="javascript:;" onclick="sldeUpDown('extend')">Change Password</a></h5>
+
+            <div id="extend" class="bolt_expnd_Passwrd" style="display:none;">
+                <h5>New password</h5>
+                <input type="password" id="newpasswrd" name="NPWD" class="text">
+                <h5>Confirm password</h5>
+                <input type="password" id="Confrmpasswrd" name="CPWD" class="text">
+
+                <div class="reg-btn-outer">
+                    <input type="submit" value="Update" class="reg-btn" onclick="return validatePassword();">
+                    <input type="button" value="Cancel" class="reg-btn" onclick="javascript: $('input[type=password]').val('');sldeUpDown('extend')">
+                </div>
+            </div>
+
+
+
+
+
+            <div class="clear"></div>
+        </div>
+    </div>
+
+}
+<script>
+
+    function validatePassword() {
+        if ($('#newpasswrd').val().length > 0 && ($('#newpasswrd').val() == $('#Confrmpasswrd').val())) {
+            return true;
+        }
+        else {
+            alert("Invalid password");
+            $('input[type=password]').val('');
+            return false;
+        }
+    }
+
+    $(document).ready(function () {
+        $('.bolt_tabs li a').eq(0).addClass('active');
+    });
+</script>

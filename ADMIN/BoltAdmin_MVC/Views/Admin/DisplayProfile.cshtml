@@ -1,0 +1,89 @@
+﻿@model BoltAdmin_MVC.Models.DisplayProducers
+@{
+    ViewBag.Title = "DisplayProfile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type='text/javascript'>
+    function sldeUpDown(id, header) {
+        if ($("#" + id).css('display') == 'block') {
+            $("#" + id).slideUp('slow');
+        }
+        else {
+            $("#" + id).slideDown('slow');
+        }
+    }
+
+    function GoToHome() {
+        window.location.href = "/Admin/Index/";
+
+        return false;
+    }
+
+    $(document).ready(function () {
+        $('.bolt_tabs li a').eq(1).addClass('active');
+    });
+</script>
+    @using (Html.BeginForm("UserAccount"))
+    {
+        @Html.ValidationSummary(true)
+
+        <div class="bolt_new_topic">
+            <ul class="bolt_tabs">
+              
+             @Html.Partial("_AdminTabs")
+                
+
+
+            </ul>
+            <ul class="bolt_breadcrumb">
+                <li> <a href="javascript:;" onclick="GoToHome()"> <span>Home</span> </a> </li>
+                <li> <span> @ViewBag.UserName</span> </li>
+            </ul>
+
+            @if(Model!=null)
+            { 
+            <div class="bolt_vanity_form">
+                <h2 style="padding-top: 15px; float: left; width: 100%; font-size: 18px; padding-bottom: 7px;">Profile Information</h2>
+                <h5>Buiesness or Entity Name:</h5>
+                @Html.TextBoxFor(model => model.name, new { @class = "textReadable", @readonly = "readonly" })
+
+                <h5>Description:</h5>
+                @Html.TextBoxFor(model => model.desc, new { @class = "textReadable", @readonly = "readonly" })
+
+                <h5>Energy Type:</h5>
+                @Html.TextBoxFor(model => model.energyType, new { @class = "textReadable", @readonly = "readonly" })
+               
+
+                <h5>Address 1:</h5>
+                @*<input name="" type="text" class="text">*@
+                @Html.TextBoxFor(model => model.address1, new { @class = "textReadable", @readonly = "readonly" })
+                
+                <h5>Address 2:</h5>
+                @Html.TextBoxFor(model => model.address2, new { @class = "textReadable", @readonly = "readonly" })
+                
+
+                <h5>City:</h5>
+                @Html.TextBoxFor(model => model.city, new { @class = "textReadable", @readonly = "readonly" })
+                
+                <h5>State:</h5>
+                @Html.TextBoxFor(model => model.state, new { @class = "textReadable", @readonly = "readonly" })
+
+                <h5>Zip:</h5>
+                @Html.TextBoxFor(model => model.zip, new { @class = "textReadable", @readonly = "readonly" })
+
+              
+                <div class="clear"></div>
+            </div>
+            }
+            else
+            {
+                <div style="padding-top: 7px; float: left; font-size: 14px; color: #848484;">
+                    <p>No Data Found</p>
+                </div>
+            }
+            <div class="clear"></div>
+        </div>
+
+    }
+  

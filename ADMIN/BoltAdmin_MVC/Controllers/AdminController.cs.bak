@@ -1,0 +1,518 @@
+﻿using BoltAdmin_MVC.Models;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using MongoDB.Driver.Builders;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace BoltAdmin_MVC.Controllers
+{
+    public class AdminController : Controller
+    {
+        //
+        // GET: /Admin/
+
+        public ActionResult login()
+        {
+            //string myPassword = "password";
+            //string encryptpassword = Utility.Encryptpassword(myPassword);
+            //bool checkpwd = Utility.CheckPassword("admin", encryptpassword);
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(AdminLoginBE obj)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    MongoConnectionBE con = CreateConnection();
+                    List<AdminLoginBE> userdetail = new List<AdminLoginBE>();
+                    
+                    List<AdminLoginBE> userdetails = con._db.GetCollection<AdminLoginBE>("admin").FindAll().ToList();
+                    var employees = userdetails.AsQueryable().Where(c => c.email == obj.email && c.password == obj.password);
+                    if (employees.Count() != 0)
+                    {
+                        Session["UserEmail"] = obj.email.ToString();
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "Login failed. Check your login details.");
+                    }
+                }
+
+                return View(obj);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+        public ActionResult Index()
+        {
+            List<UserBE> usersBE = new List<UserBE>();
+            MongoClient _client = new MongoClient(ConfigurationManager.AppSettings["connectionString"]);
+            MongoServer _server = _client.GetServer();
+            MongoDatabase _db = _server.GetDatabase(ConfigurationManager.AppSettings["db"]);
+            List<UserBE> userBE = _db.GetCollection<UserBE>("users").FindAll().ToList();
+            return View(userBE);
+
+        }
+
+        public ActionResult DisplayComments(string _id)
+        {
+            try
+            {
+                MongoClient _client = new MongoClient(ConfigurationManager.AppSettings["connectionString"]);
+                MongoServer _server = _client.GetServer();
+                MongoDatabase _db = _server.GetDatabase(ConfigurationManager.AppSettings["db"]);
+                var query_id = Query.EQ("owner", ObjectId.Parse(_id));
+                DisplayComments Displaycomments = _db.GetCollection<DisplayComments>("producers").FindOne(query_id);
+                //var employees = Comments.AsQueryable().Where(c => c.owner == ObjectId.Parse(_id));
+                if (Displaycomments != null)
+                {
+                    // GetFilteredListQuery----------------------
+                    List<BsonValue> ids = new List<BsonValue>();
+                    List<IMongoQuery> queryList = new List<IMongoQuery>();
+                    foreach (var items in Displaycomments.comments)
+                    {
+                        ids.Add(new ObjectId(items.ToString()));
+                    }
+
+                    queryList.Add(Query.In("_id", ids));
+
+                    var finalQuery = Query.And(queryList.ToArray());
+
+                    List<Comments> usercomments = _db.GetCollection<Comments>("comments").Find(finalQuery).ToList();
+                    return View(usercomments);
+                }
+                else
+                {
+                    return View();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public ActionResult DisplayProjects(string _id)
+        {
+            try
+            {
+                MongoClient _client = new MongoClient(ConfigurationManager.AppSettings["connectionString"]);
+                MongoServer _server = _client.GetServer();
+                MongoDatabase _db = _server.GetDatabase(ConfigurationManager.AppSettings["db"]);
+                var query_id = Query.EQ("owner", ObjectId.Parse(_id));
+                DisplayComments Displaycomments = _db.GetCollection<DisplayComments>("producers").FindOne(query_id);
+                //var employees = Comments.AsQueryable().Where(c => c.owner == ObjectId.Parse(_id));
+                if (Displaycomments != null)
+                {
+                    // GetFilteredListQuery----------------------
+                    List<BsonValue> ids = new List<BsonValue>();
+                    List<IMongoQuery> queryList = new List<IMongoQuery>();
+                    foreach (var items in Displaycomments.projects)
+                    {
+                        ids.Add(new ObjectId(items.ToString()));
+                    }
+
+                    queryList.Add(Query.In("_id", ids));
+
+                    var finalQuery = Query.And(queryList.ToArray());
+
+                    List<Projects> userprojects = _db.GetCollection<Projects>("projects").Find(finalQuery).ToList();
+                    return View(userprojects);
+                }
+                else
+                {
+                    return View();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        public ActionResult DisplayUpdates(string _id)
+        {
+            try
+            {
+                MongoClient _client = new MongoClient(ConfigurationManager.AppSettings["connectionString"]);
+                MongoServer _server = _client.GetServer();
+                MongoDatabase _db = _server.GetDatabase(ConfigurationManager.AppSettings["db"]);
+                var query_id = Query.EQ("owner", ObjectId.Parse(_id));
+                DisplayComments Displaycomments = _db.GetCollection<DisplayComments>("producers").FindOne(query_id);
+                //var employees = Comments.AsQueryable().Where(c => c.owner == ObjectId.Parse(_id));
+                if (Displaycomments != null)
+                {
+                    // GetFilteredListQuery----------------------
+                    List<BsonValue> ids = new List<BsonValue>();
+                    List<IMongoQuery> queryList = new List<IMongoQuery>();
+                    foreach (var items in Displaycomments.updates)
+                    {
+                        ids.Add(new ObjectId(items.ToString()));
+                    }
+
+                    queryList.Add(Query.In("_id", ids));
+
+                    var finalQuery = Query.And(queryList.ToArray());
+
+                    List<Updates> usercomments = _db.GetCollection<Updates>("updates").Find(finalQuery).ToList();
+                    return View(usercomments);
+                }
+                else
+                {
+                    return View();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        //
+        // GET: /Admin/Details/5
+
+        public ActionResult Details(int id)
+        {
+            return View();
+        }
+
+        //
+        // GET: /Admin/Create
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        //
+        // POST: /Admin/Create
+
+        [HttpPost]
+        public ActionResult Create(FormCollection collection)
+        {
+            try
+            {
+                // TODO: Add insert logic here
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        //
+        // GET: /Admin/Edit/5
+
+
+
+
+        public ActionResult Edit(string _id)
+        {
+            MongoClient _client = new MongoClient(ConfigurationManager.AppSettings["connectionString"]);
+            MongoServer _server = _client.GetServer();
+            MongoDatabase _db = _server.GetDatabase(ConfigurationManager.AppSettings["db"]);
+
+            var query_id = Query.EQ("_id", ObjectId.Parse(_id));
+            UserBE userBE = _db.GetCollection<UserBE>("users").FindOne(query_id);
+            userBE.password = "";
+            if (userBE.uploads.Count() > 0)
+            {
+                // GetFilteredListQuery----------------------
+                List<BsonValue> ids = new List<BsonValue>();
+                List<IMongoQuery> queryList = new List<IMongoQuery>();
+                foreach (var items in userBE.uploads)
+                {
+                    ids.Add(new ObjectId(items.ToString()));
+                }
+
+                queryList.Add(Query.In("_id", ids));
+
+                var finalQuery = Query.And(queryList.ToArray());
+                // ----------------------
+                List<UserUploadsBE> useruploadsBE = _db.GetCollection<UserUploadsBE>("useruploads").Find(finalQuery).ToList();
+                userBE.userUploads = (useruploadsBE.ToList());
+            }
+            return View(userBE);
+        }
+
+        //
+        // POST: /Admin/Edit/5
+
+        [HttpPost]
+        public ActionResult Edit(string _id, UserBE model)
+        {
+            try
+            {
+                // TODO: Add update logic here
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        //
+        // GET: /Admin/Delete/5
+
+        public ActionResult Delete(string _id)
+        {
+            try
+            {
+                MongoClient _client = new MongoClient(ConfigurationManager.AppSettings["connectionString"]);
+                MongoServer _server = _client.GetServer();
+                MongoDatabase _db = _server.GetDatabase(ConfigurationManager.AppSettings["db"]);
+                MongoCollection<UserBE> collection = _db.GetCollection<UserBE>("users");
+                IMongoQuery query = Query.EQ("_id", ObjectId.Parse(_id));
+                //collection.Remove(query);
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public ActionResult DeleteComments(string _id)
+        {
+            try
+            {
+                MongoClient _client = new MongoClient(ConfigurationManager.AppSettings["connectionString"]);
+                MongoServer _server = _client.GetServer();
+                MongoDatabase _db = _server.GetDatabase(ConfigurationManager.AppSettings["db"]);
+                MongoCollection<UserBE> collection = _db.GetCollection<UserBE>("comments");
+                MongoCollection<DisplayComments> Commentscollection = _db.GetCollection<DisplayComments>("comments");
+                IMongoQuery query = Query.EQ("comments", ObjectId.Parse(_id));
+                IMongoQuery query1 = Query.EQ("_id", ObjectId.Parse(_id));
+                DisplayComments Displaycollection = _db.GetCollection<DisplayComments>("producers").FindOne(query);
+
+                var array = new BsonArray();
+                foreach (var items in Displaycollection.comments)
+                {
+                    if (items != ObjectId.Parse(_id))
+                    {
+                        array.Add(new ObjectId(items.ToString()));
+                    }
+                }
+                var updateCommand = Update.Set("comments", array);
+                var updResult = _db.GetCollection("producers").Update(query, updateCommand);
+
+                Commentscollection.Remove(query1);
+                //IMongoUpdate update = Update.Set("comments", ObjectId.Parse(_id));
+                //Commentscollection.Update(query, update);
+                //collection.Remove(query);
+
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public ActionResult DeleteUpdates(string _id)
+        {
+            try
+            {
+                MongoClient _client = new MongoClient(ConfigurationManager.AppSettings["connectionString"]);
+                MongoServer _server = _client.GetServer();
+                MongoDatabase _db = _server.GetDatabase(ConfigurationManager.AppSettings["db"]);
+                //MongoCollection<UserBE> collection = _db.GetCollection<UserBE>("updates");
+                MongoCollection<DisplayComments> Commentscollection = _db.GetCollection<DisplayComments>("updates");
+                IMongoQuery query = Query.EQ("updates", ObjectId.Parse(_id));
+                IMongoQuery query1 = Query.EQ("_id", ObjectId.Parse(_id));
+                DisplayComments Displaycollection = _db.GetCollection<DisplayComments>("producers").FindOne(query);
+
+                var array = new BsonArray();
+                foreach (var items in Displaycollection.updates)
+                {
+                    if (items != ObjectId.Parse(_id))
+                    {
+                        array.Add(new ObjectId(items.ToString()));
+                    }
+                }
+                var updateCommand = Update.Set("updates", array);
+                var updResult = _db.GetCollection("producers").Update(query, updateCommand);
+
+                Commentscollection.Remove(query1);
+
+
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [ValidateLogin]
+        public ActionResult DeleteProjects(string _id)
+        {
+            try
+            {
+                MongoConnectionBE con = CreateConnection();
+                //MongoCollection<UserBE> collection = _db.GetCollection<UserBE>("updates");
+                MongoCollection<DisplayComments> Commentscollection = con._db.GetCollection<DisplayComments>("projects");
+                MongoCollection<Uploads> Uploaditems = con._db.GetCollection<Uploads>("projectuploads");
+                MongoCollection<Projects> Projects = con._db.GetCollection<Projects>("projects");
+                IMongoQuery query = Query.EQ("projects", ObjectId.Parse(_id));
+                IMongoQuery query1 = Query.EQ("_id", ObjectId.Parse(_id));
+                DisplayComments Displaycollection = con._db.GetCollection<DisplayComments>("producers").FindOne(query);
+
+                var array = new BsonArray();
+                var array2 = new BsonArray();
+                List<BsonValue> ids = new List<BsonValue>();
+                List<IMongoQuery> queryList = new List<IMongoQuery>();
+                foreach (var items in Displaycollection.projects)
+                {
+                    if (items != ObjectId.Parse(_id))
+                    {
+                        array.Add(new ObjectId(items.ToString()));
+                    }
+                }
+
+                var updateCommand = Update.Set("projects", array);
+                var updResult = con._db.GetCollection("producers").Update(query, updateCommand);
+                IMongoQuery query3 = Query.EQ("_id", ObjectId.Parse(_id));
+                Projects Pro = con._db.GetCollection<Projects>("projects").FindOne(query3);
+                if (Pro != null)
+                {
+                    foreach (var items in Pro.uploads)
+                    {
+                        ids.Add(new ObjectId(items.ToString()));
+                    }
+
+                    queryList.Add(Query.In("_id", ids));
+                    var finalQuery = Query.And(queryList.ToArray());
+                    Uploaditems.Remove(finalQuery);
+                }
+                Projects.Remove(query3);
+
+
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [ValidateLogin]
+        [HttpGet]
+        public ActionResult ManageContent(string _id)
+        {
+            try
+            {
+                MongoConnectionBE con = CreateConnection();
+                if (!con._db.CollectionExists("contents"))
+                {
+                    string[] listDefaultPage = ConfigurationManager.AppSettings["listContentPages"].Split(',');
+                    if (listDefaultPage.Length > 0)
+                    {
+                        List<Content> listContentBE = new List<Content>();
+
+                        var documents = new BsonDocument[listDefaultPage.Length];
+
+                        foreach (var collection in listDefaultPage)
+                        {
+                            Content contentBE = new Content();
+                            contentBE._id = new ObjectId(ObjectId.GenerateNewId().ToString());
+                            contentBE.pageTitle = collection.Trim();
+                            contentBE.pageVanityUrl = collection.Trim().ToLower();
+                            contentBE.pageContent = " ";
+                            contentBE.created = DateTime.UtcNow;
+                            contentBE.modified = DateTime.UtcNow;
+                            listContentBE.Add(contentBE);
+                        }
+
+                        var contents = con._db.GetCollection<Content>("contents");
+                        contents.InsertBatch(listContentBE);
+                    }
+                }
+                if (!String.IsNullOrEmpty(_id))
+                {
+
+                    IMongoQuery query = Query.EQ("_id", ObjectId.Parse(_id));
+                    Content DisplayContent = con._db.GetCollection<Content>("contents").FindOne(query);
+                    return Json(DisplayContent, JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    listPages();
+                    return View();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        protected void listPages()
+        {
+            MongoConnectionBE con = CreateConnection();
+            List<ListPagesBE> listPagesBE = con._db.GetCollection<ListPagesBE>("contents").FindAll().SetFields(Fields.Include("_id").Include("pageVanityUrl")).ToList();
+
+            ViewData["listPages"] = listPagesBE.ToJson().ToString();
+        }
+
+        [ValidateLogin]
+        [ValidateInput(false)]
+        public ActionResult ManageContent(Content model, string selectPage)
+        {
+            try
+            {
+                MongoConnectionBE con = CreateConnection();
+                IMongoQuery query = Query.EQ("_id", ObjectId.Parse(selectPage));
+                Content DisplayContent = con._db.GetCollection<Content>("contents").FindOne(query);
+                IMongoUpdate updateQuery = Update.Set("pageTitle",
+                model.pageTitle).Set("pageVanityUrl", model.pageVanityUrl).Set("pageContent", model.pageContent).Set("modified", DateTime.UtcNow);
+                con._db.GetCollection("contents").Update(query, updateQuery);
+                ViewData["displayMessage"] = (JsonConvert.SerializeObject(new ResponseMessageBE { responseCode = 200, message = "Content updated successfully" }));
+                return View();
+            }
+            catch (Exception ex)
+            {
+                ViewData["displayMessage"] = (JsonConvert.SerializeObject(new ResponseMessageBE { responseCode = 318, message = "Error updating content" }));
+                return View();
+                //throw ex;
+            }
+            finally
+            {
+                listPages();
+            }
+        }
+
+        public MongoConnectionBE CreateConnection()
+        {
+            MongoConnectionBE newConnection = new MongoConnectionBE();
+            newConnection._client = new MongoClient(ConfigurationManager.AppSettings["connectionString"]);
+            newConnection._server = newConnection._client.GetServer();
+            newConnection._db = newConnection._server.GetDatabase(ConfigurationManager.AppSettings["db"]);
+            return newConnection;
+        }
+    }
+}

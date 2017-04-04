@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/main.css" rel="stylesheet" type="text/css" />
+    @*<link href="/css/slideme.css" rel="stylesheet" type="text/css" />
+        <link href="/css/slippry.css" rel="stylesheet" type="text/css" />**@
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+<body>
+    <div id="bolt-main-wrapper">
+        <header class="b-header">
+
+            <div class="wrap">
+                <a href="javascript:;"> <img src="/images/logo.png" alt="Try Discourse" id="site-logo"> </a>
+                <div class="bolt_header_right">
+                    <div class="bolt-mega-menu">
+                        <nav>
+                            <a href="#"></a>
+                            <ul>
+                                <li> <a href="@Url.Content("~/Admin/Index")">Manage Users</a> </li>
+                                <li> <a href="@Url.Content("~/Admin/ManageContent")">Manage Content</a></li>
+                                <li> <a href="@Url.Content("~/Admin/logout")">Logout</a> </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="bolt-admin-nav" role="menubar">
+                        <div role="menuitem" class="bolt-admin-nav-search">
+                            <div style="display:none;">
+                                <label for="search"></label>
+                                <input type="text" id="search" title="Search..." placeholder="Search...">
+                                <input type="submit" value="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        @RenderBody()
+        <footer id="footer">
+            <div class="container">
+                <p>© 2016 <a href="#">Bolt Energy Market, Inc.</a></p>
+
+            </div>
+        </footer>
+    </div>
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+        <script src="@Url.Content("~/js/jquery-3.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/js/script.js")"></script>
+</body>
+</html>

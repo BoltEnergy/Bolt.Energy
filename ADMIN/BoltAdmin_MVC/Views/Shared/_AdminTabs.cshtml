@@ -1,0 +1,14 @@
+﻿<ul class="bolt_tabs">
+    <li> <a href="javascript:;" onclick="Navigate('Edit')"> Account </a> </li>
+    <li> <a href="javascript:;" onclick="Navigate('DisplayProfile')"> Profile </a> </li>
+    <li> <a href="javascript:;" onclick="Navigate('DisplayProjects')">Projects</a> </li>
+    <li> <a href="javascript:;" onclick="Navigate('DisplayUpdates')"> Updates </a> </li>
+    <li> <a href="javascript:;" onclick="Navigate('DisplayComments')"> Comments</a> </li>
+</ul>
+<script>
+    function Navigate(pageName)
+    {
+        var ID = '@ViewBag.ID';
+        window.location.href = "/Admin/"+ pageName +"/" + ID;
+    }
+</script>

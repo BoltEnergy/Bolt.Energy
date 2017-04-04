@@ -1,0 +1,195 @@
+﻿@model IEnumerable<BoltAdmin_MVC.Models.Projects>
+
+@{
+    ViewBag.title = "Bolt.Energy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script type='text/javascript'>
+    function sldeUpDown(id, header) {
+        if ($("#" + id).css('display') == 'block') {
+            $("#" + id).slideUp('slow');
+            $('#' + header).html('View More..');
+        }
+        else {
+            $("#" + id).slideDown('slow');
+            $('#' + header).html('View Less..');
+        }
+    }
+
+    function deleteProjects(userID) {
+        if (confirm("Please confirm to delete this Project")) {
+            //alert("In Progress... " + userID);
+            window.location.href = "/Admin/DeleteProjects/" + userID;
+        }
+        return false;
+    }
+
+    function GoToHome() {
+        //alert("In Progress... " + userID);
+        window.location.href = "/Admin/Index/";
+
+        return false;
+    }
+
+    $(document).ready(function () {
+        $('.bolt_tabs li a').eq(2).addClass('active');
+    });
+
+</script>
+
+<script type="text/javascript">
+    //Create hashtable object
+    var objAvailability = {};
+    objAvailability["AL"] = "Alabama";
+    objAvailability["AK"] = "Alaska";
+    objAvailability["AZ"] = "Arizona";
+    objAvailability["AR"] = "Arkansas";
+    objAvailability["CA"] = "California";
+    objAvailability["CO"] = "Colorado";
+    objAvailability["CT"] = "Connecticut";
+    objAvailability["DE"] = "Delaware"
+    objAvailability["DC"] = "District Of Columbia"
+    objAvailability["FL"] = "Florida"
+    objAvailability["GA"] = "Georgia"
+    objAvailability["HI"] = "Hawaii"
+    objAvailability["ID"] = "Idaho"
+    objAvailability["IL"] = "Illinois"
+    objAvailability["IN"] = "Indiana"
+    objAvailability["IA"] = "Iowa"
+    objAvailability["KS"] = "Kansas"
+    objAvailability["KY"] = "Kentucky"
+    objAvailability["LA"] = "Louisiana"
+    objAvailability["ME"] = "Maine"
+    objAvailability["MD"] = "Maryland"
+    objAvailability["MA"] = "Massachusetts"
+    objAvailability["MI"] = "Michigan"
+    objAvailability["MN"] = "Minnesota"
+    objAvailability["MS"] = "Mississippi"
+    objAvailability["MO"] = "Missouri"
+    objAvailability["MT"] = "Montana"
+    objAvailability["NE"] = "Nebraska"
+    objAvailability["NV"] = "Nevada"
+    objAvailability["NH"] = "New Hampshire"
+    objAvailability["NJ"] = "New Jersey"
+    objAvailability["NM"] = "New Mexico"
+    objAvailability["NY"] = "New York"
+    objAvailability["NC"] = "North Carolina"
+    objAvailability["ND"] = "North Dakota"
+    objAvailability["OH"] = "Ohio"
+    objAvailability["OK"] = "Oklahoma"
+    objAvailability["OR"] = "Oregon"
+    objAvailability["PA"] = "Pennsylvania"
+    objAvailability["RI"] = "Rhode Island"
+    objAvailability["SC"] = "South Carolina"
+    objAvailability["SD"] = "South Dakota"
+    objAvailability["TN"] = "Tennessee"
+    objAvailability["TX"] = "Texas"
+    objAvailability["UT"] = "Utah"
+    objAvailability["VT"] = "Vermont"
+    objAvailability["VA"] = "Virginia"
+    objAvailability["WA"] = "Washington"
+    objAvailability["WV"] = "West Virginia"
+    objAvailability["WI"] = "Wisconsin"
+    objAvailability["WY"] = "Wyoming";
+</script>
+
+
+<div class="bolt_new_topic">
+    @Html.Partial("_AdminTabs")
+    <ul class="bolt_breadcrumb">
+        <li> <a href="javascript:;" onclick="GoToHome()"> <span>Home</span> </a> </li>
+        <li> <span>@ViewBag.UserName</span> </li>
+        <li> <span>Projects</span> </li>
+    </ul>
+
+    <table width="100%" class="bolt_topic_list" border="0" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th align="left"> Project Title</th>
+                @*<th width="250" align="left"> Posted On</th>*@
+                <th width="100" align="left"> View </th>
+                <th width="80"> Action </th>
+            </tr>
+        </thead>
+        @if (Model == null || Model.Count() == 0)
+        {
+
+
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <div class="bolt-admin-no-comments"> No Projects</div>
+                </tr>
+            </table>
+
+        }
+        else
+        {
+            int count = 1;
+            int index = 0;
+            foreach (var d in Model)
+            {
+
+                <tbody>
+
+                    <tr class="@(count%2==0? "bolt_bg_gray" : "none")">
+
+
+                        <td align="left">
+                            @if (@d.name != "")
+                            {
+                                <strong>@d.name</strong>
+                            }
+                            else
+                            {
+                                <strong>----</strong>
+                            }
+
+
+
+                        </td>
+                        <td align="left" style="vertical-align:top;"><a href="#" id="@string.Concat("header",count)" onclick="sldeUpDown('@string.Concat("extend", count)' , '@string.Concat("header", count)')">View More..</a></td>
+                        <td align="center" style="vertical-align:top;"><a href="javascript:;" onclick="deleteProjects('@d._id')"><img src="/images/icon-delete.png" /></a></td>
+
+                    </tr>
+                    <tr class="@(count%2==0? "bolt_bg_gray" : "none")">
+                        <td colspan="3" style="padding:0px; border:none;">
+                            <div id="@string.Concat("extend", count)" class="bolt_expnd">
+                                <div class="bolt_two_coloum">
+                                    <div class="bolt_left">
+                                        <h4>Description</h4>
+                                        <h5 class="scroll">@d.desc</h5>
+                                        <h4>Availability</h4>
+                                        @foreach (var item in @d.availability)
+                                        {
+                                            index++;
+                                            <div id="item-@index"></div>
+                                            <text>
+                                                <script>
+                                                    $('#item-@index').html('<span>' + objAvailability['@item'] + '</span>');
+                                                </script>
+
+                                            </text>
+                                        }
+                                    </div>
+                                    <div class="bolt_right">
+                                        <h4>Project Type</h4>
+                                        <h5>@d.projectType</h5>
+                                        <h4>Capacity</h4>
+                                        <h5>@d.capacity</h5>
+                                        <h4>Status</h4>
+                                        <h5>@d.status</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                                        count++;
+            }
+        }
+    </table>
+</div>
+
+<div class="clear"></div>

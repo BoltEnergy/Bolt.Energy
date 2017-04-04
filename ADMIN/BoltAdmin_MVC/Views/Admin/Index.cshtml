@@ -1,0 +1,109 @@
+﻿@model List<BoltAdmin_MVC.Models.UserBE>
+@{
+    ViewBag.title = "Bolt.Energy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="bolt_new_topic">
+   
+    <table width="100%" class="bolt_topic_list" border="0" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th width="220" align="left"> Name</th>
+                <th align="left" class="bolt_only_dst"> Email </th>
+                <th width="160"> Profile Type </th>
+                <th width="100"> Account </th>
+                <th width="100"> Profile </th>
+                <th width="100" align="center" class="bolt_only_dst"> Projects </th>
+                <th width="100" align="center" class="bolt_only_dst"> Updates </th>
+                <th width="100" align="center" class="bolt_only_dst"> Comments </th>
+                <th width="80"> Action </th>
+            </tr>
+        </thead>
+
+        @if (Model != null)
+        {
+            foreach (var items in Model)
+            {
+                <tr>
+                    <td align="left">@items.firstName  @items.lastName</td>
+                    <td align="left" class="bolt_only_dst"> @items.email</td>
+                    <td align="center"> @items.accountType</td>
+                    <td align="center"><a href="javascript:;" onclick="editUser('@items._id')">View</a></td>
+                    
+                    @if (@items.accountType == "Producer")
+                    {
+                        <td align="center"><a href="javascript:;" onclick="viewProfile('@items._id')">View</a></td>
+                        <td align="center" class="bolt_only_dst"><a href="javascript:;" onclick="Projects('@items._id')">View</a></td>
+                        <td align="center" class="bolt_only_dst"><a href="javascript:;" onclick="Updates('@items._id')">View</a></td>
+                        <td align="center" class="bolt_only_dst"><a href="javascript:;" onclick="Comments('@items._id')">View</a></td>
+                        <td align="center"><a href="javascript:;" onclick="deleteUser('@items._id')"><img src="/images/icon-delete.png" /></a></td>
+
+                    }
+                    else
+                    {
+                        <td align="center" class="bolt_only_dst">
+                            @*<a href="javascript:;" onclick="editUser('@items._id')">View</a>*@&nbsp;
+                        </td>
+                        <td align="center" class="bolt_only_dst">
+                            @*<a href="javascript:;" onclick="editUser('@items._id')">View</a>*@&nbsp;
+                        </td>
+                        <td align="center" class="bolt_only_dst">
+                            @*<a href="javascript:;" onclick="editUser('@items._id')">View</a>*@&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </td>
+                        <td align="center" class="bolt_only_dst">
+                            @*<a href="javascript:;" onclick="editUser('@items._id')">View</a>*@&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </td>
+                        <td align="center"><a href="javascript:;" onclick="deleteUser('@items._id')"><img src="/images/icon-delete.png" /></a></td>
+                    }
+                </tr>
+            }
+        }
+    </table>
+</div>
+
+
+<div class="clear"></div>
+
+<script>
+    function editUser(userID) {
+        window.location.href = "/UserAccount/" + userID;
+        return false;
+    }
+
+    function Comments(userID) {
+        window.location.href = "/Admin/DisplayComments/" + userID;
+        return false;
+    }
+
+    function Updates(userID) {
+        window.location.href = "/Admin/DisplayUpdates/" + userID;
+        return false;
+    }
+
+    function Comments(userID) {
+        window.location.href = "/Admin/DisplayComments/" + userID;
+        return false;
+    }
+
+    function deleteUser(userID) {
+        if (confirm("Please confirm to delete this user")) {
+            //alert("In Progress... " + userID);
+            window.location.href = "/Admin/Delete/" + userID;
+        }
+        return false;
+    }
+
+    function Projects(userID) {
+        window.location.href = "/Admin/DisplayProjects/" + userID;
+        return false;
+    }
+
+    function viewProfile(userID) {
+        window.location.href = "/Admin/DisplayProfile/" + userID;
+        return false;
+    }
+
+</script>
+

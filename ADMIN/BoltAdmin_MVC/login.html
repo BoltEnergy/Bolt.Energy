@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Bolt.Energy</title>
+<link href="css/main.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<div id="wrapper">
+  
+  <!-- uiView: -->
+  <div ui-view="" class="ng-scope">
+    <main id="main" role="main" class="ng-scope">
+      <div class="container">
+        <div class="row">
+          <div class="three columns">
+          <div class="logo"> <a href="#"> <img src="images/logo.png" alt="bolt"> </a> </div>
+          <div class="clearfix"></div>
+            <h2>Admin Login</h2>
+            <p>
+              <label for="inpUsername">Email: </label>
+              <input type="text" id="inpUsername" ng-model="email" placeholder="User Email" class="ng-untouched ng-valid ng-not-empty ng-dirty ng-valid-parse" style="">
+            </p>
+            <p>
+              <label for="inpPassword">Password: </label>
+              <input type="password" id="inpPassword" ng-model="password" placeholder="User Password" class="ng-untouched ng-valid ng-not-empty ng-dirty ng-valid-parse" style="">
+            </p>
+            <p><a id="btnLogin" ng-click="login()" href="">Log In</a>&nbsp;&nbsp;<a id="btnCancel" ng-click="cancel()" href="">Cancel</a></p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+﻿@model IEnumerable<BoltAdmin_MVC.Models.Comments>
+
+@{
+    ViewBag.title = "Bolt.Energy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <script type='text/javascript'>
+        function sldeUpDown(id, header) {
+            if ($("#" + id).css('display') == 'block') {
+                $("#" + id).slideUp('slow');
+                $('#' + header).html('View More..');
+            }
+            else {
+                $("#" + id).slideDown('slow');
+                $('#' + header).html('View Less..');
+            }
+        }
+
+        function deleteUser(userID) {
+            if (confirm("Please confirm to delete this Comment")) {
+                //alert("In Progress... " + userID);
+                window.location.href = "/Admin/DeleteComments/" + userID;
+            }
+            return false;
+        }
+
+        function GoToHome() {
+            //alert("In Progress... " + userID);
+            window.location.href = "/Admin/Index/";
+
+            return false;
+        }
+
+        function GoToProject() {
+            var ID = '@ViewBag.ID';
+            window.location.href = "/Admin/DisplayProjects/" + ID;
+
+            return false;
+        }
+
+        function GoToUpdates() {
+            var ID = '@ViewBag.ID';
+            window.location.href = "/Admin/DisplayUpdates/" + ID;
+            return false;
+        }
+
+        $(document).ready(function () {
+            $('.bolt_tabs li a').eq(4).addClass('active');
+        });
+
+    </script>
+
+
+    <div class="bolt_new_topic">
+        <ul class="bolt_tabs">
+            @Html.Partial("_AdminTabs")
+        </ul>
+        <ul class="bolt_breadcrumb">
+            <li> <a href="javascript:;" onclick="GoToHome()"> <span>Home</span> </a> </li>
+            <li> <span>@ViewBag.UserName</span> </li>
+            <li> <span>Comments</span> </li>
+        </ul>
+        <table width="100%" class="bolt_topic_list" border="0" cellspacing="0" cellpadding="0">
+            <thead>
+                <tr>
+                    <th align="left"> Comment Title</th>
+                    <th width="100" align="left" class="bolt_only_dst"> View </th>
+                    <th width="80"> Action </th>
+                </tr>
+            </thead>
+            @if (Model == null || Model.Count()==0)
+            {
+
+
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <div class="bolt-admin-no-comments"> No Comments</div>
+                    </tr>
+                </table>
+
+            }
+            else
+            {
+                int count = 1;
+                foreach (var d in Model)
+                {
+                    <tbody>
+                        <tr class="@(count%2==0? "bolt_bg_gray" : "none")">
+                            <td align="left">
+                                <strong>@d.title</strong>
+
+                            </td>
+
+                            <td align="left"><a href="#" id="@string.Concat("header",count)" onclick="sldeUpDown('@string.Concat("extend", count)' , '@string.Concat("header", count)')">View More..</a></td>
+                            <td align="center"><a href="javascript:;" onclick="deleteUser('@d._id')"><img src="/images/icon-delete.png" /></a></td>
+
+                        </tr>
+                        <tr class="@(count%2==0? "bolt_bg_gray" : "none")">
+                            <td colspan="3" style="padding:0px; border:none;">
+                                <div id="@string.Concat("extend", count)" class="bolt_expnd" style="display:none;">
+                                    <p>@d.body</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                    count++;
+                }
+            }
+        </table>
+    </div>
+    <div class="clear"></div>

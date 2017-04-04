@@ -1,0 +1,108 @@
+﻿@model IEnumerable<BoltAdmin_MVC.Models.Updates>
+
+@{
+    ViewBag.title = "Bolt.Energy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <script type='text/javascript'>
+        function sldeUpDown(id, header) {
+            if ($("#" + id).css('display') == 'block') {
+                $("#" + id).slideUp('slow');
+                $('#' + header).html('View More..');
+            }
+            else {
+                $("#" + id).slideDown('slow');
+                $('#' + header).html('View Less..');
+            }
+        }
+
+        function deleteUser(userID) {
+            if (confirm("Please confirm to delete this Update")) {
+                window.location.href = "/Admin/DeleteUpdates/" + userID;
+            }
+            return false;
+        }
+
+        function GoToHome() {
+            window.location.href = "/Admin/Index/";
+            return false;
+        }
+
+        $(document).ready(function() {
+            $('.bolt_tabs li a').eq(3).addClass('active');
+        });
+        
+    </script>
+
+
+    <div class="bolt_new_topic">
+        @Html.Partial("_AdminTabs")
+        <ul class="bolt_breadcrumb">
+            <li> <a href="javascript:;" onclick="GoToHome()"> <span>Home</span> </a> </li>
+            <li> <span>@ViewBag.UserName</span> </li>
+            <li> <span>Updates</span> </li>
+        </ul>
+        <table width="100%" class="bolt_topic_list" border="0" cellspacing="0" cellpadding="0">
+            <thead>
+                <tr>
+                    <th align="left"> Update Title</th>
+                    <th width="250" align="left"> Posted On</th>
+                    <th width="100" align="left" class="bolt_only_dst"> View </th>
+                    <th width="80"> Action </th>
+                </tr>
+            </thead>
+            @if (Model == null || Model.Count() == 0)
+            {
+
+
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <div class="bolt-admin-no-comments"> No Updates</div>
+                    </tr>
+                </table>
+
+            }
+            else
+            {
+                int count = 1;
+                foreach (var d in Model)
+                {
+                    <tbody>
+                        <tr class="@(count%2==0? "bolt_bg_gray" : "none")">
+                            <td align="left">
+                                @if (@d.title != "")
+                                {
+                                    <strong>@d.title</strong>
+                                }
+                                else
+                                {
+                                    <strong>----</strong>
+                                }
+
+                            </td>
+                            <td align="left" style="vertical-align:top;">
+                                <strong>@d.created</strong>
+                            </td>
+                            <td align="left" style="vertical-align:top;"><a href="#" id="@string.Concat("header",count)" onclick="sldeUpDown('@string.Concat("extend", count)' , '@string.Concat("header", count)')">View More..</a></td>
+                            <td align="center" style="vertical-align:top;"><a href="javascript:;" onclick="deleteUser('@d._id')"><img src="/images/icon-delete.png" /></a></td>
+
+                        </tr>
+
+                        <tr class="@(count%2==0? "bolt_bg_gray" : "none")">
+                            <td colspan="4" style="padding:0px; border:none;">
+                                <div id="@string.Concat("extend", count)" class="bolt_expnd" style="display:none;">
+                                    <p>
+                                        @d.body<br />
+                                        @d.projectname
+                                    </p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                                count++;
+                }
+            }
+        </table>
+    </div>
+    <div class="clear"></div>
