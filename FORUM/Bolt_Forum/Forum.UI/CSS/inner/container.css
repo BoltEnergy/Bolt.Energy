@@ -1,0 +1,258 @@
+﻿/*----------------Header-------------------------*/
+#Header .pgtitle
+{
+	font-size: 1.3em;
+	font-weight: bold;
+}
+#Header .ullogo
+{
+	margin:0px;
+    margin-left:10px;
+	padding-left:10px; /*ff need*/
+}
+#Header .ullink
+{
+	float: right; 
+	clear: both;
+	margin-right: 10px;
+	font-size: 1.1em;
+	display: inline;
+	width:320px;
+	_width:330px;
+	text-align:right;
+}
+#Header .llink
+{
+
+	text-align:right;
+}
+
+#Header a
+{
+	font-weight: bold;
+}
+
+/*------------Bar------------*/
+#Bar #divTab
+{
+	height: 22px;
+	background: url(../../images/after-tag.gif) repeat-x;
+}
+
+#Bar #divTabLine
+{
+	height : 15px;
+	background : url(../../images/line-under-tag.gif) repeat-x;
+}
+#Bar li {
+	float: left;
+	list-style-type: none;
+	height: 22px;
+	line-height: 22px;
+	text-align: center;
+}
+#Bar ul {
+	height: 22px;
+	display: inline;
+}
+#Bar li a {
+	text-decoration: none;
+	font-size: 1.2em;
+	display: block;
+	width: auto;
+	font-weight: bold;
+	padding-left:10px;
+}
+#Bar a span{
+	display: block;
+	padding-right:10px;
+}
+#Bar .aSel {
+	color: #f8f8f7;
+	display: block;
+	width: auto;
+	background: url(../../images/tag-left.gif) no-repeat left -22px;
+}
+#Bar .aNSel {
+	color: #838362;
+	display: block;
+	width: auto;
+	background: url(../../images/tag-left.gif) no-repeat left 0px;
+}
+#Bar .spanSel {
+	display: block;
+	background: url(../../images/tag-right.gif) no-repeat right -22px;
+}
+#Bar .spanNSel {
+	display: block;
+	background: url(../../images/tag-right.gif) no-repeat right 0px;
+}
+
+/*---------Menu---------*/
+
+#Menu .divMenu
+{
+	width:200px;
+	font-size: 1.1em;
+	padding: 5px 0px;
+}
+#Menu .ul1
+{
+	margin:0px;
+	padding-left:0px; 
+}
+#Menu li
+{
+	list-style-type:none;
+}
+#Menu .li1
+{
+	margin-left:0px;
+	padding: 1px 0 1px 5px;
+}
+#Menu .liSel
+{
+    margin-left:0px;
+	padding: 1px 0 1px 5px;
+	background-color: #f8f8f8;
+}
+#Menu a
+{
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/*----------------------Content----------------------------*/
+#Content .divTitle
+{
+	text-align : left;
+	font-size: 1.5em;
+}
+#Content .divSubTitle
+{
+	text-align: left;
+	font-size: 1.1em;
+}
+#Content .divMsg
+{
+	text-align: left;
+	font-size: 1.1em;
+}
+#Content .divContent
+{
+	font-size: 1.1em;
+	background: #f1f2f5;
+	height: 100%;
+	border-top : solid 4px #009999;
+	border-right : solid 2px #009999;
+	border-bottom : solid 2px #009999;
+}
+#Content .helpMsg
+{
+    color:#aaa;
+}
+.divContentType
+{
+	font-size: 1.1em;
+	background: #f1f2f5;
+	height: 100%;
+	border-top : solid 4px #009999;
+	border-right : solid 2px #009999;
+	border-bottom : solid 2px #009999;
+	padding-left : 30px;
+}
+*html #Content .divContent
+{
+	height: 140px;
+	_height:10px;
+}
+
+#Content .divContentWithoutBorder
+{
+	font-size: 1.1em;
+	background : #f3f3ec;
+	height : 100% ;	
+}
+#Content .divTopButton
+{
+	background : #d7e7ee;
+	height : 24px;
+	line-height:24px;
+	border-bottom : solid 2px #fff;
+	padding-top : 5px;
+	text-align : center;
+}
+#Content .divTopQuery
+{
+    background : #d7e7ee;
+	height : 24px;
+	line-height:24px;
+	border-bottom : solid 2px #fff;
+	padding-top : 5px;
+	text-align : left;
+	padding-left:5px;
+	padding-bottom:5px;
+    }
+
+#Content .divButtomButton
+{
+	background: #d7e7ee;
+	height : 24px;
+	line-height:24px;
+	border-top : solid 2px #fff;
+	padding-top : 5px;
+	text-align : center;
+}
+#Content .divRltMsg
+{
+	background : #d7e7ee;
+	height : 24px;
+	line-height: 24px;
+	border-bottom : solid 2px #fff;
+	vertical-align: middle;
+	color: #009999;
+	font-size: 1.18em;
+	font-weight: bold;
+	padding-left: 20px;
+	text-align: left;
+}
+#Content .divTable
+{
+	background: #f1f2f5;
+	padding : 0 15px 0 15px;
+	text-align:left;
+	font-size: 1em;
+}
+
+
+
+#Content .divSecContent
+{
+	
+}
+
+#Content .divSecMsg
+{
+	background-color: #9fcdcd;
+	color: #f8f8f7;
+	height: 16px;
+	line-height: 16px;
+	vertical-align: middle;
+	padding-left: 10px;
+	text-align: left;
+	font-size: 1.09em;
+	font-weight: bold;
+}
+
+#Content .divSecTable
+{
+	padding: 5px 10px 5px 10px;
+	text-align: center;
+}
+
+/*------------Footer-------------*/
+#Footer .divFooter
+{
+	font-size: 1.1em;
+}
+

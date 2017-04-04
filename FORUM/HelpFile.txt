@@ -1,0 +1,4 @@
+Bolt.Forum
+---------------------
+» Forum.UI -> Config -> appSettings.xml
+  1. All the settings for email, hosted urls, and db connections can be managed from this file.

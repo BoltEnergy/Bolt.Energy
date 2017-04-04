@@ -1,0 +1,2104 @@
+﻿/*---------------Common----------------*/
+body
+{
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+    font-family: Verdana,helviteca,Tahoma,Sans-Serif; /*background: #f8f8f8;*/
+    background-color: White;
+    overflow: inherit;
+    width: 100%;
+    color: #333333;
+    height: 100%; /* firefox need it*/
+}
+
+blockquote
+{
+    border: solid 1px #111111;
+    margin: 15px 5px 2px 5px;
+    background-color: #eeeeee;
+}
+
+blockquote cite
+{
+    font-style: normal;
+    font-weight: bold;
+    display: block;
+    text-decoration: none;
+    border-bottom: solid 0px #000000;
+}
+
+.linkForum
+{
+    color: #472fd0;
+    font-weight: bold;
+}
+
+.linkForum a:link
+{
+    text-decoration: none;
+    color: #472fd0;
+    font-weight: bold;
+}
+
+.linkForum a:visited
+{
+    text-decoration: none;
+    color: #472fd0;
+    font-weight: bold;
+}
+
+.linkForum a:hover
+{
+    color: #d02f47;
+    text-decoration: underline;
+}
+
+.linkUser
+{
+    color: #50b846;
+    font-weight: bold;
+}
+
+.linkUser a:link
+{
+    text-decoration: none;
+    color: #50b846;
+    font-weight: bold;
+}
+
+.linkUser a:visited
+{
+    text-decoration: none;
+    color: #50b846;
+    font-weight: bold;
+}
+
+.linkUser a:hover
+{
+    color: #50b846;
+    text-decoration: underline;
+}
+
+.linkTopic
+{
+    color: #472fd0;
+}
+
+.linkTopic a:link
+{
+    color: #472fd0;
+    text-decoration: none;
+}
+
+.linkTopic a:visited
+{
+    color: #472fd0;
+    text-decoration: none;
+}
+
+.linkTopic a:hover
+{
+    color: #472fd0;
+    text-decoration: underline;
+}
+.linkTopic a:visited:hover
+{
+    color: #472fd0;
+    text-decoration: underline;
+}
+
+.spanNormal
+{
+    font-weight: normal;
+}
+
+.divAlertMsg
+{
+    padding: 5px 0px 0px 0px;
+}
+/*-------------------ASPNetPager---------------------*/
+.ASPNetPager
+{
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    display: inline !important;
+    font-size: 12px;
+}
+
+.ASPNetPager .BtnStyle
+{
+    position: relative !important;
+    top: 8px;
+    margin: 4px 0px;
+    width: 16px;
+}
+
+.ASPNetPager .TextBoxStyle
+{
+    position: relative !important;
+    top: 3px;
+    margin: 3px 0px;
+    font-size: 12px;
+    width: 12px;
+    height: 13px;
+}
+
+.ASPNetPager .DropDownListStyle
+{
+    position: relative !important;
+    top: 2px;
+    margin: 3px 0px;
+    font-size: 12px;
+    height: 20px;
+}
+
+
+/*---------------layout----------------*/
+
+
+*html #outer
+{
+    border-left: solid 800px white;
+    float: left;
+}
+
+*html #inner
+{
+    position: relative;
+    margin-left: -790px;
+    display: inline-block;
+    margin-top: 5px; /*margin-left:10px;*/
+    margin-right: 10px;
+}
+
+#inner
+{
+    margin-top: 5px;
+    background: white;
+    font-size: 12px;
+    min-width: 800px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#outerHeader
+{
+    /*height: 60px;*/
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    border-top-width: 6px;
+    background: #FFFFFF url('../../Images/repeater/bg_post.gif') top left repeat-x; /*border-bottom: solid 5px #ccc;*/
+}
+
+#outerHeader #Logo
+{
+    /* width: 170px;    height: 35px;*/
+    float: left;
+    padding-left: 10px;
+}
+
+#outerHeader #Logo #Img
+{
+    margin-top: 10px;
+}
+
+#outerHeader #Subject
+{
+    float: left;
+    text-align: left;
+    padding-top: 2px;
+    padding-left: 10px;
+    color: #666;
+    font-weight: bold;
+}
+
+#outerHeader #Nav
+{
+    text-align: right;
+    margin-left: 180px;
+    padding-right: 5px; /*height: 30px;*/
+}
+
+#outerHeader #Nav #Links
+{
+    margin-top: 5px;
+    height: 30px;
+    width: 680px;
+}
+
+#outerHeader #Nav #Links ul
+{
+    margin: 0px;
+    padding-left: 0px;
+}
+
+#outerHeader #Nav #Links li
+{
+    float: right;
+}
+
+#outerHeader #Nav #Links a
+{
+    font-weight: bold;
+    margin: 0 3px 0 3px;
+}
+
+#outerHeader #Search
+{
+    float: right;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-top: 10px;
+}
+
+#outerMain
+{
+    margin-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#outerFooter
+{
+    margin-top: 10px;
+    padding-top: 15px;
+    height: 80px;
+    border-top: solid 1px #bbb;
+    background: #FFFFFF url('../../Images/repeater/bg_post.gif') top left repeat-x;
+    /*padding-left: 15px;*/
+}
+
+#outerFooter #forumJump
+{
+    text-align: right;
+    padding-right: 10px;
+    margin-top: 2px;
+}
+
+#outerFooter #copyright
+{
+    padding-top: 30px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.divUserPanelContent
+{
+    padding: 0px 0px 5px 0px;
+    margin-left: 210px;
+    _margin-left:220px;
+    text-align: left;
+    min-height: 220px;
+}
+
+/*---------------container------------------*/
+#outerMain .divOperation
+{
+    text-align: right;
+    /*height: 20px;*/
+    font-size: 11px;
+    padding-top: 5px;
+    padding-right: 10px;
+    vertical-align: middle;
+    background: #FFFFFF url('images/cellpic1.gif') top left repeat-x;
+    border: solid 1px #aaa;
+}
+
+#outerMain .divOperation a:link
+{
+    font-weight: bold;
+    color: #733c8c;
+    text-decoration: none;
+}
+
+#outerMain .divOperation a:hover
+{
+    font-weight: bold;
+    color: red;
+    text-decoration: underline;
+}
+
+#outerMain .divOperation a:visited
+{
+    font-weight: bold;
+    color: #733c8c;
+    text-decoration: none;
+}
+
+#outerMain .divOperation a:visited:hover
+{
+    font-weight: bold;
+    color: red;
+    text-decoration: underline;
+}
+
+#outerMain .divContent
+{
+    /*border-top: solid 4px #ccc;     border-right: solid 2px #ccc;     border-bottom: solid 2px #ccc;*/ /* background: #f1f2f5;*/
+    background-color: White; /*margin: 2px 0px 2px 0px;*/
+    padding-bottom: 0px;
+}
+
+#outerMain .divForumTitle
+{
+    font-size: 24px;
+    font-weight: bolder;
+    font-family: Arial;
+    color: #009999;
+    padding: 10px 15px 0px 0px;
+    margin-bottom: -5px;
+    word-break: break-all;
+    overflow: hidden;
+}
+#outerMain .divModerator
+{
+    padding: 0px 10px 0px 0px;
+}
+#outerMain .divForumCP
+{
+    /*height: 30px;     font-size: 12px;     background: url('images/cellpic3.gif') top left repeat-x;     background-color:#d7e7ee;*/ /*margin-top:6px;*/ /*border-bottom : solid 2px #fff;     padding-left:15px;     padding-right:15px;*/
+    height: 20px;
+    color: #333;
+    text-align: left;
+    margin-top: 5px;
+}
+
+#outerMain .divForumCP .tableTitle
+{
+    height: 30px;
+    vertical-align: middle;
+}
+
+#outerMain .Posts
+{
+    float: right;
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 6px;
+}
+
+#outerMain .Topics
+{
+    float: right;
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 6px;
+}
+
+#outerMain .LastPost
+{
+    float: right;
+    width: 200px;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 6px;
+}
+
+#outerMain .Moderators
+{
+    float: right;
+    width: 100px;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 6px;
+}
+
+#outerMain .Forum
+{
+    margin-right: 470px;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 3px;
+    padding-top: 6px;
+}
+
+#outerMain .divTitleCP
+{
+    /*height: 20px;     color: #333;     text-align: left;     margin-top: 5px;     /*margin-left: -150px;     z-index: 99999;     position: relative;     text-overflow: ellipsis;     overflow: hidden;          z-index: 99999;     position: relative;     margin-left:-120px;     height: 20px;     color: #333;     text-align: left;     margin-top: 5px;     width: 780px;     text-overflow: ellipsis;     overflow: hidden;width: 780px;*/
+    height: 20px;
+    color: #333;
+    text-align: left;
+    z-index: 99999;
+    position: relative; /*margin-left: -20px;*/
+    margin-top: 5px;
+}
+
+#outerMain .divTitleUserPanel
+{
+    height: 20px;
+    color: #333;
+    text-align: left;
+    z-index: 99999;
+    position: relative; /*margin-left: -20px;*/
+    margin-top: 8px;
+}
+
+#outerMain .TitleName
+{
+    font-weight: bold;
+    font-size: 13px;
+    color: #636563;
+}
+
+#outerMain .CategoryDes
+{
+    font-size: 10px;
+    color: #aaa;
+}
+
+#outerMain .divForumCT
+{
+    padding: 5px 0 5px 0;
+    border-bottom: solid 2px #cccccc;
+}
+
+#outerMain .divForumCT a
+{
+    font-weight: bold;
+}
+
+#outerMain .divForumCTVisite
+{
+    background: #ffffd6;
+    padding: 5px 0 5px 0;
+    border-bottom: solid 2px #cccccc;
+}
+
+#outerMain .divForumCTVisite a
+{
+    font-weight: bold;
+}
+
+#outerMain .PostsContent
+{
+    float: right;
+    width: 80px;
+    text-align: center;
+    height: 40px;
+}
+
+#outerMain .TopicsContent
+{
+    float: right;
+    width: 80px;
+    text-align: center;
+    height: 40px;
+    border-right: solid 1px #009999;
+}
+
+#outerMain .LastPostContent
+{
+    float: right;
+    width: 200px;
+    text-align: center;
+    height: 40px;
+    border-right: solid 1px #009999;
+}
+
+#outerMain .ModeratorsContent
+{
+    float: right;
+    width: 100px;
+    text-align: center;
+    height: 40px;
+    border-right: solid 1px #009999;
+}
+
+#outerMain .ForumContent
+{
+    margin-right: 470px;
+    text-align: left;
+    padding-left: 3px;
+    height: 40px;
+    border-right: solid 1px #009999;
+}
+
+#outerMain .ForumDes
+{
+    font-size: 11px;
+    color: #4a4a4a;
+    overflow: hidden;
+}
+
+#outerMain .sitePath
+{
+    text-align: left;
+    padding: 5px;
+    font-size: 10px;
+    background: #FFFFFF url('images/cellpic1.gif') top left repeat-x;
+    border: solid 1px #A9B8C2;
+}
+
+#outerMain .sitePath a
+{
+    margin: 0px 2px 0px 2px;
+    font-weight: bold;
+}
+
+#outerMain .divToolBar
+{
+    padding: 10px 0px 0px 0px;
+}
+
+#outerMain .divNewTopic
+{
+    float: left;
+    padding: 0px 10px 0px 0px;
+}
+
+#outerMain .divAdvanceOpration
+{
+    float: right;
+    padding: 0px 5px 8px 0px;
+}
+
+#outerMain .divPager
+{
+    padding-right: 10px;
+    float: right;
+    text-align: right;
+}
+
+.divPager a:link
+{
+    text-decoration: underline;
+}
+
+#outerMain .divTopicList
+{
+}
+
+#outerMain .divCenter
+{
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#outerMain .divTopicDesn
+{
+    padding: 5px 0 15px 3px;
+}
+
+#outerMain .divPageDesn
+{
+    text-align: left;
+    margin: 8px;
+}
+
+#outerMain .divTable
+{
+    /*background: #f1f2f5;*/
+    background-color: White;
+    padding: 10px 0px 0 0px;
+    text-align: left;
+    font-size: 1em;
+}
+
+#outerMain .divTableHeader
+{
+    height: 29px;
+    background-color: #C7D0D7;
+    background-image: url('images/cellpic1.gif');
+    background-repeat: repeat-x;
+    border-top: solid 1px #AAA;
+    border-left: solid 1px #AAA;
+    border-right: solid 1px #AAA;
+}
+
+#outerMain .divLegend
+{
+    border-top: solid 1px #aaa;
+    padding: 5px 15px;
+}
+
+.TopicList
+{
+    width: 100%;
+    color: #4a4a4a;
+    table-layout: fixed;
+    border-width: 0px;
+    border-collapse: collapse;
+}
+.TopicList td
+{
+    word-break: break-all !important;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-align: left;
+    border-width: 0px;
+    border-bottom: solid 1px #e8e8e8;
+    padding: 2px;
+}
+.TopicList th
+{
+    text-align: center;
+    background: #f1f2f5;
+    color: #333333;
+    border-width: 0px;
+    border-bottom: solid 1px #cccccc;
+}
+.TopicList .trStyle1
+{
+    background-color: #f8f8f8;
+}
+.TopicList .trStyle2
+{
+    background-color: #f1f2f5;
+}
+.TopicList .trVisite
+{
+    background: #d7e7ee;
+}
+.TopicList .trTopic
+{
+    background-color: #f1f1f1;
+}
+.TopicList .StatusList
+{
+    text-align: center;
+}
+.TopicList .SubjectList
+{
+    text-align: center;
+}
+.TopicList .LastPostList
+{
+    text-align: center;
+}
+.TopicList .RepliesList
+{
+    text-align: center;
+}
+.TopicList .ViewsList
+{
+    text-align: center;
+}
+.TopicList .ForumList
+{
+    text-align: center;
+}
+.PostList
+{
+    width: 100%;
+    color: #4a4a4a;
+    table-layout: fixed;
+    border-width: 0px;
+    border-collapse: collapse;
+}
+
+.PostList td
+{
+    border-bottom: solid 1px #ccc;
+}
+
+.PostList .tdInfo
+{
+    vertical-align: top;
+    text-align: center;
+}
+
+a .user
+{
+    color: #009999;
+}
+
+a .topicNormal
+{
+}
+/*-------------common-------------*/
+table
+{
+}
+
+li
+{
+}
+
+img
+{
+    border-width: 0px; /*height: 48px;     width: 150px;*/
+}
+
+select
+{
+    font-size: 12px;
+    background-color: #f8f8f8;
+}
+
+/*Navigation bar start*/
+.NavigationBar a:link
+{
+    color: #333333;
+    text-decoration: none;
+    text-decoration: underline;
+}
+.NavigationBar a:visited
+{
+    color: #333333;
+    text-decoration: underline;
+}
+.NavigationBar a:hover
+{
+    color: #333333;
+    text-decoration: underline;
+}
+.NavigationBar a:visited:hover
+{
+    color: #333333;
+    text-decoration: underline;
+}
+/*Navigation bar end*/
+
+a:link
+{
+    color: #333333;
+    text-decoration: none;
+}
+a:visited
+{
+    color: #333333;
+    text-decoration: underline;
+}
+a:hover
+{
+    color: #333333;
+    text-decoration: underline;
+}
+a:visited:hover
+{
+    color: #333333;
+    text-decoration: underline;
+}
+
+/*post_register's a start*/
+#PostRegisterLink
+{
+    text-align:center;
+}
+#PostRegisterLink a:link
+{
+    color: #333333;
+    text-decoration: none;
+    text-decoration: underline;
+}
+#PostRegisterLink a:visited
+{
+    color: #333333;
+    text-decoration: underline;
+}
+#PostRegisterLink a:hover
+{
+    color: #333333;
+    text-decoration: underline;
+}
+#PostRegisterLink a:visited:hover
+{
+    color: #333333;
+    text-decoration: underline;
+}
+/*post_register's a end*/
+
+/*----------------button---------------*/
+.mbtn
+{
+    background-image: url(images/button-medium.gif);
+    background-color: Transparent;
+    color: #333333;
+    border: 0px;
+    vertical-align: top; /*margin-top:-100px !important;*/
+    height: 18px;
+    width: 89px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 12px !important;
+    font-weight: bold;
+    font-family: Tahoma;
+}
+
+.lbtn
+{
+    vertical-align: top;
+    background-image: url(images/button-long.gif);
+    background-repeat: no-repeat;
+    background-color: Transparent;
+    color: #333333;
+    border: 0px;
+    height: 18px;
+    width: 140px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 12px !important;
+    font-weight: bold;
+    font-family: Tahoma;
+}
+
+.slbtn
+{
+    vertical-align: top;
+    background-image: url(images/button-super-long.gif);
+    background-color: Transparent;
+    color: #333333;
+    border: 0px;
+    height: 18px;
+    width: 194px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 13px !important;
+    font-weight: bold;
+    font-family: Tahoma;
+}
+
+
+.newTopicbtn
+{
+    background-image: url(Images/btnImages/button_topic_new.gif);
+}
+/*---------------textBox---------------*/
+.txtnormal
+{
+    border: solid 1px #C5C5C5;
+    background-color: #f8f8f8;
+    width: 350px;
+    font-size: 12px;
+}
+.txtmid
+{
+    border: solid 1px #C5C5C5;
+    background-color: #f8f8f8;
+    width: 200px;
+    font-size: 12px;
+}
+.txtshort
+{
+    border: solid 1px #C5C5C5;
+    background-color: #f8f8f8;
+    width: 70px;
+    font-size: 12px;
+}
+.txttiny
+{
+    text-align: right;
+    border: solid 1px #C5C5C5;
+    background-color: #f8f8f8;
+    width: 50px;
+    font-size: 12px;
+}
+.areanormal
+{
+    border: solid 1px #C5C5C5;
+    background-color: #f8f8f8;
+    width: 350px;
+    height: 100px;
+    font-size: 12px;
+}
+.areanormal_2nd
+{
+    border: solid 1px #C5C5C5;
+    background-color: #f8f8f8;
+    width: 350px;
+    height: 300px;
+    font-size: 12px;
+}
+.areasupper
+{
+    border: solid 1px #C5C5C5;
+    background-color: #f8f8f8;
+    width: 450px;
+    height: 300px;
+    font-size: 12px;
+}
+.areabig
+{
+    border: solid 1px #C5C5C5;
+    background-color: #f8f8f8;
+    width: 450px;
+    height: 160px;
+    font-size: 12px;
+}
+
+/*-------------label message-------------*/
+.desnMsg
+{
+    font-size: 11px;
+}
+
+.errorMsg
+{
+    color: Red;
+    font-size: 11px;
+}
+
+.alertMsg
+{
+    color: Red;
+    font-size: 11px;
+}
+
+.promptMsg
+{
+    color: Green;
+    font-size: 11px;
+}
+
+.successMsg
+{
+    color: #009999;
+    font-size: 11px;
+}
+
+/*--------------table--------------*/
+.fourmTable
+{
+    background-color: #bbb;
+    border-width: 0px;
+    width: 100%;
+}
+
+.fourmTable td
+{
+    background-color: White;
+}
+
+.fourmTable .leftTd
+{
+    text-align: left;
+}
+
+.fourmTable .centerTd
+{
+    text-align: center;
+}
+
+.fourmTable .rightTd
+{
+    text-align: right;
+}
+
+.fourmTable .topAndCenterTd
+{
+    vertical-align: top;
+    text-align: center;
+}
+
+.editTable
+{
+    width: 80%;
+    border: solid 1px #009999;
+    background-color: white;
+}
+
+.editTable tr
+{
+    height: 35px;
+}
+
+.editTable .lftd
+{
+    text-align: left;
+}
+
+.editTable .rttd
+{
+    text-align: right;
+}
+
+/*--------formtable-----------*/
+.form-table
+{
+    font-size: 12px;
+}
+
+.form-table td
+{
+    height: 25px;
+}
+
+.form-table thead
+{
+    background-color: #009999;
+}
+
+
+.form-table .trStyle1
+{
+    background-color: #f8f8f8;
+}
+
+.form-table .trStyle2
+{
+    background-color: #d1d1d1;
+}
+
+.form-table .trStyle3
+{
+    background-color: #00bbbb;
+}
+
+.form-table .ttd
+{
+    text-align: right;
+    font-weight: bold;
+}
+.form-table .ctd
+{
+    text-align: left;
+}
+.form-table .rtd
+{
+    text-align: left;
+    font-weight: bold;
+    color: Red;
+}
+.form-table .lttd
+{
+    text-align: left;
+    font-weight: bold;
+}
+
+.form-table a
+{
+    color: #666;
+    text-decoration: none;
+}
+
+.form-table a:hover
+{
+    cursor: hand;
+    text-decoration: underline;
+}
+
+
+
+.alterItem
+{
+    background-color: #bbb;
+}
+
+.avatar
+{
+    width: 80px;
+    height: 80px;
+    background-color: Silver;
+}
+
+.editor
+{
+    color: #888;
+}
+
+.draftInformation
+{
+    color: Red;
+}
+
+.borderFont
+{
+    font-weight: bolder;
+}
+
+.bordFont
+{
+    font-weight: bold;
+}
+
+.timeSpan
+{
+    color: #555;
+}
+
+.clear
+{
+    clear: both;
+    height: 0px;
+    font-size: 0px;
+    overflow: hidden;
+}
+
+/*---------------HomePage----------------*/
+
+.divContent .tableForums
+{
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.divContent .trOnMouseOverStyle
+{
+    background: #d7e7ee;
+}
+
+.divContent .trNormalStyle
+{
+    background: #f1f2f5;
+}
+
+.divContent .trContent
+{
+    border-bottom: solid 2px #cccccc;
+}
+
+.divContent .tableForums .divLine
+{
+    height: 1px;
+    border-top: solid 1px #009999;
+}
+
+.divContent .tableForums thead
+{
+    height: 30px;
+    font-size: 12px;
+    background-color: #d7e7ee;
+}
+
+.divContent .tableForums td
+{
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: hidden;
+    border-bottom: solid 1px #d8d8d8;
+}
+
+.divContent .tableForums .trForumTopic
+{
+    background: url('images/cellpic3.gif') top left repeat-x;
+    height: 30px;
+}
+
+.divContent .tableForums .tdPostEnd
+{
+    border-bottom: solid 1px #999;
+    border-left: solid 1px #aaa;
+}
+
+.divContent .tableForums .tdToolBar
+{
+    border-bottom: solid 1px #999;
+    border-right: solid 1px #aaa;
+}
+
+.divContent .tableForums .tdDivide
+{
+    border-bottom: solid 1px #ccc;
+    height: 10px;
+    background-color: #52ad9f;
+}
+
+.divContent .tableForums .divHasRightBorder
+{
+    margin: 5px 0px;
+    border-right: solid 1px #009999;
+}
+
+.divContent .tableForums .divNoRightBorder
+{
+    margin: 5px 0px;
+}
+
+.divContent .tableForums .trOdd
+{
+    background-color: #f1f2f5;
+}
+
+.divContent .tableForums .trEven
+{
+    background-color: White;
+}
+
+
+.divContent .tableForums .tdHeader
+{
+    word-break: break-all;
+    overflow: hidden; /*border-bottom:solid 1px #ccc;*/
+    text-align: left;
+    height: 28px;
+    background-color: #C7D0D7;
+    background-image: url('images/cellpic1.gif');
+    border-top: solid 1px #AAA;
+    border-left: solid 1px #AAA;
+    border-right: solid 1px #AAA; /*background-color:#7dbaff;*/
+}
+
+.divContent .tableForums .tdLeft
+{
+    text-align: left;
+    font-weight: bold;
+    background: url('images/cellpic3.gif') top left repeat-x;
+}
+
+
+.divContent .tableForums .tdCenter
+{
+    text-align: center;
+    font-weight: bold;
+    background: url('images/cellpic3.gif') top left repeat-x;
+}
+
+.divContent .tableForums .tdForum
+{
+    height: 28px;
+    border-left: solid 1px #aaa;
+    padding-left: 10px;
+    text-align: left;
+    font-weight: bold;
+    background: url('images/cellpic3.gif') top left repeat-x;
+}
+
+.divContent .tableForums .tdForumRight
+{
+    height: 28px;
+    padding-left: 10px;
+    text-align: center;
+    font-weight: bold;
+    background: url('images/cellpic3.gif') top left repeat-x;
+    border-right: solid 1px #aaa;
+}
+
+.divContent .tableForums .tdModerators
+{
+    height: 28px;
+    font-weight: bold;
+    text-align: center;
+    background: url('images/cellpic3.gif') top left repeat-x;
+}
+
+.divContent .tableForums .tdLastPost
+{
+    height: 28px;
+    font-weight: bold;
+    text-align: center;
+    background: url('images/cellpic3.gif') top left repeat-x;
+}
+
+.divContent .tableForums .tdTopics
+{
+    height: 28px;
+    text-align: center;
+    font-weight: bold;
+    background: url('images/cellpic3.gif') top left repeat-x;
+}
+
+.divContent .tableForums .tdPosts
+{
+    height: 28px;
+    text-align: center;
+    font-weight: bold;
+    background: url('images/cellpic3.gif') top left repeat-x;
+    border-right: solid 1px #aaa;
+}
+
+.divContent .tableForums .tdReplies
+{
+    height: 28px;
+    text-align: center;
+    font-weight: bold;
+    background: url('images/cellpic3.gif') top left repeat-x;
+}
+
+.divContent .tableForums .tdViews
+{
+    height: 28px;
+    text-align: center;
+    font-weight: bold;
+    background: url('images/cellpic3.gif') top left repeat-x;
+}
+
+.divContent .tableForums .tdStatus
+{
+    height: 28px;
+    border-left: solid 1px #aaa;
+    padding-left: 10px;
+    text-align: left;
+    font-weight: bold;
+    background: url('images/cellpic3.gif') top left repeat-x;
+}
+
+.divContent .tableForums .tdSubject
+{
+    height: 28px;
+    padding-left: 10px;
+    text-align: left;
+    font-weight: bold;
+    background: url('images/cellpic3.gif') top left repeat-x;
+}
+
+.divContent .tableForums .tdDate
+{
+    height: 28px;
+    padding-left: 10px;
+    text-align: left;
+    font-weight: bold;
+    background: url('images/cellpic3.gif') top left repeat-x;
+}
+
+.divContent .tableForums .tdAuthor
+{
+    height: 28px;
+    text-align: center;
+    font-weight: bold;
+    background: url('images/cellpic3.gif') top left repeat-x;
+    border-left: solid 1px #aaa;
+}
+
+.divContent .tableForums .tdMessage
+{
+    width: 80%;
+    height: 28px;
+    text-align: center;
+    font-weight: bold;
+    background: url('images/cellpic3.gif') top left repeat-x;
+    border-right: solid 1px #aaa;
+}
+
+.divContent .tableForums .tdCenterContent
+{
+    word-break: keep-all;
+    overflow: hidden;
+    text-align: center; /*border-right:solid 1px white; */
+    padding: 10px 0px;
+}
+
+.divContent .tableForums .tdButtom
+{
+    border-bottom-width: 0px;
+    border-top-width: 0px;
+    display: none;
+}
+
+.divContent .tableForums .tdAuthorName
+{
+    background-color: #F4F4F4;
+    border-left: solid 1px #aaa;
+    vertical-align: top;
+    text-align: center;
+    padding: 25px 0px 10px 0px;
+}
+
+.divContent .tableForums .tdMessageName
+{
+    background-color: #F4F4F4;
+    border-right: solid 1px #aaa;
+    border-left: solid 1px #ccc;
+    vertical-align: top;
+    text-align: center;
+    padding: 25px 0px 10px 0px;
+}
+
+.divContent .tableForums .tdButtomContent
+{
+    word-break: break-all;
+    overflow: hidden;
+    text-align: center;
+    padding: 25px 0px 10px 0px;
+}
+
+.divContent .tableForums .tdLeftContent
+{
+    word-break: break-all;
+    overflow: hidden;
+    text-align: left; /*border-right:solid 1px white; */
+    padding: 10px 0px 10px 10px;
+}
+
+.divContent .tableForums .tdForumContent
+{
+    word-break: break-all;
+    overflow: hidden;
+    text-align: left; /*border-right:solid 1px white;*/
+    padding: 10px;
+    border-left: solid 1px #aaa;
+}
+
+.divContent .tableForums .tdPostsContent
+{
+    word-break: break-all;
+    overflow: hidden;
+    text-align: center; /*border-right:solid 1px white;*/
+    padding: 10px 0px;
+    border-right: solid 1px #aaa;
+}
+.divContent .tableForums .tdStatusContent
+{
+    word-break: break-all;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px 0px;
+    border-left: solid 1px #aaa;
+}
+.divContent .tableForums .tdAuthorContent
+{
+    background: #FFFFFF url('../../Images/repeater/bg_post.gif') top left repeat-x;
+    word-break: break-all;
+    overflow: hidden;
+    text-align: center; /*border-right:solid 1px white; */
+    padding: 0px 0px 10px 0px;
+    border-left: solid 1px #aaa;
+}
+.divContent .tableForums .tdMessageContent
+{
+    background: #FFFFFF url('../../Images/repeater/bg_post.gif') top left repeat-x;
+    word-break: keep-all;
+    overflow: hidden;
+    text-align: left; /*border-right:solid 1px white; */
+    padding: 25px 10px 10px 10px;
+    border-right: solid 1px #aaa;
+    border-left: solid 1px #ccc;
+}
+
+.divContent .tableForums .tdAnswerLeft
+{
+    vertical-align: top;
+    text-align: center;
+    padding: 25px 0px 10px 0px;
+    background-color: #d7e7ee;
+    border-left: solid 1px #aaa;
+}
+
+.divContent .tableForums .tdAnswerRight
+{
+    border-left: solid 1px #ccc;
+    vertical-align: top;
+    text-align: center;
+    padding: 25px 0px 0px 0px;
+    background-color: #d7e7ee;
+    border-right: solid 1px #aaa;
+}
+
+.divContent .tableForums .tdAnswerLeftContent
+{
+    background: url('../../Images/repeater/bg_answer.gif') top left repeat-x;
+    border-left: solid 1px #aaa;
+}
+
+.divContent .tableForums .tdAnswerRightContent
+{
+    border-left: solid 1px #ccc;
+    background: url('../../Images/repeater/bg_answer.gif') top left repeat-x;
+    border-right: solid 1px #aaa;
+    word-break: break-all;
+    overflow: hidden;
+    text-align: left; /*border-right:solid 1px white; */
+    padding: 25px 10px 10px 10px;
+}
+
+
+.divContent .tableForums .tdNoborder
+{
+    text-align: right;
+    font-weight: bold;
+    font-size: 11px;
+    padding: 5px;
+    background-color: White;
+}
+
+.divContent .tableForums .tdMyLeft
+{
+    text-align: right;
+    font-weight: bold;
+    font-size: 11px;
+    padding: 5px 5px 5px 0px;
+    border-left: solid 1px #aaa;
+    background-color: White;
+}
+
+.divContent .tableForums .tdMyMiddle
+{
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 0px 5px 5px;
+    border-right: solid 1px #aaa;
+    background-color: White;
+}
+
+.divContent .tableForums .tdHTMLEditor
+{
+    padding: 5px;
+    text-align: left;
+    background-color: White;
+}
+
+.divContent .tableForums .tdInlineInfo
+{
+    border-left: solid 1px #aaa;
+    border-right: solid 1px #aaa;
+    padding: 20px 80px;
+}
+
+.divContent .tableForums .tdUserPanelOperation
+{
+    border-left: solid 1px #aaa;
+    border-right: solid 1px #aaa;
+    padding: 5px 0px 5px 20px;
+    font-size: 11px;
+}
+
+.divContent .tableForums .tdUserPanelHighLight
+{
+    background-color: #d6effc;
+    border-left: solid 1px #aaa;
+    border-right: solid 1px #aaa;
+    padding: 5px 0px 5px 20px;
+    font-size: 11px;
+}
+
+.divContent .tableForums .tdInline
+{
+    height: 28px;
+    text-align: left;
+    font-weight: bold;
+    background: url('../../Images/repeater/bg_th.gif') top left repeat-x;
+    border-left: solid 1px #aaa;
+    border-right: solid 1px #aaa;
+}
+
+/*---------------Forum(Topic List)----------------*/
+
+
+
+/*---------------Topic(Post list)----------------*/
+#myDiv
+{
+    /*z-index: 999999;*/
+    position: absolute;
+    display: none;
+    height: 250px;
+    width: 600px;
+    background-color: White; /*border: solid 2px #008888;*/
+}
+
+#myDiv .divQuickReplyTitle
+{
+    height: 20px;
+    background-color: #009999;
+    cursor: move;
+}
+#myDiv .divQuickReplyDesn
+{
+    font-weight: bolder;
+    color: #222;
+    float: left;
+    margin-left: 10px;
+}
+
+
+#myDiv .divQuickReplyclose
+{
+    font-weight: bolder;
+    color: #222;
+    float: right;
+    margin-right: 10px;
+}
+
+#topicTitleDiv
+{
+}
+
+#toolBarDiv
+{
+    padding: 10px 0px 30px 0px;
+}
+
+#qucikToolBarDiv
+{
+    float: left;
+}
+
+#managerToolBarDiv
+{
+    float: right;
+}
+
+.subject
+{
+    float: left;
+    padding-left: 18px;
+}
+
+.content
+{
+    padding: 0px 0px 10px 10px;
+}
+
+.posted
+{
+    float: right;
+    padding-right: 30px;
+    width: 250px;
+}
+
+.mySignature
+{
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-bottom: 25px;
+    color: #ccc222;
+}
+
+.divInfo
+{
+    margin-top: 10px;
+    margin-left: -40px;
+}
+
+.forumToolBar
+{
+    padding: 5px 10px 25px 0px;
+    text-align: right;
+}
+/*
+.gotoAnswer
+{
+    color: red;
+    font-weight: bolder;
+}
+
+.gotoAnswer a:link
+{
+    color: red;
+    font-weight: bolder;
+}
+
+.gotoAnswer a:hover
+{
+    color: red;
+    font-weight: bolder;
+    text-decoration:underline;
+}
+
+.gotoAnswer a:visited
+{
+    color: red;
+    font-weight: bolder;
+    text-decoration:none;
+}
+*/
+.status
+{
+    color: Red;
+    font-size: 12px;
+}
+
+.answerLayer
+{
+    text-align: left;
+    color: #555999;
+    padding: 0px 18px 5px 18px;
+}
+
+.answerText
+{
+}
+
+.quoteText
+{
+    background-color: Silver;
+    border: solid 1px black;
+    margin: 20px;
+}
+
+.divAvatar
+{
+    text-align: left;
+    padding: 20px 10px 5px 10px;
+    width: 100%;
+}
+
+.divJoinTime
+{
+    text-align: left;
+    padding: 10px 10px 5px 10px;
+    width: 100%;
+    font-size: 11px;
+}
+
+.divAdminToolBar
+{
+    height: 20px;
+    color: #888;
+    font-size: 12px;
+    text-align: right;
+    margin-top: 8px;
+}
+
+.divAdminToolBar a:link
+{
+    text-decoration: none;
+    color: #888;
+}
+
+.divAdminToolBar a:hover
+{
+    color: #7bc4f1;
+    text-decoration: underline;
+}
+
+.divAdminToolBar a:visited
+{
+    color: #888;
+    text-decoration: none;
+}
+
+.divPost
+{
+    text-align: left;
+    padding: 10px 10px 5px 10px;
+    width: 100%;
+    font-size: 11px;
+}
+
+.divTop
+{
+    float: left;
+    padding: 5px 0px 25px 10px;
+}
+
+.divLayer
+{
+    float: right;
+    padding: 5px 20px 25px 0px;
+}
+
+.divEdited
+{
+    float: right;
+    padding: 5px 0px 5px 20px;
+    color: #6d75fc;
+}
+
+.spanTop
+{
+    color: #1e4fe1;
+}
+
+.spanTop a:link
+{
+    color: #1e4fe1;
+}
+.spanTop a:visited
+{
+    color: #1e4fe1;
+    text-decoration: none;
+}
+.spanTop a:hover
+{
+    color: #1e4fe1;
+}
+.spanTop a:visited:hover
+{
+    color: #1e4fe1;
+}
+/*---------------Search----------------*/
+
+
+/*---------------Search Result---------------*/
+.divSearchResult
+{
+    margin: 5px 0px 5px 0px;
+}
+.divKeyWords
+{
+    padding: 5px 0px 5px 0px;
+}
+
+.divResult
+{
+    padding: 0px 0px 5px 0px;
+}
+/*---------------Login----------------*/
+.pLoginSuccess
+{
+    font-size: 12px;
+}
+.pLoginSuccess a:link
+{
+    text-decoration: underline;
+}
+
+
+/*---------------Register1----------------*/
+.divRules
+{
+    width: 80%;
+    text-align: justify;
+    background-color: White;
+    border: solid 1px #009999;
+}
+
+.divRules .divRulesTopic
+{
+    padding: 5px 0px;
+    text-align: center;
+}
+
+.divRules .divRulesContent
+{
+    padding: 5px 0px 5px 10px;
+}
+.divRules .divNextBtn
+{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+/*---------------Register2----------------*/
+.divRules .divRegisterSuccess
+{
+    padding: 30px 0px;
+    text-align: center;
+}
+
+/*---------------Register3----------------*/
+
+
+/*---------------Profile----------------*/
+#Content .divTitle
+{
+    text-align: left;
+    font-size: 16px;
+}
+#Content .divSubTitle
+{
+    text-align: left;
+    font-size: 12px;
+}
+#Content .divMsg
+{
+    clear: both;
+    float: left;
+    color: Red;
+    padding-left: 10px;
+    text-align: left;
+    font-size: 11px;
+}
+#Content .divContent
+{
+    font-size: 12px;
+    background: #f1f2f5;
+    height: 100%;
+    border-top: solid 4px #009999;
+    border-right: solid 2px #009999;
+    border-bottom: solid 2px #009999;
+}
+
+.tableMyProfile
+{
+}
+
+/*---------------Password----------------*/
+
+/*---------------signature----------------*/
+
+/*---------------close site--------------*/
+.divSite
+{
+    margin: 0px 0px 20px 20px;
+    font-weight: bold;
+    width: 500px;
+}
+
+.divCloseReson
+{
+    margin: 0px 0px 20px 20px;
+    font-weight: bold;
+    width: 500px;
+}
+
+.divAdminLogin
+{
+    margin: 0px 0px 20px 20px;
+    font-weight: bold;
+}
+
+/*---------------Select Forum   start-----*/
+/*---------------Select Forum   start-----*/
+.selectForum
+{
+}
+
+.selectForum .nowForum
+{
+    background-color: #666999;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    font-size: 11px;
+}
+
+.selectForum .tdForumChoosed
+{
+    cursor: pointer;
+    background-color: #83bbfa;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.selectForum .tdForumNoChoosed
+{
+    cursor: pointer;
+    background-color: #FFFFFF;
+    font-weight: bold;
+    padding: 5px;
+    font-size: 11px;
+}
+/*---------------Select Forum   end-----*/
+
+/*-----------user panel----------*/
+.divCheckBox
+{
+    padding-left: 20px;
+}
+
+/*---------table corner--------*/
+.tbl-title
+{
+    /* 	color: #FF5500; 	*/
+    margin-top: 6px;
+}
+
+.tbl-h-c
+{
+    /*background: url('../../Images/repeater/tbl_h_c.gif') bottom left repeat-x;*/
+    height: 30px;
+    font-weight: bold;
+    font-size: 1.3em;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.tbl-h-l
+{
+    /*background: url('../../Images/repeater/tbl_h_l.gif') bottom left no-repeat;*/
+    padding-left: 27px;
+}
+
+.tbl-h-r
+{
+    /*background: url('../../Images/repeater/tbl_h_r.gif') bottom right no-repeat;*/
+    padding-right: 27px;
+}
+
+
+.tbl-f-c
+{
+    /*background: url('../../Images/repeater/tbl_h_r.gif') bottom left repeat-x;*/
+    height: 8px;
+    font-size: 0.1em;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden; /*border-bottom:solid 1px #aaa;*/
+}
+
+.tbl-f-l
+{
+    /*background: url('../../Images/repeater/tbl_f_l.gif') bottom left no-repeat;*/
+    padding-left: 10px;
+}
+
+.tbl-f-r
+{
+    /*background: url('../../Images/repeater/tbl_f_r.gif') bottom right no-repeat;*/
+    padding-right: 10px;
+}
+
+
+.cat-bottom
+{
+    /*background: #DDE8EE url('../../Images/repeater/bg_catbottom.gif') top left repeat-x;*/
+    border: solid 1px #FFFFFF;
+    border-right-color: #aaa;
+    border-left-color: #aaa;
+    border-bottom: solid 1px #aaa;
+    background-color: #f8f8f8;
+    background-image: url('images/cellpic1.gif');
+    background-repeat: repeat-x;
+    height: 28px;
+    min-height: 28px;
+    text-align: center;
+    padding: 0px;
+}
+
+.cat
+{
+    color: #888;
+    font-weight: bold;
+    background-color: #F8F8F8; /*background-image: url('images/cellpic3.gif');*/
+    border: solid 1px #FFFFFF;
+    border-right: solid 1px #aaa;
+    border-left: solid 1px #aaa;
+    height: 26px;
+    margin: 0;
+    padding-left: 20px;
+    text-indent: 4px;
+}
+
+
+/*---------Menu---------*/
+
+#Menu
+{
+    width: 200px;
+    float: left;
+    background: White;
+}
+
+#Menu .divMenu
+{
+    width: 200px;
+    padding: 0px 15px 0px 0px;
+}
+
+#Menu a
+{
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*--------divHelp--------*/
+#divHelp
+{
+    width: 200px;
+    background: #ffffd6;
+    border: solid 1px #e7e3bd;
+    float: left;
+    position: absolute;
+    float: left;
+    padding: 5px;
+    text-align: left;
+    z-index: 2000;
+}
+
+/*---------divMsg---------*/
+.divContent .tableForums .divMsg
+{
+    float: left;
+    color: Red;
+    padding-left: 10px;
+    text-align: left;
+    font-size: 11px;
+}
+
+.divMsg .ErrorLabel
+{
+    /*font-weight: bold;*/
+    font-size: 12px;
+    color: red; /*white-space: nowrap;*/
+}
+
+.divMsg .SuccessLabel
+{
+    /*font-weight: bold;*/
+    font-size: 11px;
+    color: #009999; /*white-space: nowrap;*/
+}
+/*---------end define divMsg---------*/
+

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Com.Comm100.Forum.Bussiness.Forum" Collapsed="true">
+    <Position X="3.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYARIgQEAJCAEOAQgEACABBUKEEgwAAAEQIAgEQAAA=</HashCode>
+      <FileName>Forum\Forum.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.ForumWithPermissionCheck" Collapsed="true">
+    <Position X="3.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAQAAQEAAAAAMAAABQCAABACAEgAAAAEAIAAEAAAA=</HashCode>
+      <FileName>Forum\ForumWithPermissionCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.ForumBase" Collapsed="true">
+    <Position X="3.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EEAAIAAEIAAgggQEAAAAAAQAAAAAAAQAAAAAEAAAAAg=</HashCode>
+      <FileName>Forum\ForumBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.Forums" Collapsed="true">
+    <Position X="9.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAggAAAAQQAAAAAAEAgAAAACAAAAAAAAA=</HashCode>
+      <FileName>Forum\Forums.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.ForumsBase" Collapsed="true">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Forum\ForumsBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.ForumsOfBan" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAQAAAAAAAQAAAAABAAACAAAAAAAAAAAABA=</HashCode>
+      <FileName>Forum\ForumsOfBan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.ForumsOfBanWithPermissionCheck" Collapsed="true">
+    <Position X="7.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Forum\ForumsOfBanWithPermissionCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.ForumsOfUserGroup" Collapsed="true">
+    <Position X="5.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAEAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Forum\ForumsOfUserGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.ForumsOfUserGroupWithPermissionCheck" Collapsed="true">
+    <Position X="5.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Forum\ForumsOfUserGroupWithPermissionCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.ForumsOfUserReputationGroup" Collapsed="true">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAEAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Forum\ForumsOfUserReputationGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.ForumsOfUserReputationGroupWithPermissionCheck" Collapsed="true">
+    <Position X="4" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Forum\ForumsOfUserReputationGroupWithPermissionCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.ForumsWithPermissionCheck" Collapsed="true">
+    <Position X="9.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAgAAAAAAAAAAAAARQAAEAAAEAgAAAACAAAAAAAAA=</HashCode>
+      <FileName>Forum\ForumsWithPermissionCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

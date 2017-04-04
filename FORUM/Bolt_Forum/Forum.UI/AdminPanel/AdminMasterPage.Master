@@ -1,0 +1,212 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMasterPage.master.cs"
+    Inherits="Com.Comm100.Forum.UI.AdminPanel.AdminMasterPage" %>
+
+<%@ Import Namespace="Com.Comm100.Forum.Language" %>
+<%@ Register Assembly="Framework" Namespace="Com.Comm100.Framework.WebControls" TagPrefix="cc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="../css/inner/common.css" rel="stylesheet" type="text/css" />
+    <link href="../css/inner/layout.css" rel="Stylesheet" type="text/css" />
+    <link href="../css/inner/container.css" rel="Stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="<%=JsFilePath %>js/common/common.js"></script>
+
+    <script type="text/javascript">
+        var mx, my;
+        function showHelp(id, helpMessage) {/*--open--*/
+            var left, top;
+            var o = document.getElementById(id);
+            if (document.body.clientWidth - mx < 210) {
+                left = parseInt(mx - 216) + "px";
+
+            }
+            else {
+                left = parseInt(mx + 16) + "px";
+
+            }
+            top = my + "px";
+            o.style.left = left;
+            o.style.top = top;
+            o.style.display = "block";
+            o.innerHTML = helpMessage;
+
+        }
+        function closeHelp(id) {/*--close--*/
+            var o = document.getElementById(id);
+            if (o.style.display == "block") {
+                o.style.display = "none";
+            }
+        }
+        function mousePosition(ev) {
+            if (ev.pageX || ev.pageY) {
+                return { x: ev.pageX, y: ev.pageY };
+            }
+            return {
+                x: ev.clientX + document.documentElement.scrollLeft,
+                y: ev.clientY + document.documentElement.scrollTop
+            };
+        }
+        function mouseMove(ev) {
+            ev = ev || window.event;
+            var mousePos = mousePosition(ev);
+            mx = mousePos.x;
+            my = mousePos.y;
+        }
+    </script>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="ThickBoxContent">
+        <asp:ContentPlaceHolder ID="cphThickBox" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <div id="divHelp" style="display: none;">
+    </div>
+    <div id="outer">
+        <div id="inner">
+            <a name="Top"></a>
+            <div id="Header">
+                <cc1:AdminHeader ID="AdminHeader1" runat="server">
+                </cc1:AdminHeader>
+            </div>
+            <div id="Bar1">
+                <cc1:AdminNavBar ID="AdminNavBar1" runat="server">
+                </cc1:AdminNavBar>
+            </div>
+            <div id='Bar' style="height:15px">
+                <div id="divTabLine">
+                </div>
+             </div>
+            <div id="Main">
+                <div id="Menu">
+                    <div class="divMenu">
+                        <ul class="ul1">
+                            <li class="li1" id="itemDashboard" runat="server">
+                                <asp:Image ID="imgDashboard" runat="server" ImageUrl="~/Images/Dashboard.gif" />
+                                <asp:HyperLink ID="hlDashboard" runat="server"><%=Proxy[EnumText.enumForum_Dashboard_Title]%></asp:HyperLink>
+                            </li>
+                            <li class="li1" id="itemCodePlan" runat="server">
+                                <asp:Image ID="imgCodePlan" runat="server" ImageUrl="~/Images/CodeGeneration.gif" />
+                                <asp:HyperLink ID="hlCodePlan" runat="server"><%=Proxy[EnumText.enumForum_AdminMenu_CodePlan]%></asp:HyperLink>
+                            </li>
+                            <li class="li1" id="itemForumHome" runat="server">
+                                <asp:Image ID="imgForumHome" runat="server" ImageUrl="~/Images/forum home.gif" />
+                                <asp:HyperLink ID="hlForumHome" runat="server" Target="_blank"><%=Proxy[EnumText.enumForum_AdminMenu_ForumHome]%></asp:HyperLink>
+                            </li>
+                            <li class="li1" id="itemForumFeature" runat="server">
+                                <asp:Image ID="imgForumFeature" runat="server" ImageUrl="~/Images/forum feature.gif" />
+                                <asp:HyperLink ID="hlForumFeature" runat="server"><%=Proxy[EnumText.enumForum_AdminMenu_ForumFeature] %></asp:HyperLink>
+                            </li>
+                            <li class="li1" id="itemUserGroups" runat="server">
+                                <asp:Image ID="imgUserGroups" runat="server" ImageUrl="~/Images/user groups.gif" />
+                                <b><%=Proxy[EnumText.enumForum_AdminMenu_UserGroups]%></b> </li>
+                            <li class="li1" id="itemUserGroupsManagement" style="padding-left: 35px" runat="server">
+                                <asp:HyperLink ID="hlUserGroupsManagement" runat="server"><%=Proxy[EnumText.enumForum_AdminMenu_UserGroupsManagement] %></asp:HyperLink>
+                            </li>
+                            <li class="li1" id="itemAdministrators" style="padding-left: 35px" runat="server">
+                                <asp:HyperLink ID="hlAdministrators" runat="server"><%=Proxy[EnumText.enumForum_AdminMenu_Administrators] %></asp:HyperLink>
+                            </li>
+                            <li class="li1" id="itemAdministratorsSingle" runat="server">
+                                <asp:Image ID="imgAdministrators" runat="server" ImageUrl="~/Images/admin.gif" />
+                                <asp:HyperLink ID="hlAdministratorsSingle" runat="server"><%=Proxy[EnumText.enumForum_AdminMenu_Administrators] %></asp:HyperLink>
+                            </li>
+                            <li class="li1" id="itemUsers">
+                                <asp:Image ID="imgUsers" runat="server" ImageUrl="~/Images/users.gif" />
+                                <b>
+                                    <%=Proxy[EnumText.enumForum_AdminMenu_Users]%></b> </li>
+                            <li class="li1" id="itemUserManage" style="padding-left: 35px" runat="server">
+                                <asp:HyperLink ID="hlUserManager" runat="server"><%=Proxy[EnumText.enumForum_AdminMenu_UsersManagement]%></asp:HyperLink>
+                            </li>
+                            <li class="li1" id="itemUserModeration" style="padding-left: 35px" runat="server">
+                                <asp:HyperLink ID="hlModeration" runat="server"><%=Proxy[EnumText.enumForum_AdminMenu_UsersModeration]%></asp:HyperLink>
+                                &nbsp;</li>
+                            <li class="li1" id="itemEmailVerify" style="padding-left: 35px" runat="server">
+                                <asp:HyperLink ID="hlEmailVerify" runat="server"><%=Proxy[EnumText.enumForum_AdminMenu_UsersEmailVerify] %></asp:HyperLink>
+                                &nbsp;</li>
+                            <li class="li1" id="itemReputationGroups" runat="server">
+                                <asp:Image ID="imgReputationGroups" runat="server" ImageUrl="~/Images/reputation groups.gif" />
+                                <asp:HyperLink ID="hlReputationGroups" runat="server"><%=Proxy[EnumText.enumForum_AdminMenu_ReputationGroups] %></asp:HyperLink>
+                            </li>
+                            <li class="li1" id="itemCategoriesAndForums">
+                                <asp:Image ID="imgCategoriesAndForums" runat="server" ImageUrl="~/Images/categoris_forums.gif" />
+                                <b>
+                                    <%=Proxy[EnumText.enumForum_AdminMenu_CategoriesForums]%></b></li>
+                            <li class="li1" id="itemCategories" style="padding-left: 35px" runat="server">
+                                <asp:HyperLink ID="hlCategories" runat="server"><%=Proxy[EnumText.enumForum_AdminMenu_Categories]%></asp:HyperLink>
+                            </li>
+                            <li class="li1" id="itemForums" style="padding-left: 35px" runat="server">
+                                <asp:HyperLink ID="hlForums" runat="server"><%=Proxy[EnumText.enumForum_AdminMenu_Forums]%></asp:HyperLink>
+                            </li>
+                            <li class="li1" id="itemAnnouncements" runat="server">
+                                <asp:Image ID="imgAnnouncements" runat="server" ImageUrl="~/Images/announcement-topic.GIF" />
+                                <asp:HyperLink ID="hlAnnouncements" runat="server"><%=Proxy[EnumText.enumForum_AdminMenu_Announcements] %></asp:HyperLink>
+                            </li>
+                            <li class="li1" id="itemPostModeration">
+                                <asp:Image ID="imgPostsModeration" runat="server" ImageUrl="~/Images/posts moderation.gif" />
+                                <b>
+                                    <%=Proxy[EnumText.enumForum_AdminMenu_PostsModeration] %></b> </li>
+                            <li class="li1" id="itemWaitingForModeration" style="padding-left: 35px" runat="server">
+                                <asp:HyperLink ID="hlWaitingForModeration" runat="server"><%=Proxy[EnumText.enumForum_AdminMenu_WaitingForModeration] %></asp:HyperLink>
+                            </li>
+                            <li class="li1" id="itemRejected" style="padding-left: 35px" runat="server">
+                                <asp:HyperLink ID="hlRejected" runat="server"><%=Proxy[EnumText.enumForum_AdminMenu_RejectedPosts] %></asp:HyperLink>
+                            </li>
+                            <li class="li1" id="itemTopicsAndPosts">
+                                <asp:Image ID="imgTopicsAndPosts" runat="server" ImageUrl="~/Images/topicsposts.gif" />
+                                <b>
+                                    <%=Proxy[EnumText.enumForum_AdminMenu_TopicsAndPosts] %></b> </li>
+                            <li class="li1" id="itemTopics" style="padding-left: 35px" runat="server">
+                                <asp:HyperLink ID="hlTopics" runat="server"><%=Proxy[EnumText.enumForum_AdminMenu_TopicsManagement] %></asp:HyperLink>
+                            </li>
+                            <li class="li1" id="itemPosts" style="padding-left: 35px" runat="server">
+                                <asp:HyperLink ID="hlPosts" runat="server"><%=Proxy[EnumText.enumForum_AdminMenu_PostsManagement] %></asp:HyperLink>
+                            </li>
+                            <li class="li1" id="itemRecycleBin" style="padding-left: 35px" runat="server">
+                                <asp:HyperLink ID="hlRecycleBin" runat="server"><%=Proxy[EnumText.enumForum_AdminMenu_RecycleBin] %></asp:HyperLink>
+                            </li>
+                            <li class="li1" id="itemDraftManage" runat="server">
+                                <asp:Image ID="imgDraft" runat="server" ImageUrl="~/Images/drafts.gif" />
+                                <asp:HyperLink ID="hlDrafts" runat="server"><%=Proxy[EnumText.enumForum_AdminMenu_Drafts]%></asp:HyperLink>
+                            </li>
+                            <li class="li1" id="itemAbuse" runat="server">
+                                <asp:Image ID="imgAbuse" runat="server" ImageUrl="~/Images/report.gif" />
+                                <asp:HyperLink ID="hlAbuse" runat="server"><%=Proxy[EnumText.enumForum_AdminMenu_AbuseReport] %></asp:HyperLink>
+                            </li>
+                            <li class="li1" id="itemBan" runat="server">
+                                <asp:Image ID="imgBan" runat="server" ImageUrl="~/Images/banned list.gif" />
+                                <asp:HyperLink ID="hlBan" runat="server"><%=Proxy[EnumText.enumForum_AdminMenu_BannedList] %></asp:HyperLink>
+                            </li>
+                            <li class="li1" id="itemSettings" runat="server">
+                                <asp:Image ID="imgSettings" runat="server" ImageUrl="~/Images/settings.gif" />
+                                <asp:HyperLink ID="hlSettings" runat="server"><%=Proxy[EnumText.enumForum_AdminMenu_Settings]%></asp:HyperLink>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="Content">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <div style="clear: both">
+                    </div>
+                </div>
+            </div>
+            <div id="Footer">
+                <%--<uc:AdminFooter ID="AdminFooter1" runat="server" />--%>
+                <cc1:AdminFooter ID="AdminFooter1" runat="server">
+                </cc1:AdminFooter>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        document.onmousemove = mouseMove;
+    </script>
+
+    </form>
+</body>
+</html>

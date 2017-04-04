@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F585AB0F-F2A2-4C69-ADDE-488661C6E475}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Com.Comm100.Framework</RootNamespace>
+    <AssemblyName>Framework</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;OPENSOURCE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;OPENSOURCE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Framework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ASPNETState\SessionOperator.cs" />
+    <Compile Include="ASPNETState\SessionUser.cs" />
+    <Compile Include="Common\CommonFunctions.cs" />
+    <Compile Include="Common\ConstantsHelper.cs" />
+    <Compile Include="Common\DateTimeHelper.cs" />
+    <Compile Include="Common\Encrypt.cs" />
+    <Compile Include="Common\EncryptionDecryptionHelper.cs" />
+    <Compile Include="Common\ExceptionHelper.cs" />
+    <Compile Include="Common\ExceptionWithCode.cs" />
+    <Compile Include="Common\FileHelper.cs" />
+    <Compile Include="Common\IpHelper.cs" />
+    <Compile Include="Common\LogHelper.cs" />
+    <Compile Include="Common\Mail.cs" />
+    <Compile Include="Common\StringHelper.cs" />
+    <Compile Include="Common\WebServiceHelper.cs" />
+    <Compile Include="Database\DbConfigure.cs" />
+    <Compile Include="Database\DbHelper.cs" />
+    <Compile Include="Database\SqlConnectionWithSiteId.cs" />
+    <Compile Include="Enum\EnumApplicationType.cs" />
+    <Compile Include="Enum\EnumGender.cs" />
+    <Compile Include="Enum\EnumLogical.cs" />
+    <Compile Include="Enum\EnumUserType.cs" />
+    <Compile Include="Enum\Forum\EnumAbuseStatus.cs" />
+    <Compile Include="Enum\Forum\EnumAdminMenuType.cs" />
+    <Compile Include="Enum\Forum\EnumAttachmentType.cs" />
+    <Compile Include="Enum\Forum\EnumBanExpireType.cs" />
+    <Compile Include="Enum\Forum\EnumBanType.cs" />
+    <Compile Include="Enum\Forum\EnumCategoryStatus.cs" />
+    <Compile Include="Enum\Forum\EnumForumPostImageUseType.cs" />
+    <Compile Include="Enum\Forum\EnumForumStatus.cs" />
+    <Compile Include="Enum\Forum\EnumPayType.cs" />
+    <Compile Include="Enum\Forum\EnumPostAbuseStatus.cs" />
+    <Compile Include="Enum\Forum\EnumPostOrTopicModerationStatus.cs" />
+    <Compile Include="Enum\Forum\EnumQueueEmailStatus.cs" />
+    <Compile Include="Enum\Forum\EnumQueueEmailType.cs" />
+    <Compile Include="Enum\Forum\EnumSiteStatus.cs" />
+    <Compile Include="Enum\Forum\EnumSortMoveDirection.cs" />
+    <Compile Include="Enum\Forum\EnumTopicStatus.cs" />
+    <Compile Include="Enum\Forum\EnumTopicType.cs" />
+    <Compile Include="Enum\Forum\EnumUserEmailVerificationStatus.cs" />
+    <Compile Include="Enum\Forum\EnumUserGroupType.cs" />
+    <Compile Include="Enum\Forum\EnumUserMenuType.cs" />
+    <Compile Include="Enum\Forum\EnumUserModerateStatus.cs" />
+    <Compile Include="FieldLength\ForumDBFieldLength.cs" />
+    <Compile Include="HelpDocument\ForumHelpDocument.cs" />
+    <Compile Include="Language\EnumLanguage.cs" />
+    <Compile Include="Language\EnumText.cs" />
+    <Compile Include="Language\FunctionLanguageHelper.cs" />
+    <Compile Include="Language\LanguageHelper.cs" />
+    <Compile Include="Language\LanguageProxy.cs" />
+    <Compile Include="Language\Model\Language.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SessionControl\CustomOutOfProcSessionStateStore.cs" />
+    <Compile Include="SessionControl\SessionIdDomain.cs" />
+    <Compile Include="WebControls\AdminFooter.cs" />
+    <Compile Include="WebControls\AdminHeader.cs" />
+    <Compile Include="WebControls\AdminNavBar.cs" />
+    <Compile Include="WebControls\ASPNetPager.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

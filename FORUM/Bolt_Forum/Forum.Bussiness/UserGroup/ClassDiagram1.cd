@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Com.Comm100.Forum.Bussiness.UserGroup">
+    <Position X="9" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserGroup\UserGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.UserGroupWithPermissionCheck">
+    <Position X="9" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAEAAAAAAAIAAABAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserGroup\UserGroupWithPermissionCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.UserGroupBase">
+    <Position X="10.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACMAAAAAAgAAQEAAAAAAQAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>UserGroup\UserGroupBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.UserGroupOfForum">
+    <Position X="11.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>UserGroup\UserGroupOfForum.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.UserGroups">
+    <Position X="6" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserGroup\UserGroups.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.UserGroupsBase">
+    <Position X="5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>UserGroup\UserGroupsBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.UserGroupsOfForum">
+    <Position X="3.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAIAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>UserGroup\UserGroupsOfForum.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.UserGroupsOfForumWithPermissionCheck">
+    <Position X="3.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserGroup\UserGroupsOfForumWithPermissionCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.UserGroupsWithPermissionCheck">
+    <Position X="6" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAQAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserGroup\UserGroupsWithPermissionCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.UserGroupOfForumWithPermissionCheck">
+    <Position X="11.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserGroup\UserGroupOfForumWithPermissionCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

@@ -1,0 +1,241 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainMasterPage.master.cs"
+    Inherits="Forum.UI.MainMasterPage" %>
+
+<%@ Register Src="~/UserControl/ForumHeader.ascx" TagName="ForumHeader" TagPrefix="uc" %>
+<%@ Register Src="~/UserControl/ForumFooter.ascx" TagName="ForumFooter" TagPrefix="uc" %>
+<%@ Register Src="~/UserControl/NavigationBar.ascx" TagName="NavigationBar" TagPrefix="uc" %>
+<%@ Register Src="~/UserControl/LinkBar.ascx" TagName="LinkBar" TagPrefix="uc" %>
+<link href="CSS/inner/style.css" rel="Stylesheet" type="text/css" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <style>
+        .slider {
+            width: auto;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+            /*        background: #e6e6e6;
+        border: 20px solid #FFF;
+        margin-top: 20px;*/
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+
+    <script type="text/javascript">
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            // $("#myDropdown").css('show');
+            document.getElementById("myDropdown").classList.toggle("show");
+            document.getElementById("btnWelcome").classList.toggle("dropbtn-selected");
+        }
+
+    </script>
+
+    <title></title>
+
+    <script type="text/javascript">
+        function changeCSS(obj, cssName) {
+            obj.className = cssName;
+        }
+
+        var mx, my;
+        function showHelp(id, helpMessage) {/*--open--*/
+            var left, top;
+            var o = document.getElementById(id);
+            if (document.body.clientWidth - mx < 210) {
+                left = parseInt(mx - 216) + "px";
+            }
+            else {
+                left = parseInt(mx + 16) + "px";
+            }
+            top = my + "px";
+            o.style.left = left;
+            o.style.top = top;
+            o.style.display = "block";
+            o.innerHTML = helpMessage;
+
+        }
+        function closeHelp(id) {/*--close--*/
+            var o = document.getElementById(id);
+            if (o.style.display == "block") {
+                o.style.display = "none";
+            }
+        }
+        function mousePosition(ev) {
+            if (ev.pageX || ev.pageY) {
+                return { x: ev.pageX, y: ev.pageY };
+            }
+            return {
+                x: ev.clientX + document.documentElement.scrollLeft,
+                y: ev.clientY + document.documentElement.scrollTop
+            };
+        }
+        function mouseMove(ev) {
+            ev = ev || window.event;
+            var mousePos = mousePosition(ev);
+            mx = mousePos.x;
+            my = mousePos.y;
+        }
+
+
+
+    </script>
+
+    <script type="text/javascript">
+        var localTime = new Date();
+        var timezoneOffset = localTime.getTimezoneOffset();
+        document.cookie = "TimezoneOffset=" + timezoneOffset;
+    </script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="bolt-main-wrapper">
+        <form id="form1" runat="server">
+            <asp:ContentPlaceHolder ID="ThickBox" runat="server">
+            </asp:ContentPlaceHolder>
+            <div id="divHelp" style="display: none;">
+            </div>
+            <div id="outer">
+                <div id="inner">
+                    <div id="outerHeader">
+                        <uc:ForumHeader ID="ForumHeader1" runat="server" />
+                    </div>
+                    <!--Define the Logo here-->
+                    <%--<div id="Logo">
+                <div id="logo_row">
+                    <div class="pos_left_10 pos_top_10 pos_bottom_10">
+                        <img src="Images/comm100.gif" alt="" />
+                    </div>
+                </div>
+            </div>--%>
+                    <!--end Define the Logo-->
+                    <!--Define the Link Bar here-->
+                    <!--changed by techtier-->
+                    <div id="nav_bar" class="navrow" style="display: none;">
+                        <div class="navrow_inner">
+                            <uc:LinkBar ID="LinkBar1" runat="server" />
+                        </div>
+                    </div>
+                    <!--end Define the Link Bar-->
+                    
+
+
+                    <header id="header">
+                        <div class="container ng-scope">
+                            <div class="logo">
+                                <a href="#">
+                                    <img src="images/logo.png" alt="bolt">
+                                </a>
+                            </div>
+                            <div id="liuname" class="welcome_guest" runat="server" visible="false">
+                                    <asp:Literal ID="ltrusername" runat="server" Visible="false"></asp:Literal>
+                                </div>
+                            <a href="#" class="opener"><span></span></a>
+                            <div class="menu">
+                                <ul class="" id="nav">
+                                    <li><a class="ach_search" id="achSearch" href="javascript:;">Search</a></li>
+                                    <li><a id="achAbout" runat="server" href="javascript:;">About</a></li>
+                                    <li><a href="javascript:;" id="achContact" runat="server">Contact</a></li>
+                                    <li><asp:HyperLink ID="hlhome" runat="server">Community</asp:HyperLink></li>
+                                </ul>
+                                <%if (Com.Comm100.Forum.UI.SiteSession.CurrentUser == null)
+                                  {%>
+                                <ul class="nav-btn ng-hide">
+                                    <li>
+                                        <asp:LinkButton ID="lblogin" runat="server" OnClick="lblogin_Click" CssClass="btn">Log in</asp:LinkButton></li>
+                                    <li><a id="achSignup" runat="server" class="btn" href="javascript:;">Sign Up</a></li>
+                                </ul>
+                                <%} %>
+                                <%if (Com.Comm100.Forum.UI.SiteSession.CurrentUser != null)
+                                  {%>
+                                <ul class="nav-btn ng-hide">
+                                    <li>
+                                        <a href="javascript:void(0)" class="dropbtn" id="btnWelcome" onclick="myFunction()">Welcome »</a>
+                                        <div class="dropdown-content" id="myDropdown">
+                                            <a href="#" id="achBoltAccount" runat="server">My Account</a>
+                                            <%if (Com.Comm100.Forum.UI.SiteSession.DirectLoginUser.AccountType == "Producer1")
+                                              {%>
+                                            <a href="#">My Profile</a>
+                                            <%} %>
+                                            <a href="mytopics.aspx">My Topics</a>
+                                            <asp:LinkButton ID="lblogout" runat="server" OnClick="lblogout_Click">Logout</asp:LinkButton>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <%} %>
+                                <asp:PlaceHolder ID="plcsearch" runat="server">
+                                    <div class="header-search-bar">
+                                        <input type="text" runat="server" id="tbSearch" title="Search..." placeholder="Search...">
+
+                                        <asp:Button ID="BtnSearch" name="submit" runat="server" Text="" OnClientClick="return searchtopic();" CssClass="bolt_icon_search" />
+
+                                    </div>
+                                </asp:PlaceHolder>
+                                <div class="clear"></div>
+                            </div>
+
+                        </div>
+                    </header>
+                    <script src="js/jquery-3.js"></script>
+                    <script>
+                        $('.opener').click(function () {
+                            $(".menu").toggle();
+                        });
+                    </script>
+
+                    <script>
+                        $('.ach_search').click(function () {
+                            $(".header-search-bar").toggle();
+                        });
+                    </script>
+
+                    <script>
+                        $('.dropbtn').click(function () {
+                            $(".dropdown-content").toggle();
+                        });
+                    </script>
+
+                    <div id="content">
+                        <div id="content_main">
+                            <div id="content_main_inner">
+                                <div class="pos_bottom_10" style="display: none;">
+                                    <div class="cat">
+                                        <div class="top_cat">
+                                            <div class="top_cat_left">
+                                                <div class="top_cat_right">
+                                                    <uc:NavigationBar ID="NavigationBar1" runat="server" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                </asp:ContentPlaceHolder>
+                                <div class="pos_bottom_10">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="footer">
+                            <uc:ForumFooter ID="ForumFooter1" runat="server" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script type="text/javascript">        document.onmousemove = mouseMove; </script>
+            <script src="JS/jquery-3.js"></script>
+            <script type="text/javascript" src="JS/script.js"></script>
+            <script src="JS/jquery.main.js"></script>
+        </form>
+    </div>
+</body>
+</html>

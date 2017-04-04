@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <!--<siteMapNode url="Default.aspx" title="Home"  description="">-->
+    <siteMapNode url="Default.aspx" title="Home"  description="">
+    <siteMapNode url="AdvancedSearch.aspx" title="Advanced Search"  description="" />
+    <siteMapNode url="EmailVerification.aspx" title="Email Verification"  description="" />
+    <siteMapNode url="FindPassword.aspx" title="Find Password"  description="" />
+    <siteMapNode url="Forum.aspx" title="Forum"  description="" >
+      <siteMapNode url="AddTopic.aspx" title="Add Topic"  description="" />
+      <siteMapNode url="EditTopicOrPost.aspx" title="EditTopicOrPost"  description="" />
+      <siteMapNode url="Topic.aspx" title="Topic"  description="" />
+    </siteMapNode>
+    <siteMapNode url="Login.aspx" title="Login"  description="" />
+    <siteMapNode url="Post_Register.aspx" title="Register"  description="" />
+    <siteMapNode url="Pre_Register.aspx" title="Register"  description="" />
+    <siteMapNode url="Register.aspx" title="Register"  description="" />
+    <siteMapNode url="ResetPassword.aspx" title="Reset Password"  description="" />
+    <siteMapNode url="SearchResult.aspx" title="Search Result"  description="" />
+    <siteMapNode url="SendResetPasswordEmail.aspx" title="Send Reset Password Email"  description="" />
+    <siteMapNode url="Siteclosed.aspx" title="Site Closed"  description="" />
+    <siteMapNode url="IPBanned.aspx" title="IP Banned"  description="" />
+    <siteMapNode url="UserBanned.aspx" title="User Banned"  description="" />
+    <siteMapNode url="User_Profile.aspx" title="User Profile"  description="" />
+    <siteMapNode url="User_Posts.aspx" title="User Posts" description="" />
+    <siteMapNode url="AdminPanel/Login.aspx" title="Admin Login"  description="" />
+    <siteMapNode url="UserPanel/UserAvatarEdit.aspx" title="User Panel"  description="" />
+    <siteMapNode url="UserPanel/UserMyPosts.aspx" title="User Panel"  description="" />
+    <siteMapNode url="UserPanel/UserPasswordEdit.aspx" title="User Panel"  description="" />
+    <siteMapNode url="UserPanel/UserProfileEdit.aspx" title="User Panel"  description="" />
+    <siteMapNode url="UserPanel/UserSignatureEdit.aspx" title="User Panel"  description="" />
+    <siteMapNode url="UserPanel/UserTopicsList.aspx" title="User Panel"  description="" />
+    <siteMapNode url="UserPanel/MyFavorites.aspx" title="User Panel" description="" />
+    <siteMapNode url="UserPanel/MyInBox.aspx" title="User Panel" description="" />
+    <siteMapNode url="UserPanel/MyOutBox.aspx" title="User Panel" description="" />
+    <siteMapNode url="UserPanel/MySendMessage.aspx" title="User Panel" description="" />
+    <siteMapNode url="UserPanel/MySubscribes.aspx" title="User Panel" description="" />
+  </siteMapNode>
+</siteMap>

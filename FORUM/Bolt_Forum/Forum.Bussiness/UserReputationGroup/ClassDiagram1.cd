@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Com.Comm100.Forum.Bussiness.UserReputationGroup">
+    <Position X="5.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserReputationGroup\UserReputationGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.UserReputationGroupWithPermissionCheck">
+    <Position X="5.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAQAAAAAQAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserReputationGroup\UserReputationGroupWithPermissionCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.UserReputationGroupBase">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAISQEAAAgAAQEAAAAAAQACAAAAAAAAAAgEAABAAA=</HashCode>
+      <FileName>UserReputationGroup\UserReputationGroupBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.UserReputationGroupOfForum">
+    <Position X="7.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>UserReputationGroup\UserReputationGroupOfForum.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.UserReputationGroupOfForumWithPermissionCheck">
+    <Position X="7.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAQAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserReputationGroup\UserReputationGroupOfForumWithPermissionCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.UserReputationGroups">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>UserReputationGroup\UserReputationGroups.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.UserReputationGroupsBase">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>UserReputationGroup\UserReputationGroupsBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.UserReputationGroupsOfForum">
+    <Position X="2.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAEAAAAAAACAAAAAAAg=</HashCode>
+      <FileName>UserReputationGroup\UserReputationGroupsOfForum.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.UserReputationGroupsOfForumWithPermissionCheck">
+    <Position X="2.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>UserReputationGroup\UserReputationGroupsOfForumWithPermissionCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Comm100.Forum.Bussiness.UserReputationGroupsWithPermissionCheck">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAQAAAAAQAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>UserReputationGroup\UserReputationGroupsWithPermissionCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

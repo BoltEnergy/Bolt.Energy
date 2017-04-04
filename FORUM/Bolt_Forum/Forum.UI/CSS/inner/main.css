@@ -1,0 +1,671 @@
+body {
+	margin:0px;
+	padding:0px;
+}
+* {
+	margin:0px;
+	padding:0px;
+}
+.btn-form{
+     background-color: rgb(86, 186, 72);
+    border: none;
+    width: 70px!important;
+    padding: 4px;
+    color: #fff;
+    border: 1px solid #007500;
+}
+html {
+	/*box-sizing: border-box;*/
+	height:100%;
+	margin:0px;
+	padding:0px;
+}
+body {
+	background: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	min-width: 320px;
+	height:auto!important;
+	margin:0px;
+	padding:0px;
+}
+.b-header {
+	left: 0;
+	z-index: 1000;
+	padding: 10px 0px;
+	box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25);
+	margin-bottom: 20px;
+}
+.b-header .wrap {
+	max-width: 1110px;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 0 8px;
+}
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .h {
+	font-family: inherit;
+	margin: 0;
+	color: inherit;
+	font-weight: 600;
+	line-height: normal;
+}
+h1, .h1 {
+	font-size: 30px;
+	color: #55ba47;
+}
+h2, .h2 {
+	color: #2c382b;
+	font-size: 24px;
+	color: #55ba47;
+}
+h3, .h3 {
+	font-size: 17px;
+	margin: 0 0 16px;
+	color: #55ba47;
+}
+h4, .h4 {
+	font-size: 15px;
+}
+h5, .h5 {
+	font-size: 13px;
+}
+h6, .h6 {
+	font-size: 11px;
+}
+p {
+	margin: 0 0 21px;
+}
+a {
+	color: #424a3f;
+	text-decoration: underline;
+}
+a:hover, a:focus {
+	text-decoration: none;
+}
+form, fieldset {
+	margin: 0;
+	padding: 0;
+	border-style: none;
+}
+.three input[type="text"], input[type="tel"], input[type="email"], input[type="search"], input[type="password"], textarea {
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	box-sizing: border-box;
+	border: 1px solid #cecece;
+    padding: 8px 3px;
+    color: #5e5e5e;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    font-size: 13px;
+}
+select {
+	-webkit-border-radius: 0;
+}
+#wrapper {
+	overflow: hidden;
+	position: relative;
+	/*display: table-cell;*/
+	table-layout: fixed;
+	width: 100%;
+}
+.container {
+	margin: 0 auto;
+	padding: 0 15px;
+	max-width: 970px;
+}
+.row {
+	margin: 0 -15px;
+	clear: left;
+}
+.columns {
+	/*float: left;*/
+	padding: 0 15px;
+}
+.three {
+	width: 33.3%;
+	margin: 0px auto;
+	border: 1px solid #ebebeb;
+	border-radius: 8px;
+	margin-top: 70px;
+	padding-top: 15px;
+	min-width:270px;
+   padding-bottom: 20px;
+}
+#header {
+	padding: 17px 0 23px;
+	position: relative;
+	border-bottom: 1px solid #b1c2af;
+}
+.home #main {
+	padding: 0 0 78px;
+}
+.logo {
+	max-width: 97px;
+	margin: 5px 0 0;
+	text-align: center;
+	margin: auto;
+}
+#bolt-main-wrapper {
+	min-height: 100%;
+	/*width: calc(98% - 1px);*/
+    position: relative;
+}
+.btn.icon-link39 button {
+	display: none;
+}
+.col-left h2 {
+	margin: 10px 0;
+}
+.columns h1, .columns h2, .columns h3 {
+	margin: 15px 0;
+}
+.columns input, .columns textarea {
+	width: 100%;
+	outline:none;
+}
+#requiredFieldValidatorEmail, #regularExpressionValidatorEmail, #requiredFieldValidatorPassword{
+    position:relative;
+    top:-10px;
+}
+.columns label {
+	display: block;
+	padding-bottom: 2px;
+}
+/*Start List User*/
+.bolt_new_topic {
+	max-width: 1110px;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 0 8px;
+	padding-bottom:70px;/*margin-bottom: 30px;*/
+}
+.bolt_topic_list {
+	width: 100%;
+	border-collapse: collapse;
+}
+.bolt_topic_list th, .bolt_topic_list td {
+	padding: 12px 5px;
+	color: #7d7d7d;
+	font-weight: normal;
+	font-size: 14px;
+	border-bottom: 1px solid #e9e9e9;
+}
+.bolt_topic_list th, .bolt_topic_list td strong {
+	font-size:13px;
+}
+.bolt_topic_list th {
+	border-bottom: 2px solid #e9e9e9;
+	font-weight:bold;
+	font-size:13px;
+}
+.bolt_topic_list td a {
+	text-decoration:none;
+	color:#0085fb;
+}
+.bolt_posted_avatar {
+	width: 30px;
+	margin-right: 10px;
+	height: 30px;
+	border-radius: 50%;
+	font-size: 25px;
+	font-weight: normal;
+	text-align: center;
+	line-height: 28px;
+	font-family: monospace;
+}
+.bolt_header_right {
+	float: right;
+}
+.bolt_header_search {
+	float:right;
+}
+.bolt_header_search input {
+	height: 30px;
+	width: 250px;
+	border: 1px solid #e9e9e9;
+	position: relative;
+}
+.bolt_icon_search {
+	top: 7px;
+	position: relative;
+	right: 12px;
+}
+.bolt_normal_text {
+	color:#7d7d7d;
+	line-height: 22px;
+}
+/*Start Bolt Mega Menu*/
+.bolt-mega-menu {
+	float:right;
+	margin-left:15px;
+	margin-top: 7px;
+	width:22px;
+	height:18px;
+}
+.bolt-mega-menu nav {
+	float:right;
+	text-align:right;
+}
+.bolt-mega-menu nav > ul {
+	display: none;
+	margin: 0;
+	list-style: none;
+	width: 250px;
+}
+.bolt-mega-menu nav a {
+	color: #222;
+	text-decoration: none;
+	background:url(../images/icon-menu.jpg) no-repeat right center;
+	width:22px;
+	height:18px;
+}
+.bolt-mega-menu nav > ul > li {
+	font-weight: bold;
+	cursor: pointer;
+	line-height: 40px;
+	text-align: left;
+	position: relative;
+	border-left: 1px solid #efefef;
+	border-bottom: 1px solid #efefef;
+	background-color:#f9f9f9;
+	padding-left:10px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.bolt-mega-menu nav > ul > li:hover {
+	background: #efefef;
+}
+.bolt-mega-menu nav * > li > a {
+	border: 1px slid #bfbfbf;
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding-left: 0px;
+	background:none;
+}
+.bolt-mega-menu nav > a {
+	margin-top: 5px;
+	margin-left: 5px;
+	display: inline-block;
+	color: white;
+	margin-bottom: 15px;
+}
+/*End Bolt Mega Menu*/
+
+
+
+/* Nav Search */
+
+
+.bolt-admin-nav, .bolt-admin-nav a, .bolt-admin-nav form, .bolt-admin-nav input, .bolt-admin-nav li, .bolt-admin-nav ul {
+	border:none;
+	margin:0;
+	padding:0
+}
+.bolt-admin-nav a {
+	text-decoration:none
+}
+.bolt-admin-nav li {
+	list-style:none
+}
+.bolt-admin-nav, input {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	-webkit-font-smoothing:antialiased
+}
+.bolt-admin-nav {
+	cursor:default;
+	display:inline-block;
+	position:relative;
+	z-index:500
+}
+.bolt-admin-nav-search>form, .nav>li>a {
+	position:relative;
+	z-index:510
+}
+.bolt-admin-nav>li {
+	float:left
+}
+.bolt-admin-nav>li>a {
+	background:#372f2b;
+	border-left:1px solid #4b4441;
+	border-right:1px solid #312a27;
+	color:#fcfcfc;
+	display:block;
+	line-height:3.5;
+	padding:0 1.25em;
+	text-shadow:0 0 1px rgba(0, 0, 0, .35);
+transition:all .3s ease
+}
+.bolt-admin-nav>li:hover>a, .nav>li>a:focus {
+	background:#4b4441
+}
+.bolt-admin-nav>li:first-child>a {
+	border-left:none;
+	border-radius:3px 0 0 3px
+}
+.bolt-admin-nav-search>form {
+	height: 30px;
+	width: inherit;
+	margin-top: 6px;
+}
+.bolt-admin-nav-search input[type=text] {
+	background:#e0e0e0;
+	color:#999;
+	display:block;
+	float:left;
+	font-weight:normal;
+	height:16px;
+	padding:7px 0px;
+ transition:all .3s ease 1s;
+	width:0;
+}
+.bolt-admin-nav-search input[type=text]:focus {
+	color:#fcfcfc
+}
+.bolt-admin-nav-search input[type=text]:focus, .bolt-admin-nav-search:hover input[type=text] {
+	padding:7px 5px;
+transition:all .3s ease .1s;
+	width:200px;
+	height:16px;
+	outline:none;
+}
+.bolt-admin-nav-search input[type=submit] {
+	background: url(../images/icon_search.png) center center no-repeat #e0e0e0;
+	border-radius: 0 3px 3px 0;
+	cursor: pointer;
+	display: block;
+	float: left;
+	height: 30px;
+	padding: 0 18px;
+ transition: all .3s ease;
+	outline:none;
+	background-size: 22px;
+}
+.bolt-admin-nav-search input:focus, .bolt-admin-nav-search input[type=submit]:hover {
+	background-color:#4b4441
+}
+.bolt-admin-nav-search {
+	margin-top: 6px;
+}
+/*Start Vanity Page*/
+.bolt_vanity_form {
+	width:100%;
+	max-width: 760px;
+}
+.bolt_vanity_form h5 {
+	font-size: 13px;
+	color: #7d7d7d;
+	margin-bottom: 5px;
+}
+.bolt_vanity_form select {
+	width:100%;
+	height:30px;
+	color: #7d7d7d;
+	outline: none;
+	margin-bottom: 20px;
+	border:1px solid #bcbcbc;
+}
+.bolt_vanity_form .text {
+	border: 1px solid #bcbcbc;
+	width: calc(98% - 1px);
+	height: 30px;
+	margin-bottom:20px;
+	outline:none;
+	padding:0px 1%;
+	color: #7d7d7d;
+}
+.bolt_vanity_form textarea {
+	width:100%;
+	height:80px;
+	outline:none;
+	resize:none;
+	border: 1px solid #bcbcbc;
+}
+.reg-btn-outer {
+	margin-top: 30px;
+}
+.reg-btn-outer .reg-btn {
+	border: 1px solid #47a13c;
+	background-color: #56ba48;
+	color: #fff;
+	border-radius: 3px;
+	padding: 8px 10px;
+	font-size: 16px;
+	font-weight: bold;
+	margin-right: 8px;
+	cursor: pointer;
+}
+.bolt_vanity_form .lable {
+	background-color: #fff;
+	width: calc(99% - 1px);
+	border: 1px solid #bcbcbc;
+	padding: 0px;
+	padding-left:1%;
+	margin-bottom:20px;
+	color:#7d7d7d;
+	font-size:12px;
+}
+.bolt_vanity_form .snehainput {
+	width: calc(99% - 90px);
+	background-color: #fff;
+	border-left: 0px solid #000000;
+	border-right: 0px;
+	border-top: 0px;
+	border-bottom: 0px;
+	padding: 8px 0px;
+	color: #7d7d7d;
+	outline: none;
+}
+.bolt_vanity_form h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 25px;
+	color: #222222;
+	padding-bottom: 15px;
+}
+/*End Vanity Page*/
+
+/*Start My Project */
+
+.bolt_two_coloum {
+	width:100%;
+}
+.bolt_two_coloum .scroll {
+	max-height: 70px;
+	overflow-y: auto;
+	padding-right:20px;
+}
+.bolt_two_coloum h4 {
+	padding-bottom:5px;
+	font-size:13px;
+	font-weight:bold;
+	padding-top: 15px;
+}
+.bolt_two_coloum h5 {
+	padding-bottom:5px;
+	font-size:13px;
+	font-weight:normal;
+}
+.bolt_two_coloum .bolt_left {
+	width: 71%;
+	padding-right: 3%;
+	padding-bottom: 10px;
+	float:left;
+}
+.bolt_two_coloum .bolt_right {
+	width:25%;
+	padding-left:1%;
+	padding-bottom: 10px;
+	float:left;
+}
+.bolt_bg_gray {
+	background-color:#fbfbfb;
+}
+.bolt_expnd {
+	display:none;
+	border-bottom:1px solid #e9e9e9;
+	float: left;
+	padding:0px 11px;
+}
+.bolt_expnd p {
+	padding:15px 0px;
+	margin:0px;
+	line-height:19px;
+}
+.bolt-admin-no-comments {
+	padding: 10PX;
+	color: #7d7d7d;
+}
+/*Start breadcrumb*/
+.bolt_breadcrumb {
+	width:100%;
+	float:left;
+	padding-top:10px;
+}
+.bolt_breadcrumb li {
+	list-style:none;
+	color:#7d7d7d;
+	float:left;
+	font-size:12px;
+}
+.bolt_breadcrumb li a {
+	list-style:none;
+	color:#7d7d7d;
+	text-decoration:none;
+}
+.bolt_breadcrumb li a:hover {
+	text-decoration:underline;
+}
+.bolt_breadcrumb li:before {
+	content:'/';
+	padding:0 5px 0 3px
+}
+.bolt_breadcrumb li:first-child:before {
+	display:none
+}
+/*End breadcrumb*/
+
+/*Start Tabs */
+.bolt_tabs {
+	width:100%;
+	float:left;
+	border-bottom: 1px solid #e9e9e9;
+}
+.bolt_tabs li {
+	list-style:none;
+}
+.bolt_tabs li a {
+	list-style:none;
+	color:#7d7d7d;
+	float:left;
+	font-size:12px;
+	font-weight:bold;
+	text-decoration:none;
+	background-color:#f1f1f1;
+	padding:10px 15px;
+	margin-right: 1px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+.bolt_tabs li a:hover {
+	background-color:#6c6c6c;
+	color:#fff;
+}
+.bolt_tabs li .active {
+	background-color:#6c6c6c;
+	color:#fff;
+}
+/* End Tabs */
+
+/* Start Footer */
+#footer {
+	height: auto;
+	background: #2b3b2b;
+	font-size: 14px;
+	color: #889682;
+	position: absolute;
+	width: 100%;
+	bottom: 0px;
+	left: 0px;
+}
+#footer .container {
+	padding: 16px 15px 10px;
+	max-width: 1110px;
+	margin: auto;
+	min-height:22px;
+}
+#footer p {
+	overflow: hidden;
+	margin: 0 0 5px;
+	float: left;
+}
+#footer a {
+	text-decoration: none;
+	color: #889682;
+}
+#footer .links {
+	float: right;
+}
+#footer .privacy {
+	float: right;
+	font-weight: 600;
+	padding: 0 0 0 20px;
+}
+ @media only screen and (max-width: 767px) {
+.bolt_only_dst {
+ display: none;
+ margin: 0px;
+ padding: 0px;
+}
+.bolt-mega-menu nav > ul {
+ position:absolute;
+ right:0px;
+ width:100%;
+}
+.bolt_vanity_form {
+ width:96%;
+ margin-left:2%;
+ margin-right:2%;
+}
+.bolt_two_coloum .bolt_left {
+ width:100%;
+}
+.bolt_two_coloum .bolt_right {
+ width:100%;
+}
+.bolt_two_coloum .bolt_left {
+ padding-bottom:0px;
+}
+ .bolt_tabs li {
+ list-style:none;
+}
+.bolt_tabs li a {
+ width:92%;
+ padding:10px 15px;
+ margin-right: 1px;
+ border-top-left-radius: 0px;
+ border-top-right-radius: 0px;
+ border-top: 1px solid #ababab;
+}
+}
+ @media only screen and (max-width: 479px) {
+.bolt_header_search input {
+ width:145px;
+}
+#footer p, #footer .links {
+ float: none;
+ text-align: center;
+}
+#footer .links a {
+ float: none;
+ padding: 0 10px;
+}
+}
+ @media only screen and (max-width: 400px) {
+.bolt-admin-nav-search input[type=text]:focus, .bolt-admin-nav-search:hover input[type=text] {
+ width:165px;
+}
+}
+ @media only screen and (max-width: 320px) {
+.bolt-admin-nav-search input[type=text]:focus, .bolt-admin-nav-search:hover input[type=text] {
+ width:110px;
+}
+}

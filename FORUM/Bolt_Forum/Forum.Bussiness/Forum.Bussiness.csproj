@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4B65A84E-7F10-483A-9895-49353D0ACEDA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Com.Comm100.Forum.Bussiness</RootNamespace>
+    <AssemblyName>Forum.Business</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;OPENSOURCE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;OPENSOURCE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Data.Schema, Version=9.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.Data.Schema.UnitTesting, Version=9.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abuse\Abuse.cs" />
+    <Compile Include="Abuse\AbusesBase.cs" />
+    <Compile Include="Abuse\AbusesOfPostWithPermissionCheck.cs" />
+    <Compile Include="Abuse\AbusesOfSiteWithPermissionCheck.cs" />
+    <Compile Include="Abuse\AbusesOfPost.cs" />
+    <Compile Include="Abuse\AbusesOfSite.cs" />
+    <Compile Include="Abuse\AbuseWithPermissionCheck.cs" />
+    <Compile Include="Attachment\Attachment.cs" />
+    <Compile Include="Attachment\AttachmentsBase.cs" />
+    <Compile Include="Attachment\AttachmentsOfDraftWithPermissionCheck.cs" />
+    <Compile Include="Attachment\AttachmentsOfPost.cs" />
+    <Compile Include="Attachment\AttachmentsOfPostWithPermissionCheck.cs" />
+    <Compile Include="Attachment\AttachmentsOfUserOrOperator.cs" />
+    <Compile Include="Attachment\AttachmentsOfUserOrOperatorWithPermissionCheck.cs" />
+    <Compile Include="Attachment\AttachmentWithPermissionCheck.cs" />
+    <Compile Include="Attachment\AttahchmentsOfDraft.cs" />
+    <Compile Include="Ban\BansOfIP.cs" />
+    <Compile Include="Ban\BansOfIPWithPermissionCheck.cs" />
+    <Compile Include="Ban\BansOfUserOrOperator.cs" />
+    <Compile Include="Ban\BansOfUserOrOperatorWithPermissionCheck.cs" />
+    <Compile Include="Category\CategoriesBase.cs" />
+    <Compile Include="Common\CommFun.cs" />
+    <Compile Include="Favorite\FavoritesOfSite.cs" />
+    <Compile Include="Favorite\FavoritesOfSiteWithPermissionCheck.cs" />
+    <Compile Include="Forum\ForumPermissionManager.cs" />
+    <Compile Include="Forum\ForumsOfAnnouncement.cs" />
+    <Compile Include="Forum\ForumsOfAnnouncementWithPermissionCheck.cs" />
+    <Compile Include="Forum\ForumsOfModerator.cs" />
+    <Compile Include="Forum\ForumsOfModeratorWithPermissionCheck.cs" />
+    <Compile Include="Forum\ForumsOfSite.cs" />
+    <Compile Include="Forum\ForumsOfSiteWithPermissionCheck.cs" />
+    <Compile Include="Message\InMessage.cs" />
+    <Compile Include="Message\InMessagesOfReciever.cs" />
+    <Compile Include="Message\InMessagesOfRecieverWithPermissionCheck.cs" />
+    <Compile Include="Message\SentMessagesOfUserOrOperator.cs" />
+    <Compile Include="Message\SentMessagesOfUserOrOperatorWithPermissionCheck.cs" />
+    <Compile Include="Message\InMessageWithPermissionCheck.cs" />
+    <Compile Include="Message\MessageBase.cs" />
+    <Compile Include="Message\MessagesBase.cs" />
+    <Compile Include="Message\OutMessage.cs" />
+    <Compile Include="Message\OutMessagesOfSender.cs" />
+    <Compile Include="Message\OutMessagesOfSenderWithPermissionCheck.cs" />
+    <Compile Include="Message\OutMessageWithPermissionCheck.cs" />
+    <Compile Include="PayHistory\PayHistoriesBase.cs" />
+    <Compile Include="PayHistory\PayHistoriesOfAttachment.cs" />
+    <Compile Include="PayHistory\PayHistoriesOfTopic.cs" />
+    <Compile Include="Common\GroupPermission.cs" />
+    <Compile Include="Permission\GroupPermission\GroupPermissionBase.cs" />
+    <Compile Include="Permission\GroupPermission\GroupPermissionForForumBase.cs" />
+    <Compile Include="Permission\GroupPermission\UserGroupPermissionForForum.cs" />
+    <Compile Include="Permission\GroupPermission\UserGroupPermissionForForumWithPermissionCheck.cs" />
+    <Compile Include="Permission\GroupPermission\UserGroupPermissionWithPermissionCheck.cs" />
+    <Compile Include="Permission\GroupPermission\UserReputationGroupPermission.cs" />
+    <Compile Include="Permission\GroupPermission\UserReputationGroupPermissionForForum.cs" />
+    <Compile Include="Permission\GroupPermission\UserReputationGroupPermissionForForumWithPermissionCheck.cs" />
+    <Compile Include="Permission\GroupPermission\UserReputationGroupPermissionWithPermissionCheck.cs" />
+    <Compile Include="Permission\GuestPermission\GuestUserPermissionBase.cs" />
+    <Compile Include="Permission\GuestPermission\GuestUserSearchPermission.cs" />
+    <Compile Include="Permission\GuestPermission\GuestUserViewTopicPermission.cs" />
+    <Compile Include="Permission\interface\IViewTopicPermission.cs" />
+    <Compile Include="Permission\GuestPermission\GuestUserViewForumPermission.cs" />
+    <Compile Include="Permission\GroupPermission\UserGroupPermission.cs" />
+    <Compile Include="Poll\Poll.cs" />
+    <Compile Include="Poll\PollOption.cs" />
+    <Compile Include="Poll\PollOptions.cs" />
+    <Compile Include="Poll\PollOptionStruct.cs" />
+    <Compile Include="Poll\Polls.cs" />
+    <Compile Include="Poll\PollVoteHistories.cs" />
+    <Compile Include="Post\PostsOfUserOrOperator.cs" />
+    <Compile Include="Post\PostsOfUserOrOperatorWithPermissionCheck.cs" />
+    <Compile Include="QueueEmail\QueueEmail.cs" />
+    <Compile Include="QueueEmail\QueueEmailRecipients.cs" />
+    <Compile Include="QueueEmail\QueueEmails.cs" />
+    <Compile Include="Settings\GuestUserPermissionSetting.cs" />
+    <Compile Include="Settings\GuestUserPermissionSettingWithPermissionCheck.cs" />
+    <Compile Include="Settings\HotTopicStrategySetting.cs" />
+    <Compile Include="Settings\HotTopicStrategySettingWithPermissionCheck.cs" />
+    <Compile Include="Settings\ProhibitedWordsSetting.cs" />
+    <Compile Include="Settings\ProhibitedWordsSettingWithPermissionCheck.cs" />
+    <Compile Include="Settings\ReputationStrategySetting.cs" />
+    <Compile Include="Settings\ReputationStrategySettingWithPermissionCheck.cs" />
+    <Compile Include="Settings\ScoreStrategySetting.cs" />
+    <Compile Include="Settings\ScoreStrategySettingWithPermissionCheck.cs" />
+    <Compile Include="Settings\SMTPSetting.cs" />
+    <Compile Include="Settings\SMTPSettingWithPermissionCheck.cs" />
+    <Compile Include="Settings\UserPermissionSettingWithPermissionCheck.cs" />
+    <Compile Include="Site\Site.cs" />
+    <Compile Include="Site\SiteWithPermissionCheck.cs" />
+    <Compile Include="Subscribe\SubscribesOfSite.cs" />
+    <Compile Include="Subscribe\SubscribesOfSiteWithPermissionCheck.cs" />
+    <Compile Include="Topic\AnnoucementsFactory.cs" />
+    <Compile Include="Topic\AnnouncementsBase.cs" />
+    <Compile Include="Topic\AnnouncementsOfForum.cs" />
+    <Compile Include="Topic\AnnouncementsOfForumWithPermissionCheck.cs" />
+    <Compile Include="Topic\AnnouncementsOfSite.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Topic\AnnouncementsOfSiteWithPermissionCheck.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Favorite\Favorite.cs" />
+    <Compile Include="Favorite\FavoriteWithPermissionCheck.cs" />
+    <Compile Include="Subscribe\Subscribe.cs" />
+    <Compile Include="Subscribe\SubscribeWithPermissionCheck.cs" />
+    <Compile Include="Favorite\Favorites.cs" />
+    <Compile Include="Favorite\FavoritesWithPermissionCheck.cs" />
+    <Compile Include="Subscribe\Subscribes.cs" />
+    <Compile Include="Subscribe\SubscribesWithPermissionCheck.cs" />
+    <Compile Include="Topic\TopicFactory.cs" />
+    <Compile Include="Topic\TopicMoveHistories.cs" />
+    <Compile Include="Topic\TopicMoveHistoriesWithPermissionCheck.cs" />
+    <Compile Include="Topic\TopicPromoted.cs" />
+    <Compile Include="UserGroup\UserGroupsOfOutMessage.cs" />
+    <Compile Include="UserGroup\UserGroupsOfUserOrOperator.cs" />
+    <Compile Include="UserGroup\UserGroupsOfUserOrOperatorWithPermissionCheck.cs" />
+    <Compile Include="UserPermissionCache\UserForumPermissionItem.cs" />
+    <Compile Include="UserPermissionCache\UserPermissionCache.cs" />
+    <Compile Include="UserReputationGroup\UserReputationGroupsOfOutMessage.cs" />
+    <Compile Include="User\Administrator\Administrator.cs" />
+    <Compile Include="User\Administrator\Administrators.cs" />
+    <Compile Include="User\Administrator\AdministratorsWithPermissionCheck.cs" />
+    <Compile Include="Forum\ForumBase.cs" />
+    <Compile Include="Forum\ForumsBase.cs" />
+    <Compile Include="Settings\ForumFeature.cs" />
+    <Compile Include="Settings\ForumFeatureWithPermissionCheck.cs" />
+    <Compile Include="Permission\interface\IAttachmentPermission.cs" />
+    <Compile Include="Permission\interface\IAvatarPermission.cs" />
+    <Compile Include="Permission\interface\IImagePermission.cs" />
+    <Compile Include="Permission\interface\IMessagePermission.cs" />
+    <Compile Include="Permission\interface\IPostPermission.cs" />
+    <Compile Include="Permission\interface\IHTMLPermission.cs" />
+    <Compile Include="Permission\interface\ISignaturePermission.cs" />
+    <Compile Include="Permission\interface\IViewForumPermission.cs" />
+    <Compile Include="Permission\interface\ISearchPermission.cs" />
+    <Compile Include="Settings\UserPermissionSetting.cs" />
+    <Compile Include="Topic\TopicBase.cs" />
+    <Compile Include="Topic\Announcement.cs" />
+    <Compile Include="Topic\AnnouncementWithPermissionCheck.cs" />
+    <Compile Include="Ban\BanFactory.cs" />
+    <Compile Include="Ban\BanIPWithPermissionCheck.cs" />
+    <Compile Include="Ban\BansOfSiteWithPermissionCheck.cs" />
+    <Compile Include="Ban\BanUserOrOperatorWithPermissionCheck.cs" />
+    <Compile Include="Ban\BanBase.cs" />
+    <Compile Include="Ban\BanIP.cs" />
+    <Compile Include="Ban\Bans.cs" />
+    <Compile Include="Ban\BansOfSite.cs" />
+    <Compile Include="Ban\BanUserOrOperator.cs" />
+    <Compile Include="Category\Category.cs" />
+    <Compile Include="Category\Categories.cs" />
+    <Compile Include="Category\CategoriesWithPermissionCheck.cs" />
+    <Compile Include="Category\CategoryWithPermissionCheck.cs" />
+    <Compile Include="Draft\Draft.cs" />
+    <Compile Include="Draft\Drafts.cs" />
+    <Compile Include="Draft\DraftsWithPermissionCheck.cs" />
+    <Compile Include="Draft\DraftWithPermissionCheck.cs" />
+    <Compile Include="Forum\Forum.cs" />
+    <Compile Include="Forum\ForumsOfCategory.cs" />
+    <Compile Include="Forum\ForumsOfCategoryWithPermissionCheck.cs" />
+    <Compile Include="Forum\ForumWithPermissionCheck.cs" />
+    <Compile Include="Post\PostsFactory.cs" />
+    <Compile Include="Post\PostsOfForum.cs" />
+    <Compile Include="Post\PostsOfForumWithPermissionCheck.cs" />
+    <Compile Include="Post\PostsOfSiteWithPermissionCheck.cs" />
+    <Compile Include="Post\PostsBase.cs" />
+    <Compile Include="Post\PostsOfSite.cs" />
+    <Compile Include="Topic\TopicsBase.cs" />
+    <Compile Include="Topic\TopicsFactory.cs" />
+    <Compile Include="Topic\TopicsOfSite.cs" />
+    <Compile Include="Topic\TopicsOfSiteWithPermissionCheck.cs" />
+    <Compile Include="UserGroup\UserGroupBase.cs" />
+    <Compile Include="UserGroup\UserGroupOfForum.cs" />
+    <Compile Include="UserGroup\UserGroupOfForumWithPermissionCheck.cs" />
+    <Compile Include="UserGroup\UserGroupsOfForum.cs" />
+    <Compile Include="UserGroup\UserGroupsBase.cs" />
+    <Compile Include="UserGroup\UserGroupsOfForumWithPermissionCheck.cs" />
+    <Compile Include="UserGroup\UserGroups.cs" />
+    <Compile Include="UserGroup\UserGroupsWithPermissionCheck.cs" />
+    <Compile Include="UserReputationGroup\UserReputationGroup.cs" />
+    <Compile Include="UserReputationGroup\UserReputationGroupBase.cs" />
+    <Compile Include="UserReputationGroup\UserReputationGroupOfForum.cs" />
+    <Compile Include="UserReputationGroup\UserReputationGroupOfForumWithPermissionCheck.cs" />
+    <Compile Include="UserReputationGroup\UserReputationGroups.cs" />
+    <Compile Include="UserReputationGroup\UserReputationGroupsBase.cs" />
+    <Compile Include="UserReputationGroup\UserReputationGroupsOfForum.cs" />
+    <Compile Include="UserReputationGroup\UserReputationGroupsOfForumWithPermissionCheck.cs" />
+    <Compile Include="UserReputationGroup\UserReputationGroupsWithPermissionCheck.cs" />
+    <Compile Include="UserReputationGroup\UserReputationGroupWithPermissionCheck.cs" />
+    <Compile Include="User\Administrator\AdministratorWithPermissionCheck.cs" />
+    <Compile Include="User\IGroupsOfUserOrOperator.cs" />
+    <Compile Include="User\MemberOfUserGroup\MemberOfUserGroup.cs" />
+    <Compile Include="User\MemberOfUserGroup\MemberOfUserGroupWithPermissionCheck.cs" />
+    <Compile Include="User\MemberOfUserGroup\MembersOfUserGroup.cs" />
+    <Compile Include="User\MemberOfUserGroup\MembersOfUserGroupWithPermissionCheck.cs" />
+    <Compile Include="User\Moderator\Moderator.cs" />
+    <Compile Include="User\Moderator\Moderators.cs" />
+    <Compile Include="User\Moderator\ModeratorsOfAnnoucement.cs" />
+    <Compile Include="User\Moderator\ModeratorsWithPermisisonCheck.cs" />
+    <Compile Include="User\Moderator\ModeratorWithPermissionCheck.cs" />
+    <Compile Include="User\Operator\Operator.cs" />
+    <Compile Include="User\Operator\OperatorWithPermissionCheck.cs" />
+    <Compile Include="Post\Post.cs" />
+    <Compile Include="PostImage\PostImage.cs" />
+    <Compile Include="PostImage\PostImages.cs" />
+    <Compile Include="PostImage\PostImagesWithPermissionCheck.cs" />
+    <Compile Include="PostImage\PostImageWithPermissionCheck.cs" />
+    <Compile Include="Post\PostsOfTopic.cs" />
+    <Compile Include="Post\PostsOfTopicWithPermissionCheck.cs" />
+    <Compile Include="Post\PostWithPermissionCheck.cs" />
+    <Compile Include="Settings\RegistrationSetting .cs" />
+    <Compile Include="Settings\RegistrationSettingWithPermissionCheck.cs" />
+    <Compile Include="Search\Search.cs" />
+    <Compile Include="Search\SearchWithPermissionCheck.cs" />
+    <Compile Include="Settings\SiteSetting.cs" />
+    <Compile Include="Settings\SiteSettingWithPermissionCheck.cs" />
+    <Compile Include="Settings\StyleSetting.cs" />
+    <Compile Include="Settings\StyleSettingWithPermissionCheck.cs" />
+    <Compile Include="Settings\StyleTemplate.cs" />
+    <Compile Include="Settings\StyleTemplates.cs" />
+    <Compile Include="Settings\StyleTemplatesWithPermissionCheck.cs" />
+    <Compile Include="Settings\StyleTemplateWithPermissionCheck.cs" />
+    <Compile Include="Topic\Topic.cs" />
+    <Compile Include="Topic\TopicsOfForum.cs" />
+    <Compile Include="Topic\TopicsOfForumWithPermissionCheck.cs" />
+    <Compile Include="Topic\TopicWithPermissionCheck.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\RegisterUser\User.cs" />
+    <Compile Include="User\RegisterUser\Users.cs" />
+    <Compile Include="User\RegisterUser\UsersWithPermissionCheck.cs" />
+    <Compile Include="User\RegisterUser\UserWithPermissionCheck.cs" />
+    <Compile Include="UserGroup\UserGroup.cs" />
+    <Compile Include="UserGroup\UserGroupWithPermissionCheck.cs" />
+    <Compile Include="User\UserOrOperator.cs" />
+    <Compile Include="User\UserOrOperatorFactory.cs" />
+    <Compile Include="User\UsersOrOperators\UsersOrOperatorsBase.cs" />
+    <Compile Include="User\UsersOrOperators\UsersOrOperatorsOfOutMessage.cs" />
+    <Compile Include="User\UsersOrOperators\UsersOrOperatorsOfSite.cs" />
+    <Compile Include="User\UsersOrOperators\UsersOrOperatorsOfUserGroup.cs" />
+    <Compile Include="User\UsersOrOperators\UsersOrOperatorsOfUserGroupWithPermissionCheck.cs" />
+    <Compile Include="User\UsersOrOperators\UsersOrOperatorsOfUserReputationGroup.cs" />
+    <Compile Include="User\UsersOrOperators\UsersOrOperatorsOfUserReputationGroupWithPermissionCheck.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Forum.DataAccess\Forum.DataAccess.csproj">
+      <Project>{F62853AE-3EDC-4D00-9221-B5973DF763F0}</Project>
+      <Name>Forum.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework\Framework.csproj">
+      <Project>{F585AB0F-F2A2-4C69-ADDE-488661C6E475}</Project>
+      <Name>Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Forum\ClassDiagram1.cd" />
+    <None Include="UserGroup\ClassDiagram1.cd" />
+    <None Include="UserReputationGroup\ClassDiagram1.cd" />
+    <None Include="User\ClassDiagram1.cd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

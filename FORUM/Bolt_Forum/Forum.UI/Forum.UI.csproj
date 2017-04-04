@@ -1,0 +1,1517 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9662AB52-BE73-4A36-870A-22665ED1D83F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Com.Comm100.Forum.UI</RootNamespace>
+    <AssemblyName>Forum.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;OPENSOURCE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;OPENSOURCE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevOne.Security.Cryptography.BCrypt">
+      <HintPath>D:\skype files\DevOne.Security.Cryptography.BCrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=1.11.0.89, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <HintPath>..\packages\mongocsharpdriver.1.11.0-rc0\lib\net35\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=1.11.0.89, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <HintPath>..\packages\mongocsharpdriver.1.11.0-rc0\lib\net35\MongoDB.Driver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\assembly\GAC_MSIL\System.Web.DynamicData\3.5.0.0__31bf3856ad364e35\System.Web.DynamicData.dll</HintPath>
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ajaxcall.aspx" />
+    <Content Include="CSS\inner\main.css" />
+    <Content Include="CSS\inner\style.css" />
+    <Content Include="Images\btnImages\icon_permote.jpg" />
+    <Content Include="Images\down-short-icon.png" />
+    <Content Include="Images\icon-menu.jpg" />
+    <Content Include="Images\icon-search.jpg" />
+    <Content Include="Images\icon_permote.jpg" />
+    <Content Include="Images\icon_search.png" />
+    <Content Include="Images\up-short-icon.png" />
+    <Content Include="JS\customfunction.js" />
+    <Content Include="JS\jquery-3.js" />
+    <Content Include="JS\jquery.main.js" />
+    <Content Include="JS\script.js" />
+    <Content Include="directlogin.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="mytopics.aspx" />
+    <Content Include="prelogin.aspx" />
+    <Content Include="default.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbusePost.aspx.cs">
+      <DependentUpon>AbusePost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AbusePost.aspx.designer.cs">
+      <DependentUpon>AbusePost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddTopic.aspx.cs">
+      <DependentUpon>AddTopic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddTopic.aspx.designer.cs">
+      <DependentUpon>AddTopic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ajaxcall.aspx.cs">
+      <DependentUpon>ajaxcall.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajaxcall.aspx.designer.cs">
+      <DependentUpon>ajaxcall.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\ForumTopicDAL.cs" />
+    <Compile Include="AppCode\MongoCon.cs" />
+    <Compile Include="AppCode\MongoConnectionBE.cs" />
+    <Compile Include="AppCode\SiteSession.cs" />
+    <Compile Include="AppCode\SqlHelper.cs" />
+    <Compile Include="AppCode\UserBE.cs" />
+    <Compile Include="AppCode\UserDAL.cs" />
+    <Compile Include="AppCode\Utility.cs" />
+    <Compile Include="BanUser.aspx.cs">
+      <DependentUpon>BanUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BanUser.aspx.designer.cs">
+      <DependentUpon>BanUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\BasePage\AdminBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_GlobalResources\Resource.en-us.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.en-us.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\BasePage\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\BasePage\ForumBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\BasePage\FrameBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\BasePage\SearchBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\BasePage\UIBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\BasePage\UserPermissionInForum.cs" />
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\RestClient.cs" />
+    <Compile Include="Common\UserControl\BaseUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\CategoryAndForum.cs" />
+    <Compile Include="ClearSession.aspx.cs">
+      <DependentUpon>ClearSession.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClearSession.aspx.designer.cs">
+      <DependentUpon>ClearSession.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\ForumConfig.cs" />
+    <Compile Include="Common\GlobalController.cs" />
+    <Compile Include="Common\BasePage\ModeratorBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\WebUtility.cs" />
+    <Compile Include="directlogin.aspx.cs">
+      <DependentUpon>directlogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="directlogin.aspx.designer.cs">
+      <DependentUpon>directlogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditTopicOrPost.aspx.cs">
+      <DependentUpon>EditTopicOrPost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditTopicOrPost.aspx.designer.cs">
+      <DependentUpon>EditTopicOrPost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmailVerification.aspx.cs">
+      <DependentUpon>EmailVerification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmailVerification.aspx.designer.cs">
+      <DependentUpon>EmailVerification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FindPassword.aspx.cs">
+      <DependentUpon>FindPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FindPassword.aspx.designer.cs">
+      <DependentUpon>FindPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForumIsClosed.aspx.cs">
+      <DependentUpon>ForumIsClosed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumIsClosed.aspx.designer.cs">
+      <DependentUpon>ForumIsClosed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\DownAttachment.aspx.cs">
+      <DependentUpon>DownAttachment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Handler\DownAttachment.aspx.designer.cs">
+      <DependentUpon>DownAttachment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Images\Image.aspx.cs">
+      <DependentUpon>Image.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Images\Image.aspx.designer.cs">
+      <DependentUpon>Image.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Images\ImageVerificationCode.aspx.cs">
+      <DependentUpon>ImageVerificationCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Images\ImageVerificationCode.aspx.designer.cs">
+      <DependentUpon>ImageVerificationCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IPBanned.aspx.cs">
+      <DependentUpon>IPBanned.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IPBanned.aspx.designer.cs">
+      <DependentUpon>IPBanned.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JS\HTMLEditor\Image.aspx.cs">
+      <DependentUpon>Image.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JS\HTMLEditor\Image.aspx.designer.cs">
+      <DependentUpon>Image.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JS\HTMLEditor\ImageBrowser.aspx.cs">
+      <DependentUpon>ImageBrowser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JS\HTMLEditor\ImageBrowser.aspx.designer.cs">
+      <DependentUpon>ImageBrowser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logo.aspx.cs">
+      <DependentUpon>Logo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logo.aspx.designer.cs">
+      <DependentUpon>Logo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MainMasterPage.Master.cs">
+      <DependentUpon>MainMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MainMasterPage.Master.designer.cs">
+      <DependentUpon>MainMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="mytopics.aspx.cs">
+      <DependentUpon>mytopics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mytopics.aspx.designer.cs">
+      <DependentUpon>mytopics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PayScore.aspx.cs">
+      <DependentUpon>PayScore.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PayScore.aspx.designer.cs">
+      <DependentUpon>PayScore.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Post_Register.aspx.cs">
+      <DependentUpon>Post_Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Post_Register.aspx.designer.cs">
+      <DependentUpon>Post_Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="prelogin.aspx.cs">
+      <DependentUpon>prelogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="prelogin.aspx.designer.cs">
+      <DependentUpon>prelogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pre_Register.aspx.cs">
+      <DependentUpon>Pre_Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pre_Register.aspx.designer.cs">
+      <DependentUpon>Pre_Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Redirect.aspx.cs">
+      <DependentUpon>Redirect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Redirect.aspx.designer.cs">
+      <DependentUpon>Redirect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchResult.aspx.cs">
+      <DependentUpon>SearchResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchResult.aspx.designer.cs">
+      <DependentUpon>SearchResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SelectForum1.aspx.cs">
+      <DependentUpon>SelectForum1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SelectForum1.aspx.designer.cs">
+      <DependentUpon>SelectForum1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SendMessages.aspx.cs">
+      <DependentUpon>SendMessages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SendMessages.aspx.designer.cs">
+      <DependentUpon>SendMessages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SendResetPasswordEmail.aspx.cs">
+      <DependentUpon>SendResetPasswordEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SendResetPasswordEmail.aspx.designer.cs">
+      <DependentUpon>SendResetPasswordEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Siteclosed.aspx.cs">
+      <DependentUpon>Siteclosed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Siteclosed.aspx.designer.cs">
+      <DependentUpon>Siteclosed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="spiketest.aspx.cs">
+      <DependentUpon>spiketest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="spiketest.aspx.designer.cs">
+      <DependentUpon>spiketest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestPage.aspx.cs">
+      <DependentUpon>TestPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestPage.aspx.designer.cs">
+      <DependentUpon>TestPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TopicTest.aspx.cs">
+      <DependentUpon>TopicTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TopicTest.aspx.designer.cs">
+      <DependentUpon>TopicTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Topic.aspx.cs">
+      <DependentUpon>Topic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Topic.aspx.designer.cs">
+      <DependentUpon>Topic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\UrlRewrite.cs" />
+    <Compile Include="UnsubscribeSingleTopic.aspx.cs">
+      <DependentUpon>UnsubscribeSingleTopic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UnsubscribeSingleTopic.aspx.designer.cs">
+      <DependentUpon>UnsubscribeSingleTopic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserBanned.aspx.cs">
+      <DependentUpon>UserBanned.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserBanned.aspx.designer.cs">
+      <DependentUpon>UserBanned.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ForumFooter.ascx.cs">
+      <DependentUpon>ForumFooter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\ForumFooter.ascx.designer.cs">
+      <DependentUpon>ForumFooter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ForumHeader.ascx.cs">
+      <DependentUpon>ForumHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\ForumHeader.ascx.designer.cs">
+      <DependentUpon>ForumHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\HTMLEditor.ascx.cs">
+      <DependentUpon>HTMLEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\HTMLEditor.ascx.designer.cs">
+      <DependentUpon>HTMLEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\LinkBar.ascx.cs">
+      <DependentUpon>LinkBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\LinkBar.ascx.designer.cs">
+      <DependentUpon>LinkBar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\NavigationBar.ascx.cs">
+      <DependentUpon>NavigationBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\NavigationBar.ascx.designer.cs">
+      <DependentUpon>NavigationBar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UserPermissionListControl.ascx.cs">
+      <DependentUpon>UserPermissionListControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\UserPermissionListControl.ascx.designer.cs">
+      <DependentUpon>UserPermissionListControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\BasePage\UserBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPermissionView.aspx.cs">
+      <DependentUpon>UserPermissionView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPermissionView.aspx.designer.cs">
+      <DependentUpon>UserPermissionView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User_Posts.aspx.cs">
+      <DependentUpon>User_Posts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User_Posts.aspx.designer.cs">
+      <DependentUpon>User_Posts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User_Profile.aspx.cs">
+      <DependentUpon>User_Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User_Profile.aspx.designer.cs">
+      <DependentUpon>User_Profile.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CSS\inner\common.css" />
+    <Content Include="CSS\inner\container.css" />
+    <Content Include="CSS\inner\layout.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\after-tag.gif" />
+    <Content Include="Images\before-tag.gif" />
+    <Content Include="Images\btnbg_first.gif" />
+    <Content Include="Images\btnbg_last.gif" />
+    <Content Include="Images\btnbg_next.gif" />
+    <Content Include="Images\btnbg_previous.gif" />
+    <Content Include="Images\button-long.gif" />
+    <Content Include="Images\button-medium.gif" />
+    <Content Include="Images\button-super-long.gif" />
+    <Content Include="Images\calender.bmp" />
+    <Content Include="Images\CannedMessages.GIF" />
+    <Content Include="Images\CannedURLs.GIF" />
+    <Content Include="Images\CodeGeneration.GIF" />
+    <Content Include="Images\comm100.gif" />
+    <Content Include="Images\company.jpg" />
+    <Content Include="Images\contacthistory.gif" />
+    <Content Include="Images\Dashboard.gif" />
+    <Content Include="Images\database_delete.gif" />
+    <Content Include="Images\database_edit.gif" />
+    <Content Include="Images\datePicker.gif" />
+    <Content Include="Images\header-asc.gif" />
+    <Content Include="Images\header-bg.gif" />
+    <Content Include="Images\header-desc.gif" />
+    <Content Include="Images\help.gif" />
+    <Content Include="Images\help.png" />
+    <Content Include="Images\icon1.jpg" />
+    <Content Include="Images\Image.aspx" />
+    <Content Include="Images\leave_message.gif" />
+    <Content Include="Images\line-under-tag.gif" />
+    <Content Include="Images\logobar.jpg" />
+    <Content Include="Images\main_bg.PNG" />
+    <Content Include="Images\nothanks.gif" />
+    <Content Include="Images\Operators.GIF" />
+    <Content Include="Images\planlist_getcode.gif" />
+    <Content Include="Images\planlist_preview.gif" />
+    <Content Include="Images\Report.GIF" />
+    <Content Include="Images\SiteProfile.GIF" />
+    <Content Include="Images\sort_down.gif" />
+    <Content Include="Images\sort_up.gif" />
+    <Content Include="Images\tab_selected_left_bk.gif" />
+    <Content Include="Images\tag-left.gif" />
+    <Content Include="Images\tag-right.gif" />
+    <Content Include="Images\title-ico.gif" />
+    <Content Include="Images\Transcripts.GIF" />
+    <Content Include="Images\VisitorMonitor.GIF" />
+    <Content Include="JS\Common\Common.js" />
+    <Content Include="JS\DatePicker\calendar.js" />
+    <Content Include="JS\DatePicker\config.js" />
+    <Content Include="JS\DatePicker\DatePicker.htm" />
+    <Content Include="JS\DatePicker\lang\en-us.js" />
+    <Content Include="JS\DatePicker\lang\zh-cn.js" />
+    <Content Include="JS\DatePicker\lang\zh-tw.js" />
+    <Content Include="JS\DatePicker\skin\default\datepicker.css" />
+    <Content Include="JS\DatePicker\skin\default\img.gif" />
+    <Content Include="JS\DatePicker\skin\WdatePicker.css" />
+    <Content Include="JS\DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="JS\DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="JS\DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="JS\DatePicker\WdatePicker.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AddTopic.aspx" />
+    <Content Include="App_Themes\StyleTemplate_Template1\images\btnbg_first.gif" />
+    <Content Include="App_Themes\StyleTemplate_Template1\images\btnbg_last.gif" />
+    <Content Include="App_Themes\StyleTemplate_Template1\images\btnbg_next.gif" />
+    <Content Include="App_Themes\StyleTemplate_Template1\images\btnbg_previous.gif" />
+    <Content Include="App_Themes\StyleTemplate_Template1\images\button-long.gif" />
+    <Content Include="App_Themes\StyleTemplate_Template1\images\button-medium.gif" />
+    <Content Include="App_Themes\StyleTemplate_Template1\images\button-super-long.gif" />
+    <Content Include="App_Themes\StyleTemplate_Template1\images\cellpic1.gif" />
+    <Content Include="App_Themes\StyleTemplate_Template1\images\cellpic3.gif" />
+    <Content Include="App_Themes\StyleTemplate_Template1\images\comm100.gif" />
+    <Content Include="App_Themes\StyleTemplate_Template1\images\tag-left.gif" />
+    <Content Include="App_Themes\StyleTemplate_Template1\images\tag-right.gif" />
+    <Content Include="App_Themes\StyleTemplate_Template1\Style.css" />
+    <Content Include="Images\btnImages\icon_quick_reply.gif" />
+    <Content Include="Images\btnImages\button_topic_new.gif" />
+    <Content Include="Images\btnImages\button_topic_reply.gif" />
+    <Content Include="Images\btnImages\icon_post_delete.gif" />
+    <Content Include="Images\btnImages\icon_post_edit.gif" />
+    <Content Include="Images\btnImages\icon_post_quote.gif" />
+    <Content Include="Images\btnImages\icon_user_search.gif" />
+    <Content Include="Images\gray.gif" />
+    <Content Include="Images\green.gif" />
+    <Content Include="Images\repeater\bg_answer.gif" />
+    <Content Include="Images\repeater\bg_catbottom.gif" />
+    <Content Include="Images\repeater\bg_post.gif" />
+    <Content Include="Images\repeater\bg_postbottom.gif" />
+    <Content Include="Images\repeater\bg_th.gif" />
+    <Content Include="Images\repeater\tbl_f_c.gif" />
+    <Content Include="Images\repeater\tbl_f_l.gif" />
+    <Content Include="Images\repeater\tbl_f_r.gif" />
+    <Content Include="Images\repeater\tbl_h_c.gif" />
+    <Content Include="Images\repeater\tbl_h_l.gif" />
+    <Content Include="Images\repeater\tbl_h_r.gif" />
+    <Content Include="Images\status\close.gif" />
+    <Content Include="Images\status\close.png" />
+    <Content Include="Images\status\lock.gif" />
+    <Content Include="Images\status\lock.png" />
+    <Content Include="Images\status\mark.gif" />
+    <Content Include="Images\status\mark.png" />
+    <Content Include="Images\status\noread_close.gif" />
+    <Content Include="Images\status\noread_close.png" />
+    <Content Include="Images\status\noread_mark.gif" />
+    <Content Include="Images\status\noread_mark.png" />
+    <Content Include="Images\status\noread_normal.gif" />
+    <Content Include="Images\status\noread_normal.png" />
+    <Content Include="Images\status\normal.gif" />
+    <Content Include="Images\status\normal.png" />
+    <Content Include="Images\status\participate_close.gif" />
+    <Content Include="Images\status\participate_close.png" />
+    <Content Include="Images\status\participate_mark.gif" />
+    <Content Include="Images\status\participate_mark.png" />
+    <Content Include="Images\status\participate_normal.gif" />
+    <Content Include="Images\status\participate_normal.png" />
+    <Content Include="Images\status\read_close.gif" />
+    <Content Include="Images\status\read_close.png" />
+    <Content Include="Images\status\read_mark.gif" />
+    <Content Include="Images\status\read_mark.png" />
+    <Content Include="Images\status\read_normal.gif" />
+    <Content Include="Images\status\read_normal.png" />
+    <Content Include="JS\Common\DateFormat.js" />
+    <Content Include="Logo.aspx" />
+    <Content Include="EditTopicOrPost.aspx" />
+    <Content Include="EmailVerification.aspx" />
+    <Content Include="FindPassword.aspx" />
+    <Content Include="Images\sort_down_disable.gif" />
+    <Content Include="Images\sort_up_disable.gif" />
+    <Content Include="JS\HTMLEditor\langs\en.js" />
+    <Content Include="JS\HTMLEditor\license.txt" />
+    <Content Include="JS\HTMLEditor\plugins\advhr\css\advhr.css" />
+    <Content Include="JS\HTMLEditor\plugins\advhr\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\advhr\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\advhr\js\rule.js" />
+    <Content Include="JS\HTMLEditor\plugins\advhr\langs\en_dlg.js" />
+    <Content Include="JS\HTMLEditor\plugins\advhr\rule.htm" />
+    <Content Include="JS\HTMLEditor\plugins\advimage\css\advimage.css" />
+    <Content Include="JS\HTMLEditor\plugins\advimage\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\advimage\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\advimage\image.htm" />
+    <Content Include="JS\HTMLEditor\plugins\advimage\img\sample.gif" />
+    <Content Include="JS\HTMLEditor\plugins\advimage\js\image.js" />
+    <Content Include="JS\HTMLEditor\plugins\advimage\langs\en_dlg.js" />
+    <Content Include="JS\HTMLEditor\plugins\advlink\css\advlink.css" />
+    <Content Include="JS\HTMLEditor\plugins\advlink\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\advlink\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\advlink\js\advlink.js" />
+    <Content Include="JS\HTMLEditor\plugins\advlink\langs\en_dlg.js" />
+    <Content Include="JS\HTMLEditor\plugins\advlink\link.htm" />
+    <Content Include="JS\HTMLEditor\plugins\autosave\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\autosave\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\bbcode\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\bbcode\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\compat2x\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\compat2x\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\contextmenu\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\contextmenu\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\directionality\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\directionality\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\emotions\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\emotions\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\emotions\emotions.htm" />
+    <Content Include="JS\HTMLEditor\plugins\emotions\img\smiley-cool.gif" />
+    <Content Include="JS\HTMLEditor\plugins\emotions\img\smiley-cry.gif" />
+    <Content Include="JS\HTMLEditor\plugins\emotions\img\smiley-embarassed.gif" />
+    <Content Include="JS\HTMLEditor\plugins\emotions\img\smiley-foot-in-mouth.gif" />
+    <Content Include="JS\HTMLEditor\plugins\emotions\img\smiley-frown.gif" />
+    <Content Include="JS\HTMLEditor\plugins\emotions\img\smiley-innocent.gif" />
+    <Content Include="JS\HTMLEditor\plugins\emotions\img\smiley-kiss.gif" />
+    <Content Include="JS\HTMLEditor\plugins\emotions\img\smiley-laughing.gif" />
+    <Content Include="JS\HTMLEditor\plugins\emotions\img\smiley-money-mouth.gif" />
+    <Content Include="JS\HTMLEditor\plugins\emotions\img\smiley-sealed.gif" />
+    <Content Include="JS\HTMLEditor\plugins\emotions\img\smiley-smile.gif" />
+    <Content Include="JS\HTMLEditor\plugins\emotions\img\smiley-surprised.gif" />
+    <Content Include="JS\HTMLEditor\plugins\emotions\img\smiley-tongue-out.gif" />
+    <Content Include="JS\HTMLEditor\plugins\emotions\img\smiley-undecided.gif" />
+    <Content Include="JS\HTMLEditor\plugins\emotions\img\smiley-wink.gif" />
+    <Content Include="JS\HTMLEditor\plugins\emotions\img\smiley-yell.gif" />
+    <Content Include="JS\HTMLEditor\plugins\emotions\js\emotions.js" />
+    <Content Include="JS\HTMLEditor\plugins\emotions\langs\en_dlg.js" />
+    <Content Include="JS\HTMLEditor\plugins\example\dialog.htm" />
+    <Content Include="JS\HTMLEditor\plugins\example\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\example\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\example\img\example.gif" />
+    <Content Include="JS\HTMLEditor\plugins\example\js\dialog.js" />
+    <Content Include="JS\HTMLEditor\plugins\example\langs\en.js" />
+    <Content Include="JS\HTMLEditor\plugins\example\langs\en_dlg.js" />
+    <Content Include="JS\HTMLEditor\plugins\fullpage\css\fullpage.css" />
+    <Content Include="JS\HTMLEditor\plugins\fullpage\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\fullpage\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\fullpage\fullpage.htm" />
+    <Content Include="JS\HTMLEditor\plugins\fullpage\js\fullpage.js" />
+    <Content Include="JS\HTMLEditor\plugins\fullpage\langs\en_dlg.js" />
+    <Content Include="JS\HTMLEditor\plugins\fullscreen\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\fullscreen\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\fullscreen\fullscreen.htm" />
+    <Content Include="JS\HTMLEditor\plugins\iespell\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\iespell\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\inlinepopups\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\inlinepopups\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\inlinepopups\skins\clearlooks2\img\alert.gif" />
+    <Content Include="JS\HTMLEditor\plugins\inlinepopups\skins\clearlooks2\img\button.gif" />
+    <Content Include="JS\HTMLEditor\plugins\inlinepopups\skins\clearlooks2\img\buttons.gif" />
+    <Content Include="JS\HTMLEditor\plugins\inlinepopups\skins\clearlooks2\img\confirm.gif" />
+    <Content Include="JS\HTMLEditor\plugins\inlinepopups\skins\clearlooks2\img\corners.gif" />
+    <Content Include="JS\HTMLEditor\plugins\inlinepopups\skins\clearlooks2\img\horizontal.gif" />
+    <Content Include="JS\HTMLEditor\plugins\inlinepopups\skins\clearlooks2\img\vertical.gif" />
+    <Content Include="JS\HTMLEditor\plugins\inlinepopups\skins\clearlooks2\window.css" />
+    <Content Include="JS\HTMLEditor\plugins\inlinepopups\template.htm" />
+    <Content Include="JS\HTMLEditor\plugins\insertdatetime\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\insertdatetime\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\layer\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\layer\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\media\css\content.css" />
+    <Content Include="JS\HTMLEditor\plugins\media\css\media.css" />
+    <Content Include="JS\HTMLEditor\plugins\media\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\media\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\media\img\flash.gif" />
+    <Content Include="JS\HTMLEditor\plugins\media\img\flv_player.swf" />
+    <Content Include="JS\HTMLEditor\plugins\media\img\quicktime.gif" />
+    <Content Include="JS\HTMLEditor\plugins\media\img\realmedia.gif" />
+    <Content Include="JS\HTMLEditor\plugins\media\img\shockwave.gif" />
+    <Content Include="JS\HTMLEditor\plugins\media\img\trans.gif" />
+    <Content Include="JS\HTMLEditor\plugins\media\img\windowsmedia.gif" />
+    <Content Include="JS\HTMLEditor\plugins\media\js\embed.js" />
+    <Content Include="JS\HTMLEditor\plugins\media\js\media.js" />
+    <Content Include="JS\HTMLEditor\plugins\media\langs\en_dlg.js" />
+    <Content Include="JS\HTMLEditor\plugins\media\media.htm" />
+    <Content Include="JS\HTMLEditor\plugins\nonbreaking\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\nonbreaking\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\noneditable\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\noneditable\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\pagebreak\css\content.css" />
+    <Content Include="JS\HTMLEditor\plugins\pagebreak\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\pagebreak\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\pagebreak\img\pagebreak.gif" />
+    <Content Include="JS\HTMLEditor\plugins\pagebreak\img\trans.gif" />
+    <Content Include="JS\HTMLEditor\plugins\paste\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\paste\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\paste\js\pastetext.js" />
+    <Content Include="JS\HTMLEditor\plugins\paste\js\pasteword.js" />
+    <Content Include="JS\HTMLEditor\plugins\paste\langs\en_dlg.js" />
+    <Content Include="JS\HTMLEditor\plugins\paste\pastetext.htm" />
+    <Content Include="JS\HTMLEditor\plugins\paste\pasteword.htm" />
+    <Content Include="JS\HTMLEditor\plugins\preview\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\preview\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\preview\example.html" />
+    <Content Include="JS\HTMLEditor\plugins\preview\jscripts\embed.js" />
+    <Content Include="JS\HTMLEditor\plugins\preview\preview.html" />
+    <Content Include="JS\HTMLEditor\plugins\print\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\print\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\safari\blank.htm" />
+    <Content Include="JS\HTMLEditor\plugins\safari\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\safari\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\save\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\save\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\searchreplace\css\searchreplace.css" />
+    <Content Include="JS\HTMLEditor\plugins\searchreplace\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\searchreplace\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\searchreplace\js\searchreplace.js" />
+    <Content Include="JS\HTMLEditor\plugins\searchreplace\langs\en_dlg.js" />
+    <Content Include="JS\HTMLEditor\plugins\searchreplace\searchreplace.htm" />
+    <Content Include="JS\HTMLEditor\plugins\spellchecker\css\content.css" />
+    <Content Include="JS\HTMLEditor\plugins\spellchecker\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\spellchecker\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\spellchecker\img\wline.gif" />
+    <Content Include="JS\HTMLEditor\plugins\style\css\props.css" />
+    <Content Include="JS\HTMLEditor\plugins\style\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\style\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\style\js\props.js" />
+    <Content Include="JS\HTMLEditor\plugins\style\langs\en_dlg.js" />
+    <Content Include="JS\HTMLEditor\plugins\style\props.htm" />
+    <Content Include="JS\HTMLEditor\plugins\tabfocus\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\tabfocus\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\table\cell.htm" />
+    <Content Include="JS\HTMLEditor\plugins\table\css\cell.css" />
+    <Content Include="JS\HTMLEditor\plugins\table\css\row.css" />
+    <Content Include="JS\HTMLEditor\plugins\table\css\table.css" />
+    <Content Include="JS\HTMLEditor\plugins\table\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\table\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\table\js\cell.js" />
+    <Content Include="JS\HTMLEditor\plugins\table\js\merge_cells.js" />
+    <Content Include="JS\HTMLEditor\plugins\table\js\row.js" />
+    <Content Include="JS\HTMLEditor\plugins\table\js\table.js" />
+    <Content Include="JS\HTMLEditor\plugins\table\langs\en_dlg.js" />
+    <Content Include="JS\HTMLEditor\plugins\table\merge_cells.htm" />
+    <Content Include="JS\HTMLEditor\plugins\table\row.htm" />
+    <Content Include="JS\HTMLEditor\plugins\table\table.htm" />
+    <Content Include="JS\HTMLEditor\plugins\template\blank.htm" />
+    <Content Include="JS\HTMLEditor\plugins\template\css\template.css" />
+    <Content Include="JS\HTMLEditor\plugins\template\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\template\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\template\js\template.js" />
+    <Content Include="JS\HTMLEditor\plugins\template\langs\en_dlg.js" />
+    <Content Include="JS\HTMLEditor\plugins\template\template.htm" />
+    <Content Include="JS\HTMLEditor\plugins\visualchars\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\visualchars\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\xhtmlxtras\abbr.htm" />
+    <Content Include="JS\HTMLEditor\plugins\xhtmlxtras\acronym.htm" />
+    <Content Include="JS\HTMLEditor\plugins\xhtmlxtras\attributes.htm" />
+    <Content Include="JS\HTMLEditor\plugins\xhtmlxtras\cite.htm" />
+    <Content Include="JS\HTMLEditor\plugins\xhtmlxtras\css\attributes.css" />
+    <Content Include="JS\HTMLEditor\plugins\xhtmlxtras\css\popup.css" />
+    <Content Include="JS\HTMLEditor\plugins\xhtmlxtras\del.htm" />
+    <Content Include="JS\HTMLEditor\plugins\xhtmlxtras\editor_plugin.js" />
+    <Content Include="JS\HTMLEditor\plugins\xhtmlxtras\editor_plugin_src.js" />
+    <Content Include="JS\HTMLEditor\plugins\xhtmlxtras\ins.htm" />
+    <Content Include="JS\HTMLEditor\plugins\xhtmlxtras\js\abbr.js" />
+    <Content Include="JS\HTMLEditor\plugins\xhtmlxtras\js\acronym.js" />
+    <Content Include="JS\HTMLEditor\plugins\xhtmlxtras\js\attributes.js" />
+    <Content Include="JS\HTMLEditor\plugins\xhtmlxtras\js\cite.js" />
+    <Content Include="JS\HTMLEditor\plugins\xhtmlxtras\js\del.js" />
+    <Content Include="JS\HTMLEditor\plugins\xhtmlxtras\js\element_common.js" />
+    <Content Include="JS\HTMLEditor\plugins\xhtmlxtras\js\ins.js" />
+    <Content Include="JS\HTMLEditor\plugins\xhtmlxtras\langs\en_dlg.js" />
+    <Content Include="JS\HTMLEditor\themes\advanced\about.htm" />
+    <Content Include="JS\HTMLEditor\themes\advanced\anchor.htm" />
+    <Content Include="JS\HTMLEditor\themes\advanced\charmap.htm" />
+    <Content Include="JS\HTMLEditor\themes\advanced\color_picker.htm" />
+    <Content Include="JS\HTMLEditor\themes\advanced\editor_template.js" />
+    <Content Include="JS\HTMLEditor\themes\advanced\editor_template_src.js" />
+    <Content Include="JS\HTMLEditor\themes\advanced\image.htm" />
+    <Content Include="JS\HTMLEditor\themes\advanced\img\colorpicker.jpg" />
+    <Content Include="JS\HTMLEditor\themes\advanced\img\icons.gif" />
+    <Content Include="JS\HTMLEditor\themes\advanced\js\about.js" />
+    <Content Include="JS\HTMLEditor\themes\advanced\js\anchor.js" />
+    <Content Include="JS\HTMLEditor\themes\advanced\js\charmap.js" />
+    <Content Include="JS\HTMLEditor\themes\advanced\js\color_picker.js" />
+    <Content Include="JS\HTMLEditor\themes\advanced\js\image.js" />
+    <Content Include="JS\HTMLEditor\themes\advanced\js\link.js" />
+    <Content Include="JS\HTMLEditor\themes\advanced\js\source_editor.js" />
+    <Content Include="JS\HTMLEditor\themes\advanced\langs\en.js" />
+    <Content Include="JS\HTMLEditor\themes\advanced\langs\en_dlg.js" />
+    <Content Include="JS\HTMLEditor\themes\advanced\link.htm" />
+    <Content Include="JS\HTMLEditor\themes\advanced\skins\default\content.css" />
+    <Content Include="JS\HTMLEditor\themes\advanced\skins\default\dialog.css" />
+    <Content Include="JS\HTMLEditor\themes\advanced\skins\default\img\buttons.png" />
+    <Content Include="JS\HTMLEditor\themes\advanced\skins\default\img\items.gif" />
+    <Content Include="JS\HTMLEditor\themes\advanced\skins\default\img\menu_arrow.gif" />
+    <Content Include="JS\HTMLEditor\themes\advanced\skins\default\img\menu_check.gif" />
+    <Content Include="JS\HTMLEditor\themes\advanced\skins\default\img\progress.gif" />
+    <Content Include="JS\HTMLEditor\themes\advanced\skins\default\img\tabs.gif" />
+    <Content Include="JS\HTMLEditor\themes\advanced\skins\default\ui.css" />
+    <Content Include="JS\HTMLEditor\themes\advanced\skins\o2k7\content.css" />
+    <Content Include="JS\HTMLEditor\themes\advanced\skins\o2k7\dialog.css" />
+    <Content Include="JS\HTMLEditor\themes\advanced\skins\o2k7\img\button_bg.png" />
+    <Content Include="JS\HTMLEditor\themes\advanced\skins\o2k7\img\button_bg_black.png" />
+    <Content Include="JS\HTMLEditor\themes\advanced\skins\o2k7\img\button_bg_silver.png" />
+    <Content Include="JS\HTMLEditor\themes\advanced\skins\o2k7\ui.css" />
+    <Content Include="JS\HTMLEditor\themes\advanced\skins\o2k7\ui_black.css" />
+    <Content Include="JS\HTMLEditor\themes\advanced\skins\o2k7\ui_silver.css" />
+    <Content Include="JS\HTMLEditor\themes\advanced\source_editor.htm" />
+    <Content Include="JS\HTMLEditor\themes\simple\editor_template.js" />
+    <Content Include="JS\HTMLEditor\themes\simple\editor_template_src.js" />
+    <Content Include="JS\HTMLEditor\themes\simple\img\icons.gif" />
+    <Content Include="JS\HTMLEditor\themes\simple\langs\en.js" />
+    <Content Include="JS\HTMLEditor\themes\simple\skins\default\content.css" />
+    <Content Include="JS\HTMLEditor\themes\simple\skins\default\ui.css" />
+    <Content Include="JS\HTMLEditor\themes\simple\skins\o2k7\content.css" />
+    <Content Include="JS\HTMLEditor\themes\simple\skins\o2k7\img\button_bg.png" />
+    <Content Include="JS\HTMLEditor\themes\simple\skins\o2k7\ui.css" />
+    <Content Include="JS\HTMLEditor\tiny_mce.js" />
+    <Content Include="JS\HTMLEditor\tiny_mce_popup.js" />
+    <Content Include="JS\HTMLEditor\tiny_mce_src.js" />
+    <Content Include="JS\HTMLEditor\utils\editable_selects.js" />
+    <Content Include="JS\HTMLEditor\utils\form_utils.js" />
+    <Content Include="JS\HTMLEditor\utils\mctabs.js" />
+    <Content Include="JS\HTMLEditor\utils\validate.js" />
+    <Content Include="MainMasterPage.Master" />
+    <Content Include="Post_Register.aspx" />
+    <Content Include="Pre_Register.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="ResetPassword.aspx" />
+    <Content Include="SearchResult.aspx" />
+    <Content Include="SendResetPasswordEmail.aspx" />
+    <Content Include="Siteclosed.aspx" />
+    <Content Include="Topic.aspx" />
+    <Content Include="UserControl\ForumFooter.ascx" />
+    <Content Include="UserControl\ForumHeader.ascx" />
+    <Content Include="UserControl\HTMLEditor.ascx" />
+    <Content Include="UserControl\NavigationBar.ascx" />
+    <Content Include="User_Profile.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Forum.Bussiness\Forum.Bussiness.csproj">
+      <Project>{4B65A84E-7F10-483A-9895-49353D0ACEDA}</Project>
+      <Name>Forum.Bussiness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Forum.Language\Forum.Language.csproj">
+      <Project>{B4991C2C-F459-4993-8D4C-457A899AD6FB}</Project>
+      <Name>Forum.Language</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Forum.Process\Forum.Process.csproj">
+      <Project>{A934C90D-6148-42A3-BF33-AE9A222A02CE}</Project>
+      <Name>Forum.Process</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework\Framework.csproj">
+      <Project>{F585AB0F-F2A2-4C69-ADDE-488661C6E475}</Project>
+      <Name>Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Themes\StyleTemplate_Default\ve-3F17.tmp" />
+    <None Include="Common\BasePage\ClassDiagram1.cd" />
+    <None Include="Common\ClassDiagram1.cd" />
+    <None Include="Images\repeater\Thumbs.db" />
+    <None Include="Images\status\Thumbs.db" />
+    <Content Include="Web.sitemap" />
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AbusePost.aspx" />
+    <Content Include="App_GlobalResources\Resource.en-us.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Resource.en-us.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_Themes\StyleTemplate_Default1\boxy.css" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\announcement-topic.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\attachment.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\Ban.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\bb_bot.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\bb_left_bot.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\bb_left_top.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\bb_right_bot.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\bb_right_top.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\bb_top.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\bg_answer.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\bg_attach.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\bg_catbottom.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\bg_logo.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\bg_navbar.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\bg_post.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\bg_postbottom.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\bg_quote.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\bg_th.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\bg_top1.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\bg_top2.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\boxy\boxy-ne.png" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\boxy\boxy-nw.png" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\boxy\boxy-se.png" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\boxy\boxy-sw.png" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\btn\button_topic_new.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\cathead.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\cellpic1.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\cellpic3.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\database_delete.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\error.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\featured.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\ftr_left.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\ftr_mid.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\ftr_right.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\hdr_left.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\hdr_mid.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\hdr_right.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\hot.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\icon_ban.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\icon_sendmessage.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\icon_topic_attach.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\lastpost.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\lift-ban.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\nav_bar\forum home.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\nav_bar\home.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\nav_bar\admin_control_panel.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\nav_bar\login.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\nav_bar\logout.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\nav_bar\messages.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\nav_bar\moderator_control_panel.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\nav_bar\register.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\nav_bar\search.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\nav_bar\sendmessage.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\nav_bar\user_control_panel.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\pay.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\poll.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\profile.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\replay.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\reputation.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\sendmessage.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\32_32\close.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\32_32\close.png" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\32_32\mark.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\32_32\mark.png" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\32_32\normal.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\32_32\normal.png" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\announcement.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\close.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\close.png" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\lock.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\lock.png" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\mark.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\mark.png" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\move.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\noread_close.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\noread_close.png" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\noread_mark.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\noread_mark.png" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\noread_normal.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\noread_normal.png" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\normal.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\normal.png" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\participate_close.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\participate_close.png" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\participate_mark.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\participate_mark.png" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\participate_normal.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\participate_normal.png" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\read_close.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\read_close.png" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\read_mark.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\read_mark.png" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\read_normal.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\read_normal.png" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\status\sticky.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\success.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\tag-left.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\tag-right.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\tbl_f_c.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\tbl_f_l.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\tbl_f_r.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\tbl_h_c.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\tbl_h_l.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\tbl_h_r.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\th.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\userpanel\Avatar.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\userpanel\My favorite.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\userpanel\My message.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\userpanel\My post.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\userpanel\My subscribe.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\userpanel\My topic.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\userpanel\Password.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\userpanel\profile.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\userpanel\Signature.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\images\vote.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default1\stylesheet.css" />
+    <Content Include="App_Themes\StyleTemplate_Default2\boxy.css" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\announcement-topic.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\attachment.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\Ban.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\bb_bot.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\bb_left_bot.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\bb_left_top.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\bb_right_bot.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\bb_right_top.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\bb_top.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\bg_answer.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\bg_attach.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\bg_buttons.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\bg_catbottom.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\bg_logo.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\bg_nav1.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\bg_nav2.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\bg_navbar.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\bg_post.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\bg_postbottom.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\bg_quote.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\bg_th.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\bg_top1.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\bg_top2.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\boxy\boxy-ne.png" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\boxy\boxy-nw.png" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\boxy\boxy-se.png" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\boxy\boxy-sw.png" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\btn\button_topic_new.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\cathead.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\cellpic1.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\cellpic3.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\database_delete.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\error.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\featured.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\ftr_left.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\ftr_mid.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\ftr_right.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\hdr_left.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\hdr_mid.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\hdr_right.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\hot.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\icon_ban.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\icon_sendmessage.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\icon_topic_attach.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\lastpost.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\lift-ban.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\nav_bar\admin_control_panel.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\nav_bar\forum home.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\nav_bar\home.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\nav_bar\login.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\nav_bar\logout.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\nav_bar\messages.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\nav_bar\moderator_control_panel.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\nav_bar\register.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\nav_bar\search.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\nav_bar\sendmessage.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\nav_bar\user_control_panel.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\pay.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\poll.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\profile.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\replay.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\reputation.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\sendmessage.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\32_32\close.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\32_32\close.png" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\32_32\mark.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\32_32\mark.png" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\32_32\normal.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\32_32\normal.png" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\announcement.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\close.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\close.png" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\lock.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\lock.png" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\mark.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\mark.png" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\move.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\noread_close.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\noread_close.png" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\noread_mark.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\noread_mark.png" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\noread_normal.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\noread_normal.png" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\normal.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\normal.png" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\participate_close.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\participate_close.png" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\participate_mark.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\participate_mark.png" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\participate_normal.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\participate_normal.png" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\read_close.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\read_close.png" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\read_mark.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\read_mark.png" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\read_normal.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\read_normal.png" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\status\sticky.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\success.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\tag-left.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\tag-right.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\tbl_f_c.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\tbl_f_l.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\tbl_f_r.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\tbl_h_c.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\tbl_h_l.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\tbl_h_r.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\th.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\userpanel\Avatar.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\userpanel\My favorite.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\userpanel\My message.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\userpanel\My post.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\userpanel\My subscribe.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\userpanel\My topic.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\userpanel\Password.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\userpanel\profile.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\userpanel\Signature.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\images\vote.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default2\stylesheet.css" />
+    <Content Include="App_Themes\StyleTemplate_Default\boxy.css" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\announcement-topic.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\attachment.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\Ban.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\bb_bot.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\bb_left_bot.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\bb_left_top.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\bb_right_bot.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\bb_right_top.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\bb_top.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\bg_attach.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\bg_logo.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\bg_navbar.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\bg_quote.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\bg_top1.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\bg_top2.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\body.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\boxy\boxy-ne.png" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\boxy\boxy-nw.png" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\boxy\boxy-se.png" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\boxy\boxy-sw.png" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\btn\button_topic_new.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\cathead.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\cell.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\error.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\database_delete.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\ftr_left.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\ftr_mid.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\ftr_right.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\hdr_left.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\hdr_mid.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\hdr_right.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\icon_ban.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\icon_sendmessage.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\icon_topic_attach.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\lastpost.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\lift-ban.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\nav_bar\admin_control_panel.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\nav_bar\forum home.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\nav_bar\home.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\nav_bar\login.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\nav_bar\logout.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\nav_bar\messages.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\nav_bar\moderator_control_panel.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\nav_bar\register.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\nav_bar\search.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\nav_bar\sendmessage.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\nav_bar\user_control_panel.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\pay.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\poll.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\profile.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\replay.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\reputation.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\sendmessage.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\32_32\close.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\32_32\close.png" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\32_32\mark.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\32_32\mark.png" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\32_32\normal.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\32_32\normal.png" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\announcement.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\close.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\close.png" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\featured.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\hot.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\lock.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\lock.png" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\mark.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\mark.png" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\move.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\noread_close.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\noread_close.png" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\noread_mark.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\noread_mark.png" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\noread_normal.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\noread_normal.png" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\normal.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\normal.png" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\participate_close.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\participate_close.png" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\participate_mark.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\participate_mark.png" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\participate_normal.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\participate_normal.png" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\read_close.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\read_close.png" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\read_mark.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\read_mark.png" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\read_normal.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\read_normal.png" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\status\sticky.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\success.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\th.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\userpanel\Avatar.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\userpanel\My favorite.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\userpanel\My message.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\userpanel\My post.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\userpanel\My subscribe.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\userpanel\My topic.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\userpanel\Password.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\userpanel\profile.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\userpanel\Signature.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\images\vote.gif" />
+    <Content Include="App_Themes\StyleTemplate_Default\stylesheet.css" />
+    <Content Include="BanUser.aspx" />
+    <Content Include="ClearSession.aspx" />
+    <Content Include="Config\appSettings.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ForumIsClosed.aspx" />
+    <Content Include="Handler\DownAttachment.aspx" />
+    <Content Include="Images\abort.gif" />
+    <Content Include="Images\abuse.gif" />
+    <Content Include="Images\accept.gif" />
+    <Content Include="Images\active.GIF" />
+    <Content Include="Images\active_bak.GIF" />
+    <Content Include="Images\add-moderator.GIF" />
+    <Content Include="Images\admin.gif" />
+    <Content Include="Images\announcement-topic.GIF" />
+    <Content Include="Images\ApproveAbuse.gif" />
+    <Content Include="Images\attachment-manage.GIF" />
+    <Content Include="Images\attachment.gif" />
+    <Content Include="Images\ban.GIF" />
+    <Content Include="Images\banned list.gif" />
+    <Content Include="Images\Ban_bak.gif" />
+    <Content Include="Images\blue.gif" />
+    <Content Include="Images\btnImages\approval.gif" />
+    <Content Include="Images\btnImages\ApproveAbuse.gif" />
+    <Content Include="Images\btnImages\button_topic_Favorite.gif" />
+    <Content Include="Images\btnImages\button_topic_featured.gif" />
+    <Content Include="Images\btnImages\button_topic_Subscribe.gif" />
+    <Content Include="Images\btnImages\button_topic_UnFavorite.gif" />
+    <Content Include="Images\btnImages\button_topic_unFeatured.gif" />
+    <Content Include="Images\btnImages\button_topic_UnSubscribe.gif" />
+    <Content Include="Images\btnImages\DefaultLogo.gif" />
+    <Content Include="Images\btnImages\icon_post_Abuse.gif" />
+    <Content Include="Images\btnImages\icon_post_Submit.gif" />
+    <Content Include="Images\btnImages\icon_post_View.gif" />
+    <Content Include="Images\btnImages\RefuseAbuse.gif" />
+    <Content Include="Images\btnImages\Unapproval.gif" />
+    <Content Include="Images\btnImages\zh-cn\button_return.gif" />
+    <Content Include="Images\btnImages\zh-cn\button_topic_close.gif" />
+    <Content Include="Images\btnImages\zh-cn\button_topic_delete.gif" />
+    <Content Include="Images\btnImages\zh-cn\button_topic_move.gif" />
+    <Content Include="Images\btnImages\zh-cn\button_topic_new.gif" />
+    <Content Include="Images\btnImages\zh-cn\button_topic_reopen.gif" />
+    <Content Include="Images\btnImages\zh-cn\button_topic_reply.gif" />
+    <Content Include="Images\btnImages\zh-cn\button_topic_sticky.gif" />
+    <Content Include="Images\btnImages\zh-cn\button_topic_unsticky.gif" />
+    <Content Include="Images\btnImages\zh-cn\DefaultLogo.gif" />
+    <Content Include="Images\btnImages\zh-cn\icon_post_delete.gif" />
+    <Content Include="Images\btnImages\zh-cn\icon_post_edit.gif" />
+    <Content Include="Images\btnImages\zh-cn\icon_post_markasanswer.gif" />
+    <Content Include="Images\btnImages\zh-cn\icon_post_quote.gif" />
+    <Content Include="Images\btnImages\zh-cn\icon_post_unmark.gif" />
+    <Content Include="Images\btnImages\zh-cn\icon_quick_reply.gif" />
+    <Content Include="Images\btnImages\zh-cn\icon_user_search.gif" />
+    <Content Include="Images\button-super-long-long.gif" />
+    <Content Include="Images\button_topic_UnFavorite.gif" />
+    <Content Include="Images\button_topic_UnSubscribe.gif" />
+    <Content Include="Images\cancel-featured.GIF" />
+    <Content Include="Images\CancelAbused.gif" />
+    <Content Include="Images\close.GIF" />
+    <Content Include="Images\ConfirmAbused.gif" />
+    <Content Include="Images\database_accept.gif" />
+    <Content Include="Images\admin_control_panel.gif" />
+    <Content Include="Images\bread.png" />
+    <Content Include="Images\btnImages\button_topic_close.gif" />
+    <Content Include="Images\btnImages\button_topic_delete.gif" />
+    <Content Include="Images\btnImages\icon_post_markasanswer.gif" />
+    <Content Include="Images\btnImages\button_topic_move.gif" />
+    <Content Include="Images\btnImages\button_topic_reopen.gif" />
+    <Content Include="Images\btnImages\button_topic_sticky.gif" />
+    <Content Include="Images\btnImages\icon_post_unmark.gif" />
+    <Content Include="Images\btnImages\button_topic_unsticky.gif" />
+    <Content Include="Images\btnImages\button_return.gif" />
+    <Content Include="Images\categoris_forums.gif" />
+    <Content Include="Images\DefaultLogo.gif" />
+    <Content Include="Images\DefaultLogo\DefaultLogo.gif" />
+    <Content Include="Images\DeletePermanently.gif" />
+    <Content Include="Images\drafts.gif" />
+    <Content Include="Images\favorite.GIF" />
+    <Content Include="Images\feature-Topic .GIF" />
+    <Content Include="Images\feature-topic.GIF" />
+    <Content Include="Images\featured.gif" />
+    <Content Include="Images\forum feature.gif" />
+    <Content Include="Images\forum home.gif" />
+    <Content Include="Images\forum.gif" />
+    <Content Include="Images\gray.jpg" />
+    <Content Include="Images\green.jpg" />
+    <Content Include="Images\hot.GIF" />
+    <Content Include="Images\icon_max.gif" />
+    <Content Include="Images\icon_min.gif" />
+    <Content Include="Images\ImageVerificationCode.aspx" />
+    <Content Include="Images\inactive.GIF" />
+    <Content Include="Images\inactive_bak.GIF" />
+    <Content Include="Images\lift-ban.gif" />
+    <Content Include="Images\Lift-Ban_bak.gif" />
+    <Content Include="Images\login.gif" />
+    <Content Include="Images\logout.gif" />
+    <Content Include="Images\move.gif" />
+    <Content Include="Images\lastpost.gif" />
+    <Content Include="Images\permission-manager.GIF" />
+    <Content Include="Images\post approve.gif" />
+    <Content Include="Images\post refuse.gif" />
+    <Content Include="Images\post restore.gif" />
+    <Content Include="Images\posts moderation.gif" />
+    <Content Include="Images\purple.gif" />
+    <Content Include="Images\refuse.gif" />
+    <Content Include="Images\RefuseAbuse.gif" />
+    <Content Include="Images\register.gif" />
+    <Content Include="Images\reOpen.GIF" />
+    <Content Include="Images\repeater\cellpic1.gif" />
+    <Content Include="Images\reputation groups.gif" />
+    <Content Include="Images\reputation.gif" />
+    <Content Include="Images\restore.gif" />
+    <Content Include="Images\RestorePost.gif" />
+    <Content Include="Images\search.gif" />
+    <Content Include="Images\send message.GIF" />
+    <Content Include="Images\sendmessage.gif" />
+    <Content Include="Images\sendmessage_bak.gif" />
+    <Content Include="Images\set-featured.GIF" />
+    <Content Include="Images\settings.gif" />
+    <Content Include="Images\status\32_32\close.gif" />
+    <Content Include="Images\status\32_32\close.png" />
+    <Content Include="Images\status\32_32\mark.gif" />
+    <Content Include="Images\status\32_32\mark.png" />
+    <Content Include="Images\status\32_32\normal.gif" />
+    <Content Include="Images\status\32_32\normal.png" />
+    <Content Include="Images\status\move.gif" />
+    <Content Include="Images\status\sticky.gif" />
+    <Content Include="Images\sticky.GIF" />
+    <Content Include="Images\styles.gif" />
+    <Content Include="Images\submit vote.GIF" />
+    <Content Include="Images\Subscribe.gif" />
+    <Content Include="Images\SystemAvatar\001.gif" />
+    <Content Include="Images\SystemAvatar\002.gif" />
+    <Content Include="Images\SystemAvatar\003.gif" />
+    <Content Include="Images\SystemAvatar\004.gif" />
+    <Content Include="Images\delete_user.gif" />
+    <Content Include="Images\delete_user.png" />
+    <Content Include="Images\SystemAvatar\000.gif" />
+    <Content Include="Images\topicsposts.gif" />
+    <Content Include="Images\Unapproval.gif" />
+    <Content Include="Images\UnMark.bmp" />
+    <Content Include="Images\UNsticky.GIF" />
+    <Content Include="Images\user groups.GIF" />
+    <Content Include="Images\user reputation.gif" />
+    <Content Include="Images\userpanel\My favorite.GIF" />
+    <Content Include="Images\user_control_panel.gif" />
+    <Content Include="Images\userpanel\Avatar.gif" />
+    <Content Include="Images\userpanel\My post.gif" />
+    <Content Include="Images\userpanel\My topic.gif" />
+    <Content Include="Images\userpanel\Password.gif" />
+    <Content Include="Images\userpanel\profile.gif" />
+    <Content Include="Images\userpanel\Signature.gif" />
+    <Content Include="Images\users.gif" />
+    <Content Include="Images\view forum.GIF" />
+    <Content Include="Images\view vote.GIF" />
+    <Content Include="Images\view-announcement.GIF" />
+    <Content Include="Images\view-link.GIF" />
+    <Content Include="Images\view-topic.GIF" />
+    <Content Include="Images\view.gif" />
+    <Content Include="Images\vote-manager.GIF" />
+    <Content Include="Images\vote-submit.GIF" />
+    <Content Include="Images\vote-topic.GIF" />
+    <Content Include="Images\vote-view.gif" />
+    <Content Include="Images\vote.GIF" />
+    <Content Include="IPBanned.aspx" />
+    <Content Include="JS\Clipboard\ZeroClipboard.js" />
+    <Content Include="JS\Clipboard\ZeroClipboard.swf" />
+    <Content Include="JS\Common\RepeatSubmit.js" />
+    <Content Include="JS\Common\show.js" />
+    <Content Include="JS\Common\ThickBox.js" />
+    <Content Include="JS\HTMLEditor\Image.aspx" />
+    <Content Include="JS\HTMLEditor\langs\zh.js" />
+    <Content Include="JS\HTMLEditor\themes\advanced\langs\zh.js" />
+    <Content Include="JS\HTMLEditor\themes\advanced\langs\zh_dlg.js" />
+    <Content Include="JS\HTMLEditor\tiny_mce_gzip.aspx" />
+    <Content Include="JS\HTMLEditor\tiny_mce_gzip.js" />
+    <Content Include="JS\HTMLEditor\ImageBrowser.aspx" />
+    <Content Include="PayScore.aspx" />
+    <Content Include="Redirect.aspx" />
+    <Content Include="SelectForum1.aspx" />
+    <Content Include="SendMessages.aspx" />
+    <Content Include="spiketest.aspx" />
+    <Content Include="TestPage.aspx" />
+    <Content Include="UnsubscribeSingleTopic.aspx" />
+    <Content Include="UserBanned.aspx" />
+    <Content Include="UserControl\LinkBar.ascx" />
+    <Content Include="UserControl\UserPermissionListControl.ascx" />
+    <Content Include="UserPermissionView.aspx" />
+    <Content Include="User_Posts.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>25016</DevelopmentServerPort>
+          <DevelopmentServerVPath>/gavin</DevelopmentServerVPath>
+          <IISUrl>http://localhost:25010/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,61 @@
+E:\Upwork\bolt.forum\Bolt_forum_code_28\Forum.UI\bin\Forum.UI.dll.config
+E:\Upwork\bolt.forum\Bolt_forum_code_28\Forum.UI\bin\Forum.UI.dll
+E:\Upwork\bolt.forum\Bolt_forum_code_28\Forum.UI\bin\Forum.UI.pdb
+E:\Upwork\bolt.forum\Bolt_forum_code_28\Forum.UI\bin\DevOne.Security.Cryptography.BCrypt.dll
+E:\Upwork\bolt.forum\Bolt_forum_code_28\Forum.UI\bin\Forum.Business.dll
+E:\Upwork\bolt.forum\Bolt_forum_code_28\Forum.UI\bin\Forum.Language.dll
+E:\Upwork\bolt.forum\Bolt_forum_code_28\Forum.UI\bin\Forum.Process.dll
+E:\Upwork\bolt.forum\Bolt_forum_code_28\Forum.UI\bin\Framework.dll
+E:\Upwork\bolt.forum\Bolt_forum_code_28\Forum.UI\bin\MongoDB.Bson.dll
+E:\Upwork\bolt.forum\Bolt_forum_code_28\Forum.UI\bin\MongoDB.Driver.dll
+E:\Upwork\bolt.forum\Bolt_forum_code_28\Forum.UI\bin\Forum.DataAccess.dll
+E:\Upwork\bolt.forum\Bolt_forum_code_28\Forum.UI\bin\Forum.Business.pdb
+E:\Upwork\bolt.forum\Bolt_forum_code_28\Forum.UI\bin\Forum.Language.pdb
+E:\Upwork\bolt.forum\Bolt_forum_code_28\Forum.UI\bin\Forum.Process.pdb
+E:\Upwork\bolt.forum\Bolt_forum_code_28\Forum.UI\bin\Framework.pdb
+E:\Upwork\bolt.forum\Bolt_forum_code_28\Forum.UI\bin\MongoDB.Bson.xml
+E:\Upwork\bolt.forum\Bolt_forum_code_28\Forum.UI\bin\MongoDB.Driver.xml
+E:\Upwork\bolt.forum\Bolt_forum_code_28\Forum.UI\bin\Forum.DataAccess.pdb
+E:\Upwork\bolt.forum\Bolt_forum_code_28\Forum.UI\obj\Release\Forum.UI.csprojResolveAssemblyReference.cache
+E:\Upwork\bolt.forum\Bolt_forum_code_28\Forum.UI\obj\Release\Forum.UI.dll
+E:\Upwork\bolt.forum\Bolt_forum_code_28\Forum.UI\obj\Release\Forum.UI.pdb
+E:\UpWork\Bolt\Forum\bolt.forum\Bolt_Forum\Forum.UI\bin\Forum.UI.dll.config
+E:\UpWork\Bolt\Forum\bolt.forum\Bolt_Forum\Forum.UI\bin\Forum.UI.dll
+E:\UpWork\Bolt\Forum\bolt.forum\Bolt_Forum\Forum.UI\bin\Forum.UI.pdb
+E:\UpWork\Bolt\Forum\bolt.forum\Bolt_Forum\Forum.UI\bin\Forum.Business.dll
+E:\UpWork\Bolt\Forum\bolt.forum\Bolt_Forum\Forum.UI\bin\Forum.Language.dll
+E:\UpWork\Bolt\Forum\bolt.forum\Bolt_Forum\Forum.UI\bin\Forum.Process.dll
+E:\UpWork\Bolt\Forum\bolt.forum\Bolt_Forum\Forum.UI\bin\Framework.dll
+E:\UpWork\Bolt\Forum\bolt.forum\Bolt_Forum\Forum.UI\bin\MongoDB.Bson.dll
+E:\UpWork\Bolt\Forum\bolt.forum\Bolt_Forum\Forum.UI\bin\MongoDB.Driver.dll
+E:\UpWork\Bolt\Forum\bolt.forum\Bolt_Forum\Forum.UI\bin\Forum.DataAccess.dll
+E:\UpWork\Bolt\Forum\bolt.forum\Bolt_Forum\Forum.UI\bin\Forum.Business.pdb
+E:\UpWork\Bolt\Forum\bolt.forum\Bolt_Forum\Forum.UI\bin\Forum.Language.pdb
+E:\UpWork\Bolt\Forum\bolt.forum\Bolt_Forum\Forum.UI\bin\Forum.Process.pdb
+E:\UpWork\Bolt\Forum\bolt.forum\Bolt_Forum\Forum.UI\bin\Framework.pdb
+E:\UpWork\Bolt\Forum\bolt.forum\Bolt_Forum\Forum.UI\bin\MongoDB.Bson.xml
+E:\UpWork\Bolt\Forum\bolt.forum\Bolt_Forum\Forum.UI\bin\MongoDB.Driver.xml
+E:\UpWork\Bolt\Forum\bolt.forum\Bolt_Forum\Forum.UI\bin\Forum.DataAccess.pdb
+E:\UpWork\Bolt\Forum\bolt.forum\Bolt_Forum\Forum.UI\obj\Release\Forum.UI.csprojResolveAssemblyReference.cache
+E:\UpWork\Bolt\Forum\bolt.forum\Bolt_Forum\Forum.UI\obj\Release\Forum.UI.dll
+E:\UpWork\Bolt\Forum\bolt.forum\Bolt_Forum\Forum.UI\obj\Release\Forum.UI.pdb
+E:\workarea\updated Bolt_Forum_Code\Bolt_Forum\Forum.UI\bin\Forum.UI.dll.config
+E:\workarea\updated Bolt_Forum_Code\Bolt_Forum\Forum.UI\bin\Forum.UI.dll
+E:\workarea\updated Bolt_Forum_Code\Bolt_Forum\Forum.UI\bin\Forum.UI.pdb
+E:\workarea\updated Bolt_Forum_Code\Bolt_Forum\Forum.UI\bin\Forum.Business.dll
+E:\workarea\updated Bolt_Forum_Code\Bolt_Forum\Forum.UI\bin\Forum.Language.dll
+E:\workarea\updated Bolt_Forum_Code\Bolt_Forum\Forum.UI\bin\Forum.Process.dll
+E:\workarea\updated Bolt_Forum_Code\Bolt_Forum\Forum.UI\bin\Framework.dll
+E:\workarea\updated Bolt_Forum_Code\Bolt_Forum\Forum.UI\bin\MongoDB.Bson.dll
+E:\workarea\updated Bolt_Forum_Code\Bolt_Forum\Forum.UI\bin\MongoDB.Driver.dll
+E:\workarea\updated Bolt_Forum_Code\Bolt_Forum\Forum.UI\bin\Forum.DataAccess.dll
+E:\workarea\updated Bolt_Forum_Code\Bolt_Forum\Forum.UI\bin\Forum.Business.pdb
+E:\workarea\updated Bolt_Forum_Code\Bolt_Forum\Forum.UI\bin\Forum.Language.pdb
+E:\workarea\updated Bolt_Forum_Code\Bolt_Forum\Forum.UI\bin\Forum.Process.pdb
+E:\workarea\updated Bolt_Forum_Code\Bolt_Forum\Forum.UI\bin\Framework.pdb
+E:\workarea\updated Bolt_Forum_Code\Bolt_Forum\Forum.UI\bin\MongoDB.Bson.xml
+E:\workarea\updated Bolt_Forum_Code\Bolt_Forum\Forum.UI\bin\MongoDB.Driver.xml
+E:\workarea\updated Bolt_Forum_Code\Bolt_Forum\Forum.UI\bin\Forum.DataAccess.pdb
+E:\workarea\updated Bolt_Forum_Code\Bolt_Forum\Forum.UI\obj\Release\Forum.UI.csprojResolveAssemblyReference.cache
+E:\workarea\updated Bolt_Forum_Code\Bolt_Forum\Forum.UI\obj\Release\Forum.UI.dll
+E:\workarea\updated Bolt_Forum_Code\Bolt_Forum\Forum.UI\obj\Release\Forum.UI.pdb

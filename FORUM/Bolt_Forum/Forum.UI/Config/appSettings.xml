@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<appSettings>
+  <add key="EnumLanguage" value="0"/>
+  <add key="siteId" value="0"/>
+  <add key="forumId" value="1"/>
+  <add key="PageSize" value="20"/>
+  <add key="ForumName" value="Bolt Energy"/>
+  
+  <add key="UserPassword" value="boltforum"/>
+  <add key="Defaultlang" value="en-US"/>
+  <add key="CheckLogin" value="http://localhost:50691/admin/AuthenticateUser?param1={0}&amp;param2={1}&amp;param3={2}"/>
+
+
+  <add key="AdminUrl" value="http://localhost/AdminTest" />
+  
+  <add key="ForumUrl" value="http://localhost/ForumTest" />
+ 
+  <add key="BaseURL" value="http://localhost:25010/" />
+  
+  <!--Settings for Bolt Site-->
+  <add key="BoltURL" value="http://localhost:8080"/>
+  <add key="BoltLoginURL" value="http://localhost:8080/#/login" />
+  <add key="AboutUs" value="http://localhost:8080/#/content/about"/>
+  <add key="Terms" value="http://localhost:8080/#/content/terms"/>
+  <add key="Privacy" value="http://localhost:8080/#/content/Privacy"/>
+  <add key="Signup" value="http://localhost:8080/#/register"/>
+  <add key="ContactUs" value="mailto:hello@bolt.energy"/>
+  <!--END Settings for Bolt Site-->
+
+  <add key="MongoConnectionString" value="mongodb://localhost" />
+  <add key="db" value="boltDb" />
+
+  <!--set smtp parameter to send email-->
+  <add key="smtpServer" value="127.0.0.1"></add>
+  <add key="smtpUserName" value="1@comm100"></add>
+  <add key="smtpPassword" value="1"></add>
+  <add key="smtpEnableSsl" value="false"></add>
+  <add key="smtpPort" value="25"></add>
+  <add key="smtpFromAddress" value="1@comm100.local"></add>
+  <!--set smtp parameter to send email-->
+
+  <add key="domain" value="" />
+
+</appSettings>

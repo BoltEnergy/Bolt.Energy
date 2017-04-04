@@ -1,0 +1,428 @@
+﻿/*-------------common------------*/
+*
+{
+    /* Reset browsers default margin, padding and font sizes */
+    margin: 0 0;
+    padding: 0 0;
+}
+
+html
+{
+    font-size: 100%;
+    margin: 0 0;
+    padding: 0 0;
+}
+
+body
+{
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    color: #000;
+    background: #D2E3ED url(images/body.gif);
+    font-size: 11px;
+    margin: 0 0;
+    padding: 0 0;
+}
+
+img
+{
+    vertical-align: middle;
+}
+
+table
+{
+    width: 100%;
+}
+
+img a
+{
+    border: none;
+}
+p
+{
+    margin: 0 0;
+    padding: 0 0;
+}
+span.require
+{
+    color: Red;
+    font-weight: bold;
+}
+p.forum_desc
+{
+    font-size: 11px;
+    font-weight: normal;
+    color: #232323;
+    overflow: hidden;
+    line-height: 1;
+}
+a:link
+{
+    font-weight: bold;
+    color: #2981b4;
+    text-decoration: none;
+}
+a:visited
+{
+    font-weight: bold;
+    color: #2981b4;
+    text-decoration: none;
+}
+a:visited:hover
+{
+    font-weight: bold;
+    color: red;
+    text-decoration: none;
+}
+a:hover
+{
+    font-weight: bold;
+    color: red;
+    text-decoration: none;
+}
+a.forum_link
+{
+}
+a.user_link:link
+{
+    color: #aa0000;
+}
+a.user_link:visited:hover
+{
+    color: #aa0000;
+    text-decoration: underline;
+}
+a.user_link:hover
+{
+    color: #aa0000;
+    text-decoration: underline;
+}
+a.user_link:link
+{
+    color: #aa0000;
+}
+/*----------postion----------*/
+.pos_left_10
+{
+    padding-left: 10px;
+}
+.pos_top_10
+{
+    padding-top: 10px;
+}
+.pos_bottom_10
+{
+    padding-bottom: 10px;
+}
+
+.divWidth
+{
+    width: 300px;
+    _position: relative;
+}
+.divRight
+{
+    float: right;
+}
+.divMarginRight
+{
+    margin-right: 320px;
+    height: 100%;
+}
+
+textarea, select, .txt, .btn
+{
+    font-weight: normal;
+    font-family: Verdana, Helvetica, sans-serif;
+    color: #232323;
+    border: 1px solid #A0C9E0;
+    background-color: #EFF5F8;
+}
+.btn
+{
+    color: #000;
+    font-weight: bold;
+    padding: 0px 5px;
+}
+
+.td_width
+{
+    width: 120px;
+}
+.td_width1
+{
+    width: 160px;
+}
+.top
+{
+    text-align: right;
+}
+.clear
+{
+    clear: both;
+}
+/*-------------end common------------*/
+
+/*------------layout----------*/
+#logo
+{
+}
+#search-bar
+{
+}
+#inner
+{
+    min-width: 950px;
+    position: relative;
+    _display: inline-block;
+    _margin-left: -950px;
+}
+#outer
+{
+    _position: relative;
+    _border-left: solid 950px #D2E3ED;
+    _float: left;
+}
+#content
+{
+    _position: relative;
+    background: url(images/bg_top1.gif) top left repeat-x;
+    padding: 0 10px 10px 10px;
+}
+#footer
+{
+    font-size: 11px;
+    text-align: center;
+    color: #2981b4;
+    padding-bottom: 40px;
+}
+/*------------end layout----------*/
+#content_main
+{
+    position: relative;
+    border: solid 2px #FFF;
+    margin: 0 auto;
+}
+#content_main_inner
+{
+    padding: 8px;
+    background: #EDF5F9 url(images/bg_top2.gif) top left repeat-x;
+}
+/*------------container---------*/
+
+#logo-row
+{
+    background: #FFF url(images/bg_logo.gif) bottom left repeat-x;
+}
+.navrow
+{
+    _position: relative;
+    background: #388BBB url(images/bg_navbar.gif) top left repeat-x;
+    height: 26px;
+    overflow: hidden;
+    color: #CADEEA;
+    text-align: center;
+    font-size: 11px;
+    padding-top: 5px;
+}
+.navrow a:link
+{
+    color: #fff;
+    font-weight: normal;
+}
+.navrow a:visited:hover
+{
+    color: #fff;
+    font-weight: normal;
+    text-decoration: underline;
+}
+.navrow a:hover
+{
+    color: #fff;
+    font-weight: normal;
+    text-decoration: underline;
+}
+.navrow a:visited
+{
+    color: #fff;
+    font-weight: normal;
+}
+.navrow_inner
+{
+    padding-top: 5px;
+}
+.cat
+{
+    _position: relative;
+    border: solid 1px #B2D3E4;
+    background: #EBF4F8 url(images/cell.gif) top left repeat-x;
+}
+.cat a:link
+{
+    font-weight: bold;
+    color: #2981b4;
+    text-decoration: none;
+}
+.cat a:visited
+{
+    font-weight: bold;
+    color: #2981b4;
+    text-decoration: none;
+}
+.cat a:visited:hover
+{
+    font-weight: bold;
+    color: red;
+    text-decoration: none;
+}
+.cat a:hover
+{
+    font-weight: bold;
+    color: red;
+    text-decoration: none;
+}
+.kbbar_top
+{
+}
+.top_cat
+{
+    padding: 5px;
+}
+.top_cat_left
+{
+}
+.top_cat_center
+{
+}
+.top_cat_right
+{
+}
+.kbbar_content
+{
+}
+.bottom_cat_left
+{
+}
+.bottom_cat_center
+{
+}
+.bottom_cat_right
+{
+}
+
+.cat2
+{
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-color: #B2D3E4;
+    border-right-color: #EDF5F9;
+    background: url(images/ftr_mid.gif) bottom left repeat-x;
+}
+.top_cat2
+{
+    color: #2981B4;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    background: url(images/hdr_mid.gif) top left repeat-x;
+    white-space: nowrap;
+    width: 100%;
+    height: 27px;
+    text-align: left;
+    _width: 100%;
+}
+.top_cat2_left
+{
+    background: url(images/hdr_left.gif) top left no-repeat;
+}
+.top_cat2_right
+{
+    background: url(images/hdr_right.gif) top right no-repeat;
+    padding-top: 6px;
+    padding-left: 29px;
+    height: 21px;
+}
+.cat3
+{
+    height: 24px;
+    padding: 0 3px;
+    border-left: solid 1px #F4F9FB7;
+    border-top: solid 1px #F4F9FB;
+    border-bottom: solid 1px #BBD8E7;
+    padding-left: 10px;
+    color: #232323;
+    font-weight: bold;
+    background: #E5EEF2 url(images/cathead.gif) top left repeat-x;
+}
+.forum_content, .tb_forum, .tb_legend
+{
+    border: solid 1px #B2D3E4;
+    background: #EBF4F8url(images/cell.gif) top left repeat-x;
+}
+.tb_forum th
+{
+    color: #D1EAF4;
+    font-size: 11px;
+    font-weight: bold;
+    background: #559DC6 url(images/th.gif) top left repeat-x;
+    white-space: nowrap;
+    padding: 0 5px;
+    text-align: center;
+    height: 26px;
+    border-left: solid 1px #4C9AC7;
+    border-right: solid 1px #3184B3;
+    border-top: solid 1px #1B70A1;
+    border-bottom: solid 1px #1D73A5;
+}
+.tb_forum th a, th a:visited
+{
+    color: #D1EAF4 !important;
+    text-decoration: underline;
+}
+.tb_forum th a:hover
+{
+    color: #EFF5F8;
+    text-decoration: underline;
+}
+.row1, ., .row3row2
+{
+    border-left: solid 1px #F4F9FB;
+    border-right: solid 1px #BBD8E7;
+    border-top: solid 1px #F4F9FB;
+    border-bottom: solid 1px #BBD8E7;
+    background: #EBF4F8 url(images/cell.gif) top lefing: 4px;
+    color: #232323;
+    padding: 4px 4px 0px 4px;
+}
+.row1
+{
+}
+.row1 p, row2 p
+{
+    padding-bottom: 4px;
+}
+.row2
+{
+    border-right: none;
+}
+.row3
+{
+    border-right: none;
+}
+.kbbuttom
+{
+}
+
+.page
+{
+    width: 100%;
+    text-align: right;
+}
+#forumJump
+{
+    padding: 10px 5px;
+    text-align: right;
+}
+/*----------end container---------*/
+
+

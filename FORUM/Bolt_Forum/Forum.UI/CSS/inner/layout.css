@@ -1,0 +1,73 @@
+﻿/*-----------layout------------*/
+
+*html #outer
+{
+	border-left: solid 950px #f8f8f8; 
+	float: left;
+}
+
+*html #inner
+{
+	position: relative; 
+	margin-left: -950px;
+	display: inline-block;
+}
+
+#divHelp
+{
+	width:200px;
+	background:#ffffd6; 
+	border: solid 1px  #e7e3bd;
+	float:left;
+	position:absolute;
+	float:left;
+	padding: 5px;
+	text-align: left;
+	z-index: 200000000;
+}
+
+#Header,#Main,#Footer,#Bar
+{
+	min-width: 960px;
+	width: 100%;
+	position: relative;
+}
+
+#Main
+{
+	background: url(../../images/main_bg.png) repeat-y left;
+	border-bottom: solid 1px #e8e8e8;
+}
+
+#Header
+{
+	padding: 10px 0px 10px 0px;
+}
+
+#Bar
+{
+	height: 37px;
+	text-align: left;
+}
+
+#Menu
+{
+	float:left;
+	background : #f1f2f5;
+}
+
+#Content
+{
+	padding: 5px 10px 5px 5px;
+	margin-left:210px;
+	text-align: center;
+	min-height: 260px;
+}
+
+#Footer
+{
+	clear: both;
+	text-align: center;
+	height: 30px;
+	margin-top: 8px;
+}

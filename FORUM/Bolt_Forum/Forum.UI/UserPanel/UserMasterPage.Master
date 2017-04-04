@@ -1,0 +1,251 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UserMasterPage.master.cs"
+    Inherits="Com.Comm100.Forum.UI.UserPanel.UserMasterPage" %>
+
+<%@ Import Namespace="Com.Comm100.Forum.Language" %>
+<%@ Register Src="~/UserControl/ForumHeader.ascx" TagName="ForumHeader" TagPrefix="uc" %>
+<%@ Register Src="~/UserControl/ForumFooter.ascx" TagName="ForumFooter" TagPrefix="uc" %>
+<%@ Register Src="~/UserControl/NavigationBar.ascx" TagName="NavigationBar" TagPrefix="uc" %>
+<%@ Register Src="~/UserControl/LinkBar.ascx" TagName="LinkBar" TagPrefix="uc" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+
+    <script type="text/javascript">
+        var divHlepID = "divHelp";
+
+        function ShowHelp(msg) {
+            var x = mouseX;
+            var y = mouseY;
+
+            if (document.body.clientWidth - x < 210)
+                x = parseInt(x - 216);
+            else
+                x = parseInt(x + 16);
+
+            var divHelp = document.getElementById(divHlepID);
+
+
+            divHelp.style.left = x + "px"; //px
+            divHelp.style.top = y + "px";
+            divHelp.style.display = "block";
+            divHelp.innerHTML = msg;
+        }
+
+        function CloseHelp() {
+            var divHelp = document.getElementById(divHlepID);
+            divHelp.style.display = "none";
+        }
+
+        function mousePosition(ev) {
+            if (ev.pageX || ev.pageY) {
+                return { x: ev.pageX, y: ev.pageY };
+            }
+            return {
+                x: ev.clientX + document.documentElement.scrollLeft,
+                y: ev.clientY + document.documentElement.scrollTop
+            };
+        }
+
+        var mouseX;
+        var mouseY;
+        document.onmousemove = function MouseMove(MouseEvent) {
+            var MousePoint = MouseEvent || window.event;
+            mouseX = mousePosition(MousePoint).x;
+            mouseY = mousePosition(MousePoint).y;
+        }
+    </script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="divThickOuter" class="thick_outer">
+    </div>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+    </asp:ContentPlaceHolder>
+    <div id="divHelp" style="display: none;">
+    </div>
+    <div id="outer">
+        <div id="inner">
+            <div id="outerHeader">
+                <uc:ForumHeader ID="ForumHeader1" runat="server" />
+            </div>
+            <!--Define the Logo here-->
+            <%--<div id="Logo">
+                <div id="logo_row">
+                    <div class="pos_left_10 pos_top_10 pos_bottom_10">
+                        <img src="Images/comm100.gif" alt="" />
+                    </div>
+                </div>
+            </div>--%>
+            <!--end Define the Logo-->
+            <!--Define the Link Bar here-->
+            <div id="nav_bar" class="navrow">
+                <div class="navrow_inner">
+                    <uc:LinkBar ID="LinkBar1" runat="server" />
+                </div>
+            </div>
+            <!--end Define the Link Bar-->
+            <div id="content">
+                <div class="content_main">
+                    <div id="content_main_inner">
+                        <%--Navagation bar--%>
+                        <div class="pos_bottom_10">
+                            <div class="cat">
+                                <div class="top_cat">
+                                    <div class="top_cat_left">
+                                        <div class="top_cat_right">
+                                            <uc:NavigationBar ID="NavigationBar1" runat="server" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <%--Menu--%>
+                        <div class="pos_bottom_10">
+                            <div class="divWidth1 divLeft">
+                                <div class="cat2">
+                                    <div class="top_cat2 pos_relative">
+                                        <div class="top_cat2_left">
+                                            <div class="top_cat2_right">
+                                                <%= Proxy[EnumText.enumForum_UserMenu_UserPanel]%>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <table class="tb_forum" cellspacing='0'>
+                                    <tr>
+                                        <td class="row4" id="itemProfile" runat="server" style="display:none;">
+                                            <p>
+                                                <img class="Image" src="../<%=ImagePath %>/userpanel/profile.gif" align="absmiddle" />
+                                                <a href="UserProfileEdit.aspx?siteId=<%=SiteId %>">&nbsp;<%= Proxy[EnumText.enumForum_UserMenu_Profile]%></a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row4" id="itemSignature" runat="server" style="display:none;">
+                                            <b>here</b>
+                                            <p>
+                                                <img class="Image" src="../<%=ImagePath %>/userpanel/profile.gif" align="absmiddle" />
+                                                <a href="UserSignatureEdit.aspx?siteId=<%=SiteId %>">&nbsp;<%= Proxy[EnumText.enumForum_UserMenu_Signature]%></a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row4" id="itemAvatar" runat="server" style="display:none;">
+                                            <p>
+                                                <img class="Image" src="../<%=ImagePath %>/userpanel/Avatar.gif" align="absmiddle" />
+                                                <a href="UserAvatarEdit.aspx?siteId=<%=SiteId %>">&nbsp;<%= Proxy[EnumText.enumForum_UserMenu_Avatar]%></a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row4" id="itemPassword" runat="server" style="display:none;">
+                                            <p>
+                                                <img class="Image" src="../<%=ImagePath %>/userpanel/Password.gif" align="absmiddle" />
+                                                <a href="UserPasswordEdit.aspx?siteId=<%=SiteId %>">&nbsp;<%= Proxy[EnumText.enumForum_UserMenu_Password]%></a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row4" id="itemMyPosts" runat="server">
+                                            <p>
+                                                <img class="Image" src="../<%=ImagePath %>/userpanel/My post.gif" align="absmiddle" />
+                                                <a href="UserMyPosts.aspx?siteId=<%=SiteId %>" target="_self">&nbsp;<%= Proxy[EnumText.enumForum_UserMenu_MyPosts]%></a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <asp:Panel ID="panelFavorite" runat="server">
+                                        <tr>
+                                            <td class="row4" id="itemMyFavorites" runat="server">
+                                                <p>
+                                                    <img class="Image" src="../<%=ImagePath %>/userpanel/My favorite.GIF" align="absmiddle" />
+                                                    <a href="MyFavorites.aspx?siteId=<%=SiteId %>" target="_self">&nbsp;<%= Proxy[EnumText.enumForum_UserMenu_MyFavorites] %></a></p>
+                                            </td>
+                                        </tr>
+                                    </asp:Panel>
+                                    <asp:Panel ID="panelMessage" runat="server">
+                                        <tr>
+                                            <td class="row4" id="itemMyMessages" runat="server">
+                                                <p>
+                                                    <img class="Image" src="../<%=ImagePath %>/userpanel/My message.gif" align="absmiddle" />
+                                                    <b>&nbsp;<%= Proxy[EnumText.enumForum_UserMenu_MyMessages] %></b></p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="row4" id="itemSendMessage" runat="server">
+                                                <div class="pos_left_25">
+                                                    <p>
+                                                        <a href="MySendMessage.aspx?siteId=<%=SiteId %>" target="_self">
+                                                            <%= Proxy[EnumText.enumForum_UserMenu_SendMessage] %></a>
+                                                    </p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="row4" id="itemInbox" runat="server">
+                                                <div class="pos_left_25">
+                                                    <p>
+                                                        <a href="MyInBox.aspx?siteId=<%=SiteId %>" target="_self">
+                                                            <%= Proxy[EnumText.enumForum_UserMenu_InBox] %></a>
+                                                    </p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="row4" id="itemOutbox" runat="server">
+                                                <div class="pos_left_25">
+                                                    <p>
+                                                        <a href="MyOutBox.aspx?siteId=<%=SiteId %>" target="_self">
+                                                            <%= Proxy[EnumText.enumForum_UserMenu_OutBox] %></a>
+                                                    </p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </asp:Panel>
+                                </table>
+                            </div>
+                            <div class="divMarginLeft">
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </div>
+                        </div>
+                        <div class="clear">
+                        </div>
+                    </div>
+                    <%--Footer--%>
+                    <%--<div class="pos_bottom_10">
+                            <div id="forumJump">
+                                Forum Jump:&nbsp;
+                                <select class="jump">
+                                    <option selected="selected" value="0">Select a forum</option>
+                                    <option style="color: Gray;" value="0">Dynamic Web TWAIN</option>
+                                    <option>&#160;&#160;&#160;&#160;Knowledge Base</option>
+                                    <option>&#160;&#160;&#160;&#160;Support and Discussion</option>
+                                    <option style="color: Gray;" value="0">Dynamic TWAIN</option>
+                                    <option>&#160;&#160;&#160;&#160;Knowledge Base</option>
+                                    <option>&#160;&#160;&#160;&#160;Support and Discussion</option>
+                                    <option style="color: Gray;" value="0">Partner</option>
+                                    <option>&#160;&#160;&#160;&#160;Knowledge Base</option>
+                                    <option>&#160;&#160;&#160;&#160;Support and Discussion</option>
+                                    <option style="color: Gray;" value="0">General</option>
+                                    <option>&#160;&#160;&#160;&#160;About this Site</option>
+                                    <option>&#160;&#160;&#160;&#160;Release Announcements</option>
+                                    <option>&#160;&#160;&#160;&#160;Testing Area</option>
+                                </select>
+                            </div>
+                        </div>--%>
+                </div>
+                <div id="footer">
+                    <uc:ForumFooter ID="ForumFooter1" runat="server" />
+                </div>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    </form>
+</body>
+</html>

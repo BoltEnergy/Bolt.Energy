@@ -1,0 +1,953 @@
+﻿body
+{
+    margin: 0px;
+    padding: 0px;
+    font-size: 10px; /*62.5%;*/
+    font-family: Verdana,helviteca,Tahoma,Sans-Serif;
+    background-color: #f8f8f8;
+    overflow: visible;
+    width: 100%;
+    color: #333333;
+    height: 100%; /* firefox need it*/
+}
+
+li
+{
+    list-style: none;
+}
+img
+{
+    border-width: 0px;
+}
+
+select
+{
+    font-size: 1em;
+    background-color: #f8f8f8;
+}
+
+a:link
+{
+    color: #333333;
+    text-decoration: underline;
+}
+a:visited
+{
+    color: #333333;
+    text-decoration: underline;
+}
+a:hover
+{
+    color: #333333;
+    text-decoration: underline;
+}
+
+/*---------------Label----------------*/
+.ErrorLabel
+{
+    font-weight: bold;
+    color: #FF0000;
+    white-space: nowrap;
+}
+
+.SuccessLabel
+{
+    font-weight: bold;
+    color: #009999;
+    white-space: nowrap;
+}
+
+.TitleLabel
+{
+    line-height: 36px; /*background: url(../../images/title-ico.gif) no-repeat; */ /*padding-left: 28px;*/
+    font-weight: bold;
+}
+.TitleLabelBig
+{
+    line-height: 45px; /*background: url(../../images/title-ico.gif) no-repeat; */
+    padding-left: 15px;
+    font-weight: bold; /*font-size: 15px;*/
+}
+.Label
+{
+    color: Black;
+    padding-left: 15px;
+}
+.MsgLabel
+{
+    color: #009999; /*font-size: 13px;*/
+    line-height: 36px;
+    padding-left: 28px;
+    font-weight: bold;
+}
+
+.DraftEditLabel
+{
+    color: Green;
+}
+
+.DraftTitleAlert
+{
+    color: Red;
+}
+
+.requiredField
+{
+    font-weight: bold;
+    color: Red;
+}
+/*--------input text--------*/
+.txtnormal
+{
+    border: solid 1px #C5C5C5;
+    background-color: #f8f8f8;
+    width: 350px;
+    font-size: 1em;
+}
+.txtnormalforsitesitting
+{
+    border: solid 1px #C5C5C5;
+    background-color: #f8f8f8;
+    width: 300px;
+    font-size: 1em;
+}
+.txtmid
+{
+    border: solid 1px #C5C5C5;
+    background-color: #f8f8f8;
+    width: 200px;
+    font-size: 1em;
+}
+.txtshort
+{
+    border: solid 1px #C5C5C5;
+    background-color: #f8f8f8;
+    width: 70px;
+    font-size: 1em;
+}
+.txtshortScore
+{
+    border: solid 1px #C5C5C5;
+    background-color: #f8f8f8;
+    width: 90px;
+    font-size: 1em;
+    text-align: right;
+}
+.txttiny
+{
+    text-align: right;
+    border: solid 1px #C5C5C5;
+    background-color: #f8f8f8;
+    width: 50px;
+    font-size: 1em;
+}
+.areanormal
+{
+    border: solid 1px #C5C5C5;
+    background-color: #f8f8f8;
+    width: 350px;
+    height: 100px;
+    font-size: 12px; /*textarea ie: 1em=12px; firefox:1em=10px*/
+}
+.areasupper
+{
+    border: solid 1px #C5C5C5;
+    background-color: #f8f8f8;
+    width: 450px;
+    height: 300px;
+    font-size: 1em;
+}
+.areabig
+{
+    border: solid 1px #C5C5C5;
+    background-color: #f8f8f8;
+    width: 450px;
+    height: 160px;
+    font-size: 1em;
+}
+/*------------input button--------------*/
+.mbtn
+{
+    background-image: url(../../images/button-medium.gif);
+    background-color: Transparent;
+    color: #333333;
+    border: 0px;
+    height: 18px;
+    width: 89px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.09em !important;
+    font-weight: bold;
+}
+
+.lbtn
+{
+    background-image: url(../../images/button-long.gif);
+    background-color: Transparent;
+    color: #333333;
+    border: 0px;
+    height: 18px;
+    width: 129px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.09em !important;
+    font-weight: bold;
+}
+
+.slbtn
+{
+    background-image: url(../../images/button-super-long.gif);
+    background-color: Transparent;
+    color: #333333;
+    border: 0px;
+    height: 18px;
+    width: 194px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.09em !important;
+    font-weight: bold;
+}
+
+.sllbtn
+{
+    background-image: url(../../images/button-super-long-long.gif);
+    background-color: Transparent;
+    color: #333333;
+    border: 0px;
+    height: 18px;
+    width: 213PX;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.09em !important;
+    font-weight: bold;
+}
+
+/*--------------select--------------*/
+.normalsel
+{
+}
+
+/*--------------CheckBoxList--------------*/
+.chblist
+{
+    text-align: left;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+
+
+/*--------------DropDownList--------------*/
+.DropDownList
+{
+    width: 300px;
+}
+.normalDropDownList
+{
+    width: 200px;
+}
+
+/*--------radio--------*/
+.RadioButtonList
+{
+}
+
+.RadioButton
+{
+}
+/*----------listbox------------*/
+.normallistbox
+{
+    font-size: 1em;
+    border: solid 1px #C5C5C5;
+    width: 200px;
+    height: 100px;
+}
+
+/*-------------------ASPNetPager---------------------*/
+.ASPNetPager
+{
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    display: inline !important;
+    font-size: 1em;
+}
+
+/*--------add with button for ff ie------*/
+.ASPNetPager .BtnStyle
+{
+    position: relative !important;
+    top: 8px;
+    margin: 4px 0px;
+    width: 16px;
+}
+*html .ASPNetPager .BtnStyle
+{
+    position: relative !important;
+    top: 4px;
+    margin: 4px 0px;
+    width: 16px;
+}
+* + html .ASPNetPager .BtnStyle
+{
+    position: relative !important;
+    top: 4px;
+    margin: 4px 0px;
+    width: 16px;
+}
+/*-------------end define------------*/
+
+.ASPNetPager .TextBoxStyle
+{
+    position: relative !important;
+    top: 3px;
+    margin: 3px 0px;
+    font-size: 1em;
+    width: 12px;
+    height: 12px;
+}
+
+.ASPNetPager .DropDownListStyle
+{
+    position: relative !important;
+    top: 2px;
+    margin: 3px 0px;
+    font-size: 1em;
+    height: 20px;
+}
+
+/*--------add with span------*/
+.ASPNetPager span
+{
+    vertical-align: middle;
+}
+/*-------------end define------------*/
+
+/*---------table----------*/
+
+/*--------the-table--------*/
+.the-table
+{
+    font-size: 1em;
+    width: 100%;
+    color: #4a4a4a;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.the-table th, .the-table td
+{
+    padding: 1px 3px 1px 3px;
+}
+
+.the-table td
+{
+    word-break: break-all !important;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-align: left;
+    border-bottom: solid 1px #e8e8e8;
+}
+
+.the-table .cth
+{
+    text-align: center;
+}
+
+.the-table .ctd
+{
+    text-align: center;
+}
+
+.the-table th
+{
+    text-align: left;
+    background: #f1f2f5;
+    color: #333333;
+    border-bottom: solid 1px #cccccc;
+}
+
+.the-table .trStyle1
+{
+    background-color: #f8f8f8;
+}
+
+.the-table .trStyle2
+{
+    background-color: #f1f2f5;
+}
+
+.the-table .trHightLight
+{
+    background-color: #d7e7ee;
+}
+
+.the-table th a:link
+{
+    color: #333333;
+    text-decoration: none;
+}
+
+.the-table th a:visited
+{
+    color: #333333;
+    text-decoration: none;
+}
+
+.the-table th a:hover
+{
+    color: #333333;
+    text-decoration: underline !important;
+}
+
+.the-table td a:link
+{
+    color: #009999;
+    text-decoration: underline;
+}
+
+.the-table td a:visited
+{
+    color: #009999;
+    text-decoration: underline;
+}
+
+.the-table td a:hover
+{
+    color: #009999;
+    text-decoration: underline !important;
+}
+
+/*--------formtable-----------*/
+.form-table
+{
+    font-size: 1em;
+}
+
+.form-table td
+{
+    padding: 1px;
+}
+
+.form-table tr
+{
+    margin: 0;
+}
+
+.form-table .ttd
+{
+    text-align: right;
+    font-weight: bold;
+}
+.form-table .ctd
+{
+    text-align: left;
+}
+.form-table .rtd
+{
+    text-align: left;
+    font-weight: bold;
+    color: Red;
+}
+.form-table .lttd
+{
+    text-align: left;
+    font-weight: bold;
+}
+
+.form-table td a
+{
+    color: #009999;
+    text-decoration: underline;
+}
+
+/*-------info-table--------*/
+.info-table
+{
+    font-size: 1em;
+}
+
+.info-table td
+{
+    word-break: break-all !important;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+.info-table .ttd
+{
+    text-align: right;
+    font-weight: bold;
+}
+.info-table .ctd
+{
+    text-align: left;
+    padding-left: 30px;
+    padding-right: 100px;
+}
+
+
+/* ---------------- Tab -----------*/
+.nTab
+{
+    height: 100%;
+    font-size: 1.1em;
+}
+.nTab .TabTitle
+{
+    height: 22px;
+    text-align: left;
+}
+.nTab .TabTitle ul
+{
+    height: 22px;
+    display: inline;
+}
+.nTab .TabTitle li
+{
+    float: left;
+    list-style-type: none;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    font-weight: bold;
+}
+.nTab .TabTitle span
+{
+    display: block;
+    padding: 0 10px 0 10px;
+}
+.nTab .TabTitle .liactive
+{
+    color: #f8f8f8;
+    display: block;
+    background: url(../../images/tag-left.gif) no-repeat left -22px;
+}
+.nTab .TabTitle .linormal
+{
+    color: #838362;
+    display: block;
+    background: url(../../images/tag-left.gif) no-repeat left 0px;
+    cursor: pointer;
+}
+.nTab .TabTitle .spanactive
+{
+    background: url(../../images/tag-right.gif) no-repeat right -22px;
+}
+.nTab .TabTitle .spannormal
+{
+    background: url(../../images/tag-right.gif) no-repeat right 0px;
+}
+.nTab .TabContent
+{
+    padding: 5px;
+    border-top: solid 4px #009999;
+    border-right: solid 2px #009999;
+    border-bottom: solid 2px #009999;
+    background-color: #f1f2f5;
+    text-align: left;
+}
+
+/*---normal---*/
+.RepeaterItemDiv
+{
+    float: left;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+.TableContent td
+{
+    text-align: left;
+}
+
+
+/*-------------- Code Plan --------*/
+.txtCpURL
+{
+    border: solid 1px #C5C5C5;
+    background-color: #f8f8f7;
+    width: 300px;
+}
+
+.divCpTitle
+{
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: left;
+    padding: 5px 0 5px 15px;
+}
+.divCpTitleDetail
+{
+    padding: 5px 0 10px 15px;
+}
+
+.divCpFirst
+{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.divCpFirstTitle
+{
+    background-color: #9fcdcd;
+    height: 22px;
+    line-height: 22px;
+    font-weight: bold;
+    vertical-align: middle;
+    text-align: left;
+    padding-left: 20px;
+}
+.divCpFirstContent
+{
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-top: 15px;
+    background-color: #f8f8f8;
+}
+
+.divCpSecond
+{
+    padding-left: 20px;
+}
+
+.divCpSecondTitle
+{
+    background-color: silver;
+    height: 22px;
+    line-height: 22px;
+    font-weight: bold;
+    vertical-align: middle;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.divCpSecondContent
+{
+    border-bottom: 20px;
+}
+
+.divCpSelect
+{
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.fieldsetCp
+{
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.tableCpImage
+{
+    border-collapse: collapse;
+    border: solid #999;
+    border-width: 2px 0 0 1px;
+    text-align: center;
+    padding-left: 50;
+}
+.tableCpImage th
+{
+    border: solid #999;
+    border-width: 0 1px 2px 0;
+    padding: 10px;
+}
+.tableCpImage td
+{
+    border: solid #999;
+    border-width: 0 1px 2px 0;
+    padding: 20px 10px 20px 10px;
+}
+
+.tableCpText
+{
+}
+
+.tableCpText th
+{
+    text-align: center;
+    padding: 5px 20px 5px 20px;
+}
+.tableCpText .lth
+{
+    text-align: left;
+    padding: 5px 5px 5px 5px;
+}
+.tableCpText .rth
+{
+    text-align: left;
+    padding: 5px 0 5px 0;
+}
+.tableCpText td
+{
+    text-align: center;
+    padding: 5px 5px 5px 5px;
+}
+
+.tableCpText .rtd
+{
+    text-align: right;
+    padding: 5px 0 5px 0;
+}
+
+.tableCpText .ltd
+{
+    text-align: left;
+    padding: 5px 5px 5px 5px;
+}
+
+/*-------------------tblPermissionsSet---------------------*/
+.tblPermissionsSet
+{
+    background-color: #d7e7ee;
+    width: 100%;
+    text-align: left;
+}
+
+.tblPermissionsSet td
+{
+    background-color: #fff;
+    height: 24px;
+}
+
+.tblPermissionsSet .ttd
+{
+    text-align: right;
+    font-weight: normal;
+    width: 30%;
+}
+.tblPermissionsSet .ctd
+{
+    padding-left: 5px;
+    width: 100px;
+}
+
+.tblPermissionsSet .htd
+{
+    padding: 5px 5px 5px 5px;
+}
+
+
+/*----------------  Forum List--------------------------------*/
+
+
+/*------------------------------Thick Box Begin-------------------------------*/
+.divh
+{
+    font-size: 1.1em;
+    background: #f1f2f5;
+   /* border-top: solid 4px #009999;
+    border-bottom: solid 2px #009999;*/
+}
+.divh-header
+{
+    background: #d7e7ee;
+    height: 20px;
+    border-bottom: solid 2px #fff;
+    color: #333333;
+}
+.divh-bottom
+{
+    background: #d7e7ee;
+    height: 20px;
+    border-top: solid 2px #fff;
+}
+.divh-table
+{
+    text-align: left;
+    padding: 0px 15px;
+}
+.divh-header-spantitle
+{
+    font-weight: bold;
+    font-size: 1.1em;
+    padding-left: 10px;
+}
+.divh-header-spanclose
+{
+    padding-right: 10px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+.linkClose a:link
+{
+    text-decoration: underline;
+}
+.linkClose a:hover
+{
+    text-decoration: underline;
+    color: #009999;
+}
+.linkClose a:visited
+{
+    text-decoration: underline;
+}
+
+/*--------------------Thick Box Content----------------------*/
+#ThickBoxContent .divContent
+{
+    font-size: 1.1em;
+    background: #f1f2f5;
+    height: 100%;
+    border-top: solid 4px #009999;
+    border-right: solid 2px #009999;
+    border-bottom: solid 2px #009999;
+}
+*html #ThickBoxContent .divContent
+{
+    height: 140px;
+}
+#ThickBoxContent .divTopButton
+{
+    background: #d7e7ee;
+    height: 24px;
+    line-height: 24px;
+    border-bottom: solid 2px #fff;
+    padding-top: 5px;
+    text-align: center;
+}
+#ThickBoxContent .divTopQuery
+{
+    background: #d7e7ee;
+    height: 24px;
+    line-height: 24px;
+    border-bottom: solid 2px #fff;
+    padding-top: 5px;
+    text-align: left;
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+
+#ThickBoxContent .divButtomButton
+{
+    background: #d7e7ee;
+    height: 24px;
+    line-height: 24px;
+    border-top: solid 2px #fff;
+    padding-top: 5px;
+    text-align: center;
+}
+#ThickBoxContent .divTable
+{
+    background: #f1f2f5;
+    padding: 0 15px 0 15px;
+    text-align: left;
+    font-size: 1em;
+}
+/*---------------------------Thick Box End-------------------------------*/
+
+/*--------------------Thick Box Begin--------------------*/
+.R_inner
+{
+    background: #f1f2f5;
+    border: solid 4px #009999;
+    border-top-width: 0;
+    border-bottom-width: 0;
+}
+
+.divh
+{
+    font-size: 1.1em;
+    background: #f1f2f5;
+}
+.divh-header
+{
+    height: 20px;
+    color: #333333;
+}
+.divh-msg
+{
+    text-align: left;
+    padding: 0px 15px;
+}
+.divh-bottom
+{
+    height: 20px;
+}
+.divh-table
+{
+    text-align: left;
+    padding: 0px 15px;
+}
+.divh-header-spantitle
+{
+    font-weight: bold;
+    font-size: 1.1em;
+    padding-left: 10px;
+}
+.divh-header-spanclose
+{
+    padding-right: 10px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+.linkClose
+{
+    font-weight: normal;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+/*-------------Rounded Corner Begin-------------*/
+b.R_outer_top, b.R_outer_bottom
+{
+    display: block;
+}
+b.R_outer_top b, b.R_outer_bottom b
+{
+    display: block;
+    height: 1px;
+    overflow: hidden;
+    background: #009999;
+}
+b.R_outer_1
+{
+    margin: 0 5px;
+}
+b.R_outer_2
+{
+    margin: 0 3px;
+}
+b.R_outer_3
+{
+    margin: 0 2px;
+}
+b.R_outer_top b.R_outer_4, b.R_outer_bottom b.R_outer_4
+{
+    margin: 0 1px;
+    height: 1px;
+}
+
+b.R_inner_top, b.R_inner_bottom
+{
+    display: block;
+    background: #009999;
+}
+b.R_inner_top b, b.R_inner_bottom b
+{
+    display: block;
+    height: 1px;
+    overflow: hidden;
+    background: #f1f2f5;
+}
+b.R_inner_1
+{
+    margin: 0 4px;
+}
+b.R_inner_2
+{
+    margin: 0 2px;
+}
+b.R_inner_3
+{
+    margin: 0 1px;
+}
+b.R_inner_top b.R_inner_4, b.R_inner_bottom b.R_inner_4
+{
+    margin: 0 1px;
+    height: 1px;
+}
+/*----------Rounded Corner End-----------*/
