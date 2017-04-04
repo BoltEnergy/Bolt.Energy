@@ -23,6 +23,7 @@ require('./routes/project_routes')(app);
 require('./routes/search_routes')(app);
 require('./routes/update_routes')(app);
 require('./routes/comment_routes')(app);
+require('./routes/content_routes')(app);
 
 app.use(express.static('public'));
 //app.use(express.static('userImages'));

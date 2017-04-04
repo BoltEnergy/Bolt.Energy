@@ -1,0 +1,16 @@
+Bolt.energy
+-----------------
+» public -> app.js
+  1. There is a method "$scope.community" in which yuo need to define the url for forum to connect with. Currently it is http://localhost:25010/
+***
+» public -> index.html
+  1. Once you have added the content for static pages from admin section, change the navigation of links in index.html to be look like : 
+  <a ui-sref="content({vanityUrl: 'about'})">About</a>
+  <a ui-sref="content({vanityUrl: 'privacy'})" class="privacy">Privacy Policy</a>
+   <a ui-sref="content({vanityUrl: 'terms'})" class="privacy">Terms of Service</a>
+---------------------
+
+Bolt.Forum
+---------------------
+» Forum.UI -> Config -> appSettings.xml
+  1. All the settings for email, hosted urls, and db connections can be managed from this file.

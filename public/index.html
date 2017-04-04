@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <base href="/">
     <style>
-    .slider {
-        width: auto;
-        height: 400px;
-        overflow: hidden;
-        position: relative;
-/*        background: #e6e6e6;
+        .slider {
+            width: auto;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+            /*        background: #e6e6e6;
         border: 20px solid #FFF;
         margin-top: 20px;*/
-    }
+        }
 
-    .slide {
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
     </style>
     <title>Bolt.Energy</title>
     <!-- Styling -->
@@ -29,7 +29,7 @@
     <link media="all" rel="stylesheet" href="libs/angular-spinkit/build/angular-spinkit.min.css">
     <link rel='stylesheet' href="libs/angular-socialshare/angular-socialshare.min.css">
     <!-- <script src="https://use.typekit.net/oex8oja.js"></script> -->
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script>try { Typekit.load({ async: true }); } catch (e) { }</script>
     <script type="text/javascript" src="libs/jquery/dist/jquery.min.js" defer></script>
     <!-- Tools -->
     <script src="libs/underscore/underscore-min.js"></script>
@@ -51,46 +51,80 @@
     <script src="profile/profile.js?Reset=1"></script>
     <script src="home/home.js"></script>
     <script src="app.js"></script>
+    <script src="content/page.js"></script>
 
+    <script>
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+            document.getElementById("btnWelcome").classList.toggle("dropbtn-selected");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (e) {
+            if (!e.target.matches('.dropbtn')) {
+
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var d = 0; d < dropdowns.length; d++) {
+                    var openDropdown = dropdowns[d];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                        document.getElementById("btnWelcome").classList.remove('dropbtn-selected');
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body class="home">
-  <!--<div id="wrapper" ui-view>-->
-  <div id="wrapper">
-    <header id="header">
-      <div class="container" ng-controller="HeaderController">
-        <div class="logo">
-          <a href="#">
-            <img src="images/logo.png" alt="bolt"/>
-          </a>
-        </div>
-        <a href="#" class="opener"><span></span></a>
-        <div class="menu">
-          <ul class="nav-btn" ng-hide="authenticated">
-            <li><a ui-sref="login" class="btn">Log In</a></li>
-            <li><a ui-sref="register" class="btn">Sign Up</a></li>
-          </ul>
-          <ul class="nav-btn" ng-show="authenticated">
-            <li><a href='' ng-click="profile()" class="btn">Profile</a></li>
-            <li><a ng-click="logout()" href='' class="btn">Logout</a></li>
-          </ul>
-          <ul class="" id="nav">
-            <li><a ui-sref="search">Search</a></li>
-            <li><a ui-sref="about">About</a></li>
-            <li><a href="mailto:hello@bolt.energy">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </header>
-    <div ui-view></div>
-  </div>
-    
-  
-        <footer id="footer">
-            <div class="container">
-                <p>&copy; 2016 <a href="#">Bolt Energy Market, Inc.</a></p><p class="links"><a ui-sref="privacy" class="privacy">Privacy Policy</a> <a ui-sref="terms" class="privacy">Terms of Service</a></p>
+    <!--<div id="wrapper" ui-view>-->
+    <div id="wrapper">
+        <header id="header">
+            <div class="container" ng-controller="HeaderController">
+                <div class="logo">
+                    <a href="#">
+                        <img src="images/logo.png" alt="bolt" />
+                    </a>
+                </div>
+                <a href="#" class="opener"><span></span></a>
+                <div class="menu">
+                    <ul class="nav-btn" ng-hide="authenticated">
+                        <li><a ui-sref="login" class="btn">Log In</a></li>
+                        <li><a ui-sref="register" class="btn">Sign Up</a></li>
+                    </ul>
+                    <ul class="nav-btn" ng-show="authenticated">
+                        <li>
+                            <a href="javascript:void(0)" class="dropbtn" id="btnWelcome" onclick="myFunction()">Welcome &#187;</a>
+                            <div class="dropdown-content" id="myDropdown">
+                                <a href="" ng-click="profile()">My Account</a>
+                                <a href="" ng-click="publicProfile()" ng-show="isProducer">My Profile</a>
+                                <a href="" ng-click="logout()">Logout</a>
+                            </div>
+                        </li>
+                        <!--<li><a href='' ng-click="profile()" class="btn">Profile</a></li>
+                        <li><a ng-click="logout()" href='' class="btn">Logout</a></li>-->
+                    </ul>
+
+                    <ul class="" id="nav">
+                        <li><a ui-sref="search">Search</a></li>
+                        <li><a ui-sref="content({vanityUrl: 'about'})">About</a></li>
+                        <li><a href="mailto:hello@bolt.energy">Contact</a></li>
+                        <li><a href="" ng-click="community()">Community</a></li>
+                    </ul>
+                </div>
             </div>
-        </footer>
-        <script type="text/javascript">window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js" defer><\/script>')</script>
-        <script type="text/javascript" src="js/jquery.main.js" defer></script>
+        </header>
+        <div ui-view></div>
+    </div>
+
+
+    <footer id="footer">
+        <div class="container">
+            <p>&copy; 2016 <a href="#">Bolt Energy Market, Inc.</a></p><p class="links"><a ui-sref="content({vanityUrl: 'privacy'})" class="privacy">Privacy Policy</a> <a ui-sref="content({vanityUrl: 'terms'})" class="privacy">Terms of Service</a></p>
+        </div>
+    </footer>
+    <script type="text/javascript">window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js" defer><\/script>')</script>
+    <script type="text/javascript" src="js/jquery.main.js" defer></script>
 </body>
 </html>

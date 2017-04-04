@@ -1,0 +1,10 @@
+﻿<main id="main" role="main">
+    <div class="container">
+        <div class="row">
+            <div class="twelve columns" ng-model="content" id="bind-html-with-sanitize">
+                <h1>{{content.pageTitle}}</h1>
+                <p ng-bind-html="content.pageContent"></p>
+            </div>
+        </div>
+    </div>
+</main>

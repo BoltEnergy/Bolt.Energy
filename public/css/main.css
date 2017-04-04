@@ -3779,6 +3779,69 @@ button.btn {
     margin: 25px auto;
 }
 }
+.drop-down-menu {
+} 
+.dropdown-content a {
+
+    border:1px solid #889682!important;
+    border-top:none!important;
+} 
+
+.drop-down-menu li a, .dropbtn {
+    display: block;
+    color: #889682;
+    text-align: center;
+    padding: 7px 8px;
+    text-decoration: none;
+    border: 1px solid #889682;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.drop-down-menu li a:hover, .drop-down-menu .dropdown:hover .drop-down-menu .dropbtn {
+    background-color: #889682;
+}
+
+.dropbtn-selected {
+    background-color: #889682;
+    color: #ffffff!important;
+}
+
+.drop-down-menu li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display:none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 10px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    /* border-bottom-left-radius: 10px; */
+    /* border-bottom-right-radius: 10px; */
+    border-top-right-radius: 10px;
+    padding-bottom: -1px;
+    /* border-bottom: 1px solid #889635; */
+    margin-top: -4px;
+    /* border-top-right-radius: 18px; */
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown-content a:first-child {
+    border-top: 1px solid #889682!important
+   }
+
+.dropdown-content a:hover {background-color: #64725e}
+
+.show {display:block;}
 
 @media (max-width: 320px) {
 	.btn-block li:last-child {

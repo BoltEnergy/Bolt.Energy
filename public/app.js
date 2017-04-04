@@ -1,4 +1,4 @@
-angular.module('bolt', ["ngAnimate", "ngTouch", "ui.router", "ngResource", "toastr", "auth", "home", "search", "profile", "producer", 'djds4rce.angular-socialshare'])
+angular.module('bolt', ["ngAnimate", "ngTouch", "ui.router", "ngResource", "toastr", "auth", "home", "search", "profile", "producer", 'djds4rce.angular-socialshare', "content"])
 .run(function ($FB) {
     $FB.init('1049483961846178');
 })
@@ -12,6 +12,7 @@ angular.module('bolt', ["ngAnimate", "ngTouch", "ui.router", "ngResource", "toas
                     LoginService.logout();
                     $rootScope.authenticated = false;
                     $rootScope.currentUserId = '';
+                    $rootScope.isProducer = false;
                     toastr.error('Your session has expired, please login again.', 'Expired Session Error');
                     break;
                 case 403:
@@ -260,6 +261,25 @@ angular.module('bolt', ["ngAnimate", "ngTouch", "ui.router", "ngResource", "toas
         }
     })
 
+    //Content for pages
+    $stateProvider.state('content', {
+        // parent: 'root',
+        url: '/content/:vanityUrl',
+        templateUrl: 'content/page.html',
+        controller: 'ContentController',
+        resolve: {
+            contentData: function ($stateParams, ContentFactory, $q) {
+                var retVal = $q.defer();
+                retVal.promise = ContentFactory.getContent($stateParams.vanityUrl).then(function (responseData) {
+                    retVal.resolve(responseData);
+                }, function (err) {
+                    retVal.reject(err);
+                })
+                return retVal.promise;
+            }
+        }
+    })
+
     //Static Pages
     $stateProvider.state('about', {
         //parent: 'root',
@@ -280,22 +300,57 @@ angular.module('bolt', ["ngAnimate", "ngTouch", "ui.router", "ngResource", "toas
         controller: 'StaticController'
     })
 
+
 })
 .controller('StaticController', function () {
     //Static Page
 })
-.controller('HeaderController', function ($rootScope, $scope, LoginService, $state, $window, $http) {
+
+.controller('HeaderController', function ($rootScope, $scope, LoginService, ProfileFactory, $state, $window, $http) {
     $http.defaults.headers.common.Authorization = $window.localStorage.getItem('BoltToken') || '';
     $rootScope.currentUserId = $window.localStorage.getItem('BoltUser') || '';
     $scope.currentUserId = $rootScope.currentUserId;
     $rootScope.authenticated = LoginService.authenticated();
+    $rootScope.isProducer = LoginService.isProducer();
+
     $scope.logout = function () {
         LoginService.logout();
         $rootScope.authenticated = LoginService.authenticated();
+        $rootScope.isProducer = LoginService.isProducer();
         $state.go('home');
     }
     $scope.profile = function () {
         $state.go('profile', { id: $rootScope.currentUserId }, {});
+    }
+    $scope.publicProfile = function () {
+        if ($rootScope.isProducer) {
+            ProfileFactory.findProducerByOwner($rootScope.currentUserId).then(function (responseData) {
+                $state.go('producer', { producerId: responseData[0]._id }, {});
+            }, function (err) {
+                console.log(err);
+            })
+        }
+    }
+    $scope.community = function () {
+        var forumUrl = "http://localhost:25010/";
+        if ($rootScope.currentUserId != "") {
+            ProfileFactory.getUser($rootScope.currentUserId).then(function (responseData) {
+                forumUrl+= "prelogin.aspx?action=directlogin&";
+                ////// Example : http://community.bolt.energy/? /////////////
+                if (forumUrl.length < 10) {
+                    alert("Forum URL required to Redirect.");
+                }
+                else {
+                    window.location.href = forumUrl + "userid=" + responseData.email + "&fname=" + responseData.firstName + "&lname=" + responseData.lastName + "&key=" + responseData.password;
+                }
+                //console.log(responseData);
+            }, function (err) {
+                console.log(err);
+            })
+        }
+        else {
+            window.location.href = forumUrl;
+        }
     }
 })
 // .controller('RootController', function ($rootScope, $scope, LoginService, $state, $window, $http) {
@@ -343,6 +398,9 @@ angular.module('bolt', ["ngAnimate", "ngTouch", "ui.router", "ngResource", "toas
         },
         epUpdate: function () {
             return '/data/update';
+        },
+        epContent: function () {
+            return '/data/content';
         }
     }
 })

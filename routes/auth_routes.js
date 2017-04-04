@@ -1,4 +1,5 @@
 // Import dependencies
+var bcrypt = require('bcrypt');
 var passport = require('passport');
 var express = require('express');
 var config = require('../config/app_config');
@@ -56,7 +57,7 @@ const Project = require('../models/project_model');
 const ProjectUpload = require('../models/upload_model').ProjectUpload;
 const Update = require('../models/update_model');
 const Comment = require('../models/comment_model');
-
+const Content = require('../models/content_model');
 
 // Export the routes for our app to use
 module.exports = function (app) {
@@ -341,12 +342,13 @@ module.exports = function (app) {
 
     apiRoutes.get('/users/:id', requireAuth, function (req, res) {
         try {
+            
             if (objectId.isValid(req.params.id)) {
                 User.findById(req.params.id).populate('uploads').exec(function (err, user) {
                     if (err) {
                         res.status(500).json({ error: err, message: "Error finding user." });
                     } else {
-                        res.status(200).json({ user: user, message: "User information found." });
+                        res.status(200).json({ user: user, message: "User information found.", encryptedEmail: bcrypt.hashSync(user.email, 10) });
                     }
                 });
             } else {
