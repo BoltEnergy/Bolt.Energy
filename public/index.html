@@ -76,6 +76,7 @@
             }
         }
     </script>
+    
 </head>
 <body class="home">
     <!--<div id="wrapper" ui-view>-->
@@ -102,8 +103,6 @@
                                 <a href="" ng-click="logout()">Logout</a>
                             </div>
                         </li>
-                        <!--<li><a href='' ng-click="profile()" class="btn">Profile</a></li>
-                        <li><a ng-click="logout()" href='' class="btn">Logout</a></li>-->
                     </ul>
 
                     <ul class="" id="nav">
@@ -117,7 +116,9 @@
         </header>
         <div ui-view></div>
     </div>
+   
 
+   
 
     <footer id="footer">
         <div class="container">
@@ -126,5 +127,64 @@
     </footer>
     <script type="text/javascript">window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js" defer><\/script>')</script>
     <script type="text/javascript" src="js/jquery.main.js" defer></script>
+
+    <script>
+        // This is called with the results from from FB.getLoginStatus().
+        var isFbLogin = false;
+        function statusChangeCallback(response) {
+            // for FB.getLoginStatus().
+            if (response.status === 'connected') {
+                // Logged into your app and Facebook.
+                document.getElementById('divLogin').style.display = "none";
+                if (!isFbLogin) {
+                    fbAPI();
+                }
+                isFbLogin = true;
+            } else {
+                // The person is not logged into your app or we are unable to tell.
+                //document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
+                document.getElementById('divLogin').style.display = "block";
+                isFbLogin = false;
+            }
+        }
+
+        // This function is called when someone finishes with the Login
+        // Button.  See the onlogin handler attached to it in the sample
+        // code below.
+        function checkLoginState() {
+            FB.getLoginStatus(function (response) {
+                statusChangeCallback(response);
+            });
+        }
+
+        window.fbAsyncInit = function () {
+            
+            FB.getLoginStatus(function (response) {
+                statusChangeCallback(response);
+            });
+
+        };
+
+       
+        // Here we run a very simple test of the Graph API after login is
+        // successful.  See statusChangeCallback() for when this call is made.
+        function fbAPI() {
+            FB.api('/me', { fields: 'last_name,first_name,email,gender,name' }, function (response) {
+                angular.element(document.getElementById('divLogin')).scope().fblogin(response.email, response.first_name, response.last_name);
+                   
+                  //'Thanks for logging in, ' + response.name + '!';
+
+            });
+        }
+
+        function fblogout() {
+            if (isFbLogin) {
+                FB.logout(function (response) {
+                    statusChangeCallback(response);
+                });
+            }
+        }
+    </script>
+
 </body>
 </html>

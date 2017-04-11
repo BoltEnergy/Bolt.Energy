@@ -26,12 +26,48 @@ angular.module('auth', ["ngAnimate", "ngTouch", "ui.router", "ngResource", "toas
             })
             return $return.promise;
         },
+        fblogin: function (emailId, firstName, lastName) {
+            var $return = $q.defer();
+            $return.promise = $http({
+                method: 'POST',
+                url: ConfigService.appRoot() + '/data/fbauthenticate',
+                data: {
+                    email: emailId,
+                    Fname: firstName,
+                    Lname: lastName
+                }
+            }).then(function (responseData) {
+                $http.defaults.headers.common.Authorization = responseData.data.token;
+                $window.localStorage.setItem('BoltToken', responseData.data.token);
+                $window.localStorage.setItem('BoltUser', responseData.data.user._id);
+                $window.localStorage.setItem('BoltUserType', responseData.data.user.accountType);
+                $return.resolve({
+                    token: responseData.data.token,
+                    user: responseData.data.user
+                });
+            }, function (httpError) {
+                $window.localStorage.setItem('BoltSignupEmail', emailId);
+                $window.localStorage.setItem('BoltSignupFirstName', firstName);
+                $window.localStorage.setItem('BoltSignupLastName', lastName);
+                $return.reject({
+
+                    status: httpError.status
+                })
+                console.log(httpError);
+            })
+            return $return.promise;
+        },
         logout: function () {
             try {
                 $http.defaults.headers.common.Authorization = null;
                 $window.localStorage.removeItem('BoltToken');
                 $window.localStorage.removeItem('BoltUser');
                 $window.localStorage.removeItem('BoltUserType');
+                if (isFbLogin) {
+                    FB.logout(function (response) {
+
+                    });
+                }
             }
             catch (e) {
                 console.log(e);
@@ -50,7 +86,7 @@ angular.module('auth', ["ngAnimate", "ngTouch", "ui.router", "ngResource", "toas
                 if ($window.localStorage.getItem('BoltUserType') == "Producer") {
                     return true;
                 }
-                else { return false;}
+                else { return false; }
             }
             else {
                 return false;
@@ -70,7 +106,6 @@ angular.module('auth', ["ngAnimate", "ngTouch", "ui.router", "ngResource", "toas
                     accountType: accountType
                 }
             }).then(function (responseData) {
-                console.log(responseData);
                 $http.defaults.headers.common.Authorization = responseData.data.token;
                 $window.localStorage.setItem('BoltToken', responseData.data.token);
                 $window.localStorage.setItem('BoltUser', responseData.data.user._id);
@@ -80,7 +115,6 @@ angular.module('auth', ["ngAnimate", "ngTouch", "ui.router", "ngResource", "toas
                     user: responseData.data.user
                 });
             }, function (status) {
-                console.log(status);
                 $return.reject({
                     status: status.status
                 });
@@ -101,12 +135,21 @@ angular.module('auth', ["ngAnimate", "ngTouch", "ui.router", "ngResource", "toas
                 });
             })
             return $return.promise;
+        },
+        bindFBbutton: function () {
+            if (FB) {
+                FB.XFBML.parse();
+            }
         }
     }
 }])
 .controller('LoginController', function ($rootScope, $scope, LoginService, $state, toastr, $http, $window) {
     $rootScope.authenticated = LoginService.authenticated();
     $rootScope.isProducer = LoginService.isProducer();
+    try{
+        $rootScope.bindFB = LoginService.bindFBbutton();
+    }
+    catch(err){}
     $scope.login = function () {
         var result = LoginService.login($scope.email, $scope.password);
         result.then(function (responseData) {
@@ -127,9 +170,35 @@ angular.module('auth', ["ngAnimate", "ngTouch", "ui.router", "ngResource", "toas
         $rootScope.currentUserId = '';
         $state.go('home');
     }
+    $scope.fblogin = function (emailId, FName, LName) {
+        var result = LoginService.fblogin(emailId, FName, LName);
+        result.then(function (responseData) {
+            $rootScope.authenticated = LoginService.authenticated();
+            $rootScope.currentUserId = responseData.user._id;
+            $rootScope.isProducer = LoginService.isProducer();
+            $state.go('home');
+            toastr.success("Welcome to Bolt, " + responseData.user.firstName, "Login Successful");
+        }, function (status) {
+            if ($state.current.name == "register") {
+                window.location.reload();
+            }
+            else {
+                $state.go('register');
+            }
+        })
+    }
 })
 .controller('RegisterController', ['$rootScope', '$scope', 'LoginService', '$state', 'toastr', '$window', function ($rootScope, $scope, LoginService, $state, toastr, $window) {
+    if (($window.localStorage.getItem('BoltSignupEmail') != 'undefined') && ($window.localStorage.getItem('BoltSignupEmail') != null)) {
+        $scope.email = $window.localStorage.getItem('BoltSignupEmail');
+        $scope.firstName = $window.localStorage.getItem('BoltSignupFirstName');
+        $scope.lastName = $window.localStorage.getItem('BoltSignupLastName');
+    }
+    
     $scope.register = function () {
+        $window.localStorage.removeItem('BoltSignupEmail');
+        $window.localStorage.removeItem('BoltSignupFirstName');
+        $window.localStorage.removeItem('BoltSignupLastName');
         var arr = [];
         switch ($scope.accountType) {
             case 'Producer':
@@ -160,4 +229,11 @@ angular.module('auth', ["ngAnimate", "ngTouch", "ui.router", "ngResource", "toas
                 break;
         }
     }
+    $scope.cancel = function () {
+        $window.localStorage.removeItem('BoltSignupEmail');
+        $window.localStorage.removeItem('BoltSignupFirstName');
+        $window.localStorage.removeItem('BoltSignupLastName');
+        $state.go('login');
+    }
+   
 }])

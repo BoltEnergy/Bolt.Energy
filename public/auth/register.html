@@ -5,7 +5,7 @@
         <h1>Register for Bolt</h1>
       </div>
       <div class="three columns">
-      	<h3>Standar Profile Information</h3>
+      	<h3>Standard Profile Information</h3>
         <p><label for="inpFirstname">First: </label><input type="text" id="inpUsername" ng-model="firstName" placeholder="First Name" ></p>
         <p><label for="inpLastname">Last: </label><input type="text" id="inpUsername" ng-model="lastName" placeholder="Last Name"></p>
     		<p><label for="inpEmail">Email: </label><input type="text" id="inpUsername" ng-model="email" placeholder="someone@example.com"></p>
@@ -115,6 +115,10 @@
     <div class="row">
       <div class="twelve columns">
     		<p><a id="btnSignUp" ng-click="register()" href="">Register</a>&nbsp;&nbsp;<a id="btnCancel" ng-click="cancel()" href="">Cancel</a></p>
+          <p id="divLogin" ng-app='auth' ng-controller="LoginController">
+              <fb:login-button size="xlarge" scope="public_profile,email" auto_logout_link="false" onlogin="checkLoginState();">
+              </fb:login-button>
+          </p>
       </div>
     </div>
   </div>

@@ -29,6 +29,5 @@ app.use(express.static('public'));
 //app.use(express.static('userImages'));
 app.use('/userImages', express.static('userImages'));
 var port = process.env.PORT || config.port || 3001;
-
 app.listen(port);
 console.log("Bolt Profile app running on " + port);

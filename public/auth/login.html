@@ -1,12 +1,18 @@
 <main id="main" role="main">
-  <div class="container">
-  	<div class="row">
-      <div class="three columns">
-        <h1>Login</h1>
-        <p><label for="inpUsername">Email: </label><input type="text" id="inpUsername" ng-model="email" placeholder="User Email"></p>
-        <p><label for="inpPassword">Password: </label><input type="password" id="inpPassword" ng-model="password" placeholder="User Password"></p>
-        <p><a id="btnLogin" ng-click="login()" href="">Log In</a>&nbsp;&nbsp;<a id="btnCancel" ng-click="cancel()" href="">Cancel</a></p>
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="three columns">
+                <h1>Login</h1>
+                <p><label for="inpUsername">Email: </label><input type="text" id="inpUsername" ng-model="email" placeholder="User Email"></p>
+                <p><label for="inpPassword">Password: </label><input type="password" id="inpPassword" ng-model="password" placeholder="User Password"></p>
+                <p><a id="btnLogin" ng-click="login()" href="">Log In</a>&nbsp;&nbsp;<a id="btnCancel" ng-click="cancel()" href="">Cancel</a></p>
+                <p id="divLogin" ng-app='auth' ng-controller="LoginController">
+                    <fb:login-button size="xlarge" scope="public_profile,email" auto_logout_link="false" onlogin="checkLoginState();">
+                    </fb:login-button>
+                </p>
+                <p id="status">
+                </p>
+            </div>
+        </div>
     </div>
-  </div>
 </main>

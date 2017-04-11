@@ -149,6 +149,33 @@ module.exports = function (app) {
         });
     });
 
+    // FB Authenticate the user and get a JSON Web Token to include in the header of future requests.
+    apiRoutes.post('/fbauthenticate', function (req, res) {
+        User.findOne({
+            email: req.body.email
+        }, function (err, user) {
+            if (err) //throw err;
+                res.status(401).json({ success: false, message: 'ERROR.' });
+
+            if (!user) {
+                ///// Create new user ####################////////////////////////////
+
+                res.status(401).json({ success: false, message: 'Authentication failed. User not found.' });
+            } else {
+
+                {
+                    // Create token if the password matched and no error was thrown
+                    const token = jwt.sign({ id: user._id, firstName: user.firstName, lastName: user.lastName, email: user.email, accountType: user.accountType }, config.secret, {
+                        expiresIn: 10080 // in seconds
+                    });
+                    console.log(Date.now());
+                    res.status(200).json({ success: true, token: 'JWT ' + token, user: user });
+                }
+
+            }
+        });
+    });
+
     //TODO: Add an authentication check to make sure user can edit this profile
     apiRoutes.put('/users/:id', requireAuth, function (req, res) {
         try {

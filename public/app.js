@@ -1,6 +1,6 @@
 angular.module('bolt', ["ngAnimate", "ngTouch", "ui.router", "ngResource", "toastr", "auth", "home", "search", "profile", "producer", 'djds4rce.angular-socialshare', "content"])
 .run(function ($FB) {
-    $FB.init('1049483961846178');
+    $FB.init('376721239380234');
 })
 
 .run(function ($state, $rootScope, toastr, LoginService) {
@@ -341,9 +341,8 @@ angular.module('bolt', ["ngAnimate", "ngTouch", "ui.router", "ngResource", "toas
                     alert("Forum URL required to Redirect.");
                 }
                 else {
-                    window.location.href = forumUrl + "userid=" + responseData.email + "&fname=" + responseData.firstName + "&lname=" + responseData.lastName + "&key=" + responseData.password;
+                    window.location.href = forumUrl + "userid=" + responseData.email + "&fname=" + responseData.firstName + "&lname=" + responseData.lastName;
                 }
-                //console.log(responseData);
             }, function (err) {
                 console.log(err);
             })
@@ -370,7 +369,8 @@ angular.module('bolt', ["ngAnimate", "ngTouch", "ui.router", "ngResource", "toas
 .service('ConfigService', function ($http, $q, $window) {
     return {
         appRoot: function () {
-            var url = 'http://localhost:8080';
+            //var url = 'http://devbolt.testsep.com:9182';
+			var url = 'http://localhost:8080';
             //var url = 'https://bolt-test-sgannonumd.c9users.io';
             // var url = '';
             // if ($window.location.href.indexOf('c9users') > -1) {
